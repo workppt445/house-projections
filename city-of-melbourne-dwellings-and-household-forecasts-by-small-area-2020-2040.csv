@@ -1,0 +1,2647 @@
+geography,year,category,households,value
+Carlton,2024,Household type,Couple family without children,2778
+Carlton,2024,Household type,Group household,3007
+Carlton,2024,Household type,Lone person,6146
+Carlton,2024,Household size,Not applicable,2
+Carlton,2024,Household type,One-parent family,469
+Carlton,2024,Household type,Other family,409
+Carlton,2025,Structural Private Dwellings,Not applicable,13971
+Carlton,2026,Household type,Other family,399
+Carlton,2027,Household type,Couple family without children,2958
+Carlton,2027,Household type,Lone person,6314
+Carlton,2027,Structural Private Dwellings,Not applicable,14300
+Carlton,2027,Household size,Not applicable,2
+Carlton,2028,Household type,Couple family without children,3008
+Carlton,2028,Household size,Not applicable,2
+Carlton,2028,Household type,Other family,388
+Carlton,2029,Household type,Couple family with children,899
+Carlton,2029,Household size,Not applicable,2
+Carlton,2029,Household type,One-parent family,478
+Carlton,2030,Household type,Group household,3212
+Carlton,2031,Household type,Couple family with children,926
+Carlton,2031,Household type,Lone person,6622
+Carlton,2031,Household size,Not applicable,2
+Carlton,2032,Household type,Couple family without children,3143
+Carlton,2032,Household type,Lone person,6683
+Carlton,2033,Household type,Couple family with children,956
+Carlton,2034,Household type,Couple family with children,963
+Carlton,2034,Household type,Group household,3290
+Carlton,2035,Household type,Group household,3310
+Carlton,2035,Household type,Lone person,6697
+Carlton,2035,Structural Private Dwellings,Not applicable,15189
+Carlton,2035,Household type,One-parent family,495
+Carlton,2035,Household type,Other family,355
+Carlton,2036,Household type,Couple family without children,3156
+Carlton,2036,Household type,Group household,3311
+Carlton,2036,Structural Private Dwellings,Not applicable,15206
+Carlton,2037,Household type,Couple family without children,3145
+Carlton,2037,Household type,Lone person,6702
+Carlton,2038,Household type,Couple family with children,1007
+Carlton,2038,Household type,Couple family without children,3136
+Carlton,2038,Household type,Group household,3314
+Carlton,2038,Structural Private Dwellings,Not applicable,15238
+Carlton,2038,Household type,One-parent family,511
+Carlton,2039,Structural Private Dwellings,Not applicable,15254
+Carlton,2040,Household type,Couple family with children,1027
+Carlton,2040,Household type,Couple family without children,3120
+Carlton,2040,Household size,Not applicable,2
+Carlton,2041,Household type,Couple family with children,1038
+Carlton,2041,Household type,Couple family without children,3101
+Carlton,2041,Household type,Group household,3302
+Carlton,2041,Structural Private Dwellings,Not applicable,15288
+Carlton,2041,Household type,One-parent family,528
+Carlton,2041,Household type,Other family,365
+Carlton,2042,Household type,Couple family with children,1050
+Carlton,2042,Household type,Group household,3289
+Carlton,2042,Household size,Not applicable,2
+Carlton,2042,Household type,Other family,380
+Carlton,2043,Household type,Couple family without children,3076
+Carlton,2043,Household type,Group household,3272
+Carlton,2043,Household type,Lone person,6731
+Docklands,2023,Household type,Lone person,2742
+Docklands,2023,Household type,One-parent family,370
+Docklands,2024,Household type,One-parent family,396
+Docklands,2025,Household type,Couple family with children,1517
+Docklands,2025,Household type,Group household,1295
+Docklands,2025,Household type,One-parent family,390
+Docklands,2026,Household type,Other family,194
+Docklands,2027,Household type,Group household,1319
+Docklands,2027,Household type,Lone person,3000
+Docklands,2027,Household size,Not applicable,2
+Docklands,2027,Household type,One-parent family,390
+Docklands,2027,Household type,Other family,191
+Docklands,2028,Household type,Couple family without children,4162
+Docklands,2028,Household type,Group household,1317
+Docklands,2028,Household type,Other family,186
+Docklands,2029,Household type,Couple family without children,4211
+Docklands,2029,Household type,Lone person,2970
+Docklands,2029,Household type,Other family,182
+Docklands,2030,Household type,Couple family with children,1699
+Docklands,2030,Household type,Lone person,2957
+Docklands,2030,Structural Private Dwellings,Not applicable,11136
+Docklands,2030,Household type,One-parent family,383
+Docklands,2030,Household type,Other family,179
+Docklands,2031,Household type,Other family,177
+Docklands,2032,Household type,Couple family with children,1758
+Docklands,2032,Household type,Group household,1336
+Docklands,2032,Structural Private Dwellings,Not applicable,11243
+Docklands,2032,Household size,Not applicable,2
+Docklands,2033,Household type,Couple family with children,1783
+Docklands,2033,Structural Private Dwellings,Not applicable,11275
+Docklands,2034,Household type,Couple family without children,4394
+Docklands,2034,Household size,Not applicable,2
+Docklands,2034,Household type,One-parent family,397
+Docklands,2035,Household type,One-parent family,403
+Docklands,2036,Household type,One-parent family,413
+Docklands,2037,Household type,One-parent family,423
+Docklands,2038,Household type,Couple family with children,2083
+Docklands,2038,Household type,Lone person,3128
+Docklands,2038,Household type,One-parent family,431
+Docklands,2039,Household type,Couple family with children,2155
+Docklands,2039,Household type,Lone person,3178
+Docklands,2039,Structural Private Dwellings,Not applicable,12484
+Docklands,2039,Household size,Not applicable,2
+Docklands,2040,Household type,Group household,1475
+Docklands,2040,Household type,Other family,179
+Docklands,2041,Household type,Group household,1489
+Docklands,2041,Household type,Lone person,3294
+Docklands,2041,Structural Private Dwellings,Not applicable,12978
+Docklands,2041,Household type,One-parent family,462
+Docklands,2042,Household type,Couple family with children,2411
+Docklands,2042,Household type,Group household,1502
+Docklands,2042,Structural Private Dwellings,Not applicable,13231
+Docklands,2042,Household type,One-parent family,475
+East Melbourne,2023,Structural Private Dwellings,Not applicable,3424
+East Melbourne,2023,Household type,Other family,26
+East Melbourne,2024,Household size,Not applicable,2
+East Melbourne,2025,Household type,Couple family with children,334
+East Melbourne,2025,Household type,Lone person,1213
+East Melbourne,2025,Household size,Not applicable,2
+East Melbourne,2025,Household type,Other family,27
+East Melbourne,2026,Household type,Lone person,1226
+East Melbourne,2026,Structural Private Dwellings,Not applicable,3424
+East Melbourne,2026,Household size,Not applicable,2
+East Melbourne,2026,Household type,One-parent family,77
+East Melbourne,2027,Household type,Group household,288
+East Melbourne,2027,Household type,Lone person,1231
+East Melbourne,2027,Household type,Other family,27
+East Melbourne,2028,Household type,Couple family without children,1369
+East Melbourne,2028,Household type,Group household,288
+East Melbourne,2028,Household size,Not applicable,2
+East Melbourne,2028,Household type,One-parent family,77
+East Melbourne,2028,Household type,Other family,26
+East Melbourne,2029,Household type,Group household,289
+East Melbourne,2029,Household type,Lone person,1228
+East Melbourne,2029,Structural Private Dwellings,Not applicable,3523
+East Melbourne,2029,Household type,One-parent family,76
+East Melbourne,2031,Household type,Group household,291
+East Melbourne,2031,Household size,Not applicable,2
+East Melbourne,2032,Structural Private Dwellings,Not applicable,3550
+East Melbourne,2032,Household type,One-parent family,77
+East Melbourne,2032,Household type,Other family,24
+East Melbourne,2033,Household type,Group household,292
+East Melbourne,2033,Household size,Not applicable,2
+East Melbourne,2033,Household type,One-parent family,77
+East Melbourne,2034,Household type,Couple family without children,1412
+East Melbourne,2034,Household type,Group household,293
+East Melbourne,2034,Household type,Lone person,1197
+East Melbourne,2034,Structural Private Dwellings,Not applicable,3550
+East Melbourne,2034,Household type,Other family,23
+East Melbourne,2035,Household type,Couple family without children,1411
+East Melbourne,2036,Household type,Group household,294
+East Melbourne,2036,Household size,Not applicable,2
+East Melbourne,2037,Household type,Couple family with children,406
+East Melbourne,2037,Household type,Couple family without children,1399
+East Melbourne,2037,Structural Private Dwellings,Not applicable,3550
+East Melbourne,2038,Household type,Group household,294
+East Melbourne,2038,Household size,Not applicable,2
+East Melbourne,2038,Household type,One-parent family,80
+East Melbourne,2038,Household type,Other family,23
+East Melbourne,2040,Household type,Couple family without children,1383
+East Melbourne,2040,Household type,Group household,293
+East Melbourne,2041,Household size,Not applicable,2
+East Melbourne,2042,Household type,Group household,291
+East Melbourne,2042,Household type,Lone person,1196
+East Melbourne,2042,Structural Private Dwellings,Not applicable,3559
+East Melbourne,2042,Household type,One-parent family,84
+East Melbourne,2042,Household type,Other family,25
+East Melbourne,2043,Household size,Not applicable,2
+East Melbourne,2043,Household type,One-parent family,85
+Kensington,2023,Household type,Other family,77
+Kensington,2024,Household type,Lone person,1639
+Kensington,2025,Household type,One-parent family,248
+Kensington,2026,Household type,Couple family with children,1243
+Kensington,2026,Household type,Lone person,1655
+Kensington,2026,Household type,Other family,77
+Kensington,2027,Household type,Couple family with children,1263
+Kensington,2027,Household type,Group household,574
+Kensington,2028,Household type,Group household,570
+Kensington,2028,Household type,Lone person,1629
+Kensington,2028,Structural Private Dwellings,Not applicable,5746
+Kensington,2029,Household type,Couple family without children,1928
+Kensington,2030,Household type,Lone person,1616
+Kensington,2030,Household type,Other family,70
+Kensington,2031,Household type,Couple family with children,1346
+Kensington,2031,Household type,Couple family without children,1965
+Kensington,2031,Household type,Lone person,1619
+Kensington,2031,Structural Private Dwellings,Not applicable,5873
+Kensington,2032,Household type,Lone person,1613
+Kensington,2032,Household type,One-parent family,246
+Kensington,2033,Household type,Group household,583
+Kensington,2033,Structural Private Dwellings,Not applicable,5923
+Kensington,2033,Household type,One-parent family,248
+Kensington,2033,Household type,Other family,67
+Kensington,2034,Structural Private Dwellings,Not applicable,6120
+Kensington,2035,Household type,Couple family with children,1500
+Kensington,2035,Household size,Not applicable,3
+Kensington,2035,Household type,One-parent family,265
+Kensington,2035,Household type,Other family,69
+Kensington,2036,Household type,One-parent family,276
+Kensington,2036,Household type,Other family,71
+Kensington,2037,Household type,Couple family without children,2232
+Kensington,2037,Household size,Not applicable,3
+Kensington,2037,Household type,One-parent family,286
+Kensington,2038,Household type,Couple family with children,1714
+Kensington,2038,Household type,Group household,694
+Kensington,2038,Household type,Lone person,1870
+Kensington,2038,Structural Private Dwellings,Not applicable,6969
+Kensington,2039,Household type,Lone person,1903
+Kensington,2039,Structural Private Dwellings,Not applicable,7166
+Kensington,2039,Household type,One-parent family,300
+Kensington,2040,Household type,Group household,741
+Kensington,2041,Household type,Lone person,1978
+Kensington,2041,Household size,Not applicable,3
+Kensington,2041,Household type,Other family,79
+Kensington,2042,Household type,Group household,781
+Kensington,2042,Structural Private Dwellings,Not applicable,7801
+Kensington,2042,Household type,Other family,84
+Kensington,2043,Household type,Group household,796
+Kensington,2043,Structural Private Dwellings,Not applicable,7977
+Kensington,2043,Household size,Not applicable,3
+Kensington,2043,Household type,Other family,88
+Melbourne (CBD),2023,Household type,Couple family with children,1671
+Melbourne (CBD),2023,Household type,Other family,1351
+Melbourne (CBD),2024,Household type,Lone person,12751
+Melbourne (CBD),2025,Household type,Lone person,12722
+Melbourne (CBD),2025,Household type,One-parent family,569
+Melbourne (CBD),2026,Household type,Couple family with children,1871
+Melbourne (CBD),2026,Household type,One-parent family,569
+Melbourne (CBD),2026,Household type,Other family,1369
+Melbourne (CBD),2027,Household type,Couple family with children,1934
+Melbourne (CBD),2027,Household type,Group household,9370
+Melbourne (CBD),2027,Household type,One-parent family,573
+Melbourne (CBD),2027,Household type,Other family,1358
+Melbourne (CBD),2028,Household type,Couple family with children,1983
+Melbourne (CBD),2028,Household type,Lone person,12943
+Melbourne (CBD),2028,Household type,One-parent family,573
+Melbourne (CBD),2028,Household type,Other family,1332
+Melbourne (CBD),2029,Household type,Couple family without children,10006
+Melbourne (CBD),2029,Household type,Group household,9471
+Melbourne (CBD),2029,Household type,Lone person,12964
+Melbourne (CBD),2029,Household size,Not applicable,2
+Melbourne (CBD),2029,Household type,One-parent family,574
+Melbourne (CBD),2031,Household type,Couple family with children,2119
+Melbourne (CBD),2031,Structural Private Dwellings,Not applicable,39784
+Melbourne (CBD),2032,Household type,Couple family with children,2159
+Melbourne (CBD),2032,Structural Private Dwellings,Not applicable,39957
+Melbourne (CBD),2032,Household type,One-parent family,588
+Melbourne (CBD),2033,Household type,Couple family without children,10409
+Melbourne (CBD),2033,Household type,One-parent family,594
+Melbourne (CBD),2033,Household type,Other family,1248
+Melbourne (CBD),2034,Household type,Couple family with children,2271
+Melbourne (CBD),2034,Household type,Lone person,13253
+Melbourne (CBD),2034,Household size,Not applicable,2
+Melbourne (CBD),2035,Household type,Group household,10200
+Melbourne (CBD),2035,Household type,Lone person,13490
+Melbourne (CBD),2035,Household type,One-parent family,623
+Melbourne (CBD),2035,Household type,Other family,1260
+Melbourne (CBD),2037,Household type,Group household,10521
+Melbourne (CBD),2037,Household type,Lone person,14033
+Melbourne (CBD),2037,Household type,One-parent family,661
+Melbourne (CBD),2037,Household type,Other family,1298
+Melbourne (CBD),2038,Household type,Couple family with children,2578
+Melbourne (CBD),2038,Structural Private Dwellings,Not applicable,44082
+Melbourne (CBD),2038,Household type,One-parent family,678
+Melbourne (CBD),2038,Household type,Other family,1312
+Melbourne (CBD),2039,Household type,Group household,10809
+Melbourne (CBD),2039,Household type,Other family,1326
+Melbourne (CBD),2040,Household type,Group household,10951
+Melbourne (CBD),2040,Household type,Lone person,14799
+Melbourne (CBD),2040,Household type,One-parent family,713
+Melbourne (CBD),2041,Household type,Group household,11045
+Melbourne (CBD),2041,Household type,Lone person,15058
+Melbourne (CBD),2041,Structural Private Dwellings,Not applicable,46193
+Melbourne (CBD),2042,Household type,Couple family with children,2878
+Melbourne (CBD),2042,Household type,Couple family without children,12026
+Melbourne (CBD),2042,Household type,Lone person,15314
+Melbourne (CBD),2042,Structural Private Dwellings,Not applicable,46878
+Melbourne (CBD),2043,Household type,Lone person,15554
+Melbourne (CBD),2043,Household size,Not applicable,2
+Melbourne (Remainder),2023,Household type,One-parent family,60
+Melbourne (Remainder),2024,Household type,Couple family with children,149
+Melbourne (Remainder),2024,Household type,Couple family without children,589
+Melbourne (Remainder),2024,Household type,Group household,51
+Melbourne (Remainder),2025,Household type,Lone person,567
+Melbourne (Remainder),2025,Household type,One-parent family,64
+Melbourne (Remainder),2026,Household type,Group household,52
+Melbourne (Remainder),2026,Household type,Lone person,573
+Melbourne (Remainder),2026,Household size,Not applicable,2
+Melbourne (Remainder),2027,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2027,Household type,Other family,33
+Melbourne (Remainder),2028,Household type,Group household,52
+Melbourne (Remainder),2028,Household type,Lone person,563
+Melbourne (Remainder),2028,Household type,One-parent family,63
+Melbourne (Remainder),2029,Household type,Couple family without children,622
+Melbourne (Remainder),2030,Household type,Lone person,553
+Melbourne (Remainder),2030,Household size,Not applicable,2
+Melbourne (Remainder),2031,Household type,Couple family with children,165
+Melbourne (Remainder),2031,Household type,Group household,52
+Melbourne (Remainder),2031,Household size,Not applicable,2
+Melbourne (Remainder),2031,Household type,Other family,30
+Melbourne (Remainder),2032,Household type,Couple family with children,167
+Melbourne (Remainder),2032,Household type,Group household,52
+Melbourne (Remainder),2032,Household type,Lone person,546
+Melbourne (Remainder),2033,Household type,Other family,29
+Melbourne (Remainder),2034,Household type,Other family,28
+Melbourne (Remainder),2035,Household type,Couple family with children,171
+Melbourne (Remainder),2035,Household size,Not applicable,3
+Melbourne (Remainder),2035,Household type,One-parent family,63
+Melbourne (Remainder),2035,Household type,Other family,28
+Melbourne (Remainder),2036,Household type,Couple family with children,173
+Melbourne (Remainder),2036,Household type,Couple family without children,625
+Melbourne (Remainder),2036,Household type,Other family,28
+Melbourne (Remainder),2037,Household type,Group household,52
+Melbourne (Remainder),2037,Household type,Other family,28
+Melbourne (Remainder),2038,Household type,Couple family with children,177
+Melbourne (Remainder),2038,Household type,Group household,52
+Melbourne (Remainder),2038,Household type,Lone person,537
+Melbourne (Remainder),2038,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2039,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2039,Household size,Not applicable,3
+Melbourne (Remainder),2040,Household type,Couple family with children,180
+Melbourne (Remainder),2040,Household type,Group household,52
+Melbourne (Remainder),2040,Household size,Not applicable,3
+Melbourne (Remainder),2041,Household type,Couple family without children,611
+Melbourne (Remainder),2041,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2042,Household size,Not applicable,3
+Melbourne (Remainder),2042,Household type,One-parent family,68
+Melbourne (Remainder),2043,Household type,Couple family without children,602
+North Melbourne,2023,Household type,Couple family without children,2351
+North Melbourne,2023,Household size,Not applicable,2
+North Melbourne,2024,Household type,Couple family without children,2517
+North Melbourne,2024,Structural Private Dwellings,Not applicable,9437
+North Melbourne,2024,Household type,One-parent family,469
+North Melbourne,2025,Household type,Couple family with children,1105
+North Melbourne,2026,Household size,Not applicable,2
+North Melbourne,2026,Household type,One-parent family,464
+North Melbourne,2027,Household type,Couple family with children,1182
+North Melbourne,2027,Household type,Other family,154
+North Melbourne,2028,Household type,Group household,1670
+North Melbourne,2028,Household type,Other family,153
+North Melbourne,2029,Household size,Not applicable,2
+North Melbourne,2029,Household type,Other family,152
+North Melbourne,2030,Household type,Group household,1718
+North Melbourne,2030,Structural Private Dwellings,Not applicable,10121
+North Melbourne,2030,Household size,Not applicable,2
+North Melbourne,2030,Household type,One-parent family,470
+North Melbourne,2030,Household type,Other family,151
+North Melbourne,2031,Household type,Group household,1741
+North Melbourne,2031,Household size,Not applicable,2
+North Melbourne,2031,Household type,One-parent family,477
+North Melbourne,2032,Household type,Couple family with children,1350
+North Melbourne,2032,Structural Private Dwellings,Not applicable,10375
+North Melbourne,2033,Structural Private Dwellings,Not applicable,10465
+North Melbourne,2033,Household size,Not applicable,2
+North Melbourne,2033,Household type,One-parent family,489
+North Melbourne,2033,Household type,Other family,148
+North Melbourne,2034,Household type,Couple family without children,3157
+North Melbourne,2034,Household type,Lone person,3647
+North Melbourne,2034,Household type,Other family,152
+North Melbourne,2035,Household type,Group household,1930
+North Melbourne,2035,Household type,Lone person,3808
+North Melbourne,2035,Structural Private Dwellings,Not applicable,11564
+North Melbourne,2035,Household size,Not applicable,2
+North Melbourne,2035,Household type,One-parent family,547
+North Melbourne,2035,Household type,Other family,155
+North Melbourne,2036,Household type,Couple family with children,1630
+North Melbourne,2036,Household type,Other family,159
+North Melbourne,2037,Household type,Lone person,4125
+North Melbourne,2037,Structural Private Dwellings,Not applicable,12516
+North Melbourne,2037,Household type,Other family,162
+North Melbourne,2038,Household type,Couple family without children,3768
+North Melbourne,2039,Household type,Couple family with children,1865
+North Melbourne,2039,Household type,Couple family without children,3900
+North Melbourne,2039,Household type,Other family,179
+North Melbourne,2040,Household type,Couple family with children,1943
+North Melbourne,2040,Household type,Lone person,4567
+North Melbourne,2040,Household type,Other family,188
+North Melbourne,2041,Household type,Couple family with children,2025
+North Melbourne,2041,Household type,Couple family without children,4142
+North Melbourne,2041,Household size,Not applicable,2
+North Melbourne,2042,Household type,Couple family without children,4225
+North Melbourne,2042,Household type,Lone person,4830
+North Melbourne,2043,Household type,Couple family with children,2177
+North Melbourne,2043,Household type,Group household,2301
+North Melbourne,2043,Household size,Not applicable,2
+North Melbourne,2043,Household type,Other family,245
+Parkville,2023,Household type,Couple family without children,865
+Parkville,2023,Household type,Group household,505
+Parkville,2023,Household type,Lone person,863
+Parkville,2024,Household type,Couple family without children,922
+Parkville,2024,Household type,Lone person,913
+Parkville,2024,Household size,Not applicable,2
+Parkville,2025,Household type,Couple family with children,438
+Parkville,2025,Household type,Lone person,909
+Parkville,2025,Household size,Not applicable,2
+Parkville,2026,Household type,Couple family without children,939
+Parkville,2026,Household type,Group household,546
+Parkville,2026,Structural Private Dwellings,Not applicable,3011
+Parkville,2026,Household size,Not applicable,2
+Parkville,2026,Household type,Other family,45
+Parkville,2027,Household type,Couple family with children,451
+Parkville,2027,Household type,Group household,544
+Parkville,2028,Household type,Couple family with children,458
+Parkville,2028,Household type,Group household,541
+Parkville,2028,Household type,Lone person,890
+Parkville,2028,Structural Private Dwellings,Not applicable,3011
+Parkville,2028,Household size,Not applicable,2
+Parkville,2028,Household type,Other family,42
+Parkville,2029,Household type,Group household,539
+Parkville,2029,Household type,Lone person,882
+Parkville,2030,Household type,Lone person,874
+Parkville,2030,Structural Private Dwellings,Not applicable,3011
+Parkville,2030,Household size,Not applicable,2
+Parkville,2031,Household type,Group household,538
+Parkville,2031,Household type,Lone person,869
+Parkville,2031,Structural Private Dwellings,Not applicable,3011
+Parkville,2031,Household type,Other family,40
+Parkville,2032,Household type,Lone person,862
+Parkville,2032,Household size,Not applicable,2
+Parkville,2032,Household type,Other family,39
+Parkville,2033,Household type,Couple family with children,484
+Parkville,2033,Household type,One-parent family,100
+Parkville,2034,Household type,Group household,541
+Parkville,2034,Household type,Lone person,852
+Parkville,2034,Structural Private Dwellings,Not applicable,3011
+Parkville,2034,Household type,One-parent family,101
+Parkville,2036,Household type,Other family,37
+Parkville,2037,Household type,Other family,37
+Parkville,2038,Household type,Couple family with children,505
+Parkville,2038,Household type,Group household,541
+Parkville,2039,Household type,One-parent family,104
+Parkville,2040,Structural Private Dwellings,Not applicable,3011
+Parkville,2040,Household size,Not applicable,2
+Parkville,2040,Household type,One-parent family,105
+Parkville,2041,Household type,Couple family without children,933
+Parkville,2041,Structural Private Dwellings,Not applicable,3011
+Parkville,2041,Household type,One-parent family,107
+Parkville,2041,Household type,Other family,38
+Parkville,2042,Household type,Couple family without children,927
+Parkville,2042,Household type,Group household,535
+Parkville,2042,Household type,One-parent family,108
+Parkville,2043,Household type,Couple family with children,529
+Parkville,2043,Household type,Lone person,846
+Parkville,2043,Household size,Not applicable,2
+Port Melbourne,2023,Household type,Couple family without children,1
+Port Melbourne,2023,Household type,Group household,0
+Port Melbourne,2023,Household size,Not applicable,0
+Port Melbourne,2024,Household size,Not applicable,0
+Port Melbourne,2024,Household type,Other family,0
+Port Melbourne,2025,Household size,Not applicable,0
+Port Melbourne,2025,Household type,Other family,0
+Port Melbourne,2026,Household type,Couple family with children,0
+Port Melbourne,2026,Household type,Couple family without children,1
+Port Melbourne,2026,Household type,Group household,0
+Port Melbourne,2026,Structural Private Dwellings,Not applicable,2
+Port Melbourne,2026,Household type,Other family,0
+Port Melbourne,2027,Household type,Lone person,4
+Port Melbourne,2027,Household type,One-parent family,1
+Port Melbourne,2027,Household type,Other family,0
+Port Melbourne,2028,Household type,Couple family without children,8
+Port Melbourne,2028,Structural Private Dwellings,Not applicable,20
+Port Melbourne,2028,Household type,One-parent family,1
+Port Melbourne,2028,Household type,Other family,0
+Port Melbourne,2029,Household type,Group household,4
+Port Melbourne,2029,Household type,Lone person,7
+Port Melbourne,2029,Household size,Not applicable,3
+Port Melbourne,2030,Structural Private Dwellings,Not applicable,35
+Port Melbourne,2030,Household type,One-parent family,1
+Port Melbourne,2031,Structural Private Dwellings,Not applicable,45
+Port Melbourne,2031,Household type,Other family,1
+Port Melbourne,2032,Household type,Couple family with children,8
+Port Melbourne,2032,Household type,Group household,7
+Port Melbourne,2032,Household type,Lone person,13
+Port Melbourne,2032,Structural Private Dwellings,Not applicable,51
+Port Melbourne,2033,Household type,Lone person,15
+Port Melbourne,2034,Household type,Couple family without children,38
+Port Melbourne,2034,Household type,One-parent family,3
+Port Melbourne,2035,Household type,Couple family without children,56
+Port Melbourne,2035,Structural Private Dwellings,Not applicable,148
+Port Melbourne,2035,Household type,One-parent family,5
+Port Melbourne,2036,Household type,Couple family without children,77
+Port Melbourne,2036,Household type,Group household,29
+Port Melbourne,2036,Structural Private Dwellings,Not applicable,204
+Port Melbourne,2037,Household type,Couple family with children,45
+Port Melbourne,2037,Household size,Not applicable,2
+Port Melbourne,2038,Household size,Not applicable,2
+Port Melbourne,2039,Structural Private Dwellings,Not applicable,380
+Port Melbourne,2039,Household size,Not applicable,2
+Port Melbourne,2040,Household type,Couple family with children,86
+Port Melbourne,2040,Household type,Lone person,126
+Port Melbourne,2040,Household type,One-parent family,16
+Port Melbourne,2041,Household type,Couple family without children,214
+Port Melbourne,2041,Household type,Other family,9
+Port Melbourne,2042,Household type,Couple family with children,125
+Port Melbourne,2042,Household type,Group household,97
+Port Melbourne,2042,Household type,Lone person,178
+Port Melbourne,2042,Household type,Other family,12
+Port Melbourne,2043,Household type,Other family,14
+South Yarra,2023,Household type,Couple family with children,297
+South Yarra,2023,Household size,Not applicable,2
+South Yarra,2023,Household type,One-parent family,62
+South Yarra,2024,Household type,Group household,215
+South Yarra,2024,Structural Private Dwellings,Not applicable,2766
+South Yarra,2024,Household size,Not applicable,2
+South Yarra,2025,Household type,Group household,217
+South Yarra,2025,Household type,Lone person,1035
+South Yarra,2025,Structural Private Dwellings,Not applicable,2766
+South Yarra,2025,Household size,Not applicable,2
+South Yarra,2027,Household type,Group household,222
+South Yarra,2027,Structural Private Dwellings,Not applicable,2789
+South Yarra,2027,Household size,Not applicable,2
+South Yarra,2028,Household type,Lone person,1040
+South Yarra,2028,Structural Private Dwellings,Not applicable,2798
+South Yarra,2029,Household size,Not applicable,2
+South Yarra,2029,Household type,Other family,23
+South Yarra,2030,Household type,Couple family with children,362
+South Yarra,2030,Structural Private Dwellings,Not applicable,2824
+South Yarra,2030,Household type,Other family,23
+South Yarra,2031,Structural Private Dwellings,Not applicable,2842
+South Yarra,2031,Household type,One-parent family,66
+South Yarra,2032,Structural Private Dwellings,Not applicable,2852
+South Yarra,2032,Household size,Not applicable,2
+South Yarra,2033,Household type,Couple family with children,380
+South Yarra,2033,Household type,Group household,226
+South Yarra,2033,Household size,Not applicable,2
+South Yarra,2033,Household type,One-parent family,67
+South Yarra,2033,Household type,Other family,22
+South Yarra,2034,Household type,Lone person,1032
+South Yarra,2034,Household size,Not applicable,2
+South Yarra,2034,Household type,One-parent family,68
+South Yarra,2034,Household type,Other family,22
+South Yarra,2035,Household type,Couple family without children,1047
+South Yarra,2035,Household type,Lone person,1033
+South Yarra,2035,Household size,Not applicable,2
+South Yarra,2035,Household type,One-parent family,68
+South Yarra,2036,Household type,Lone person,1033
+South Yarra,2036,Household type,One-parent family,69
+South Yarra,2037,Household type,Group household,233
+South Yarra,2037,Household type,One-parent family,70
+South Yarra,2038,Household type,Couple family with children,407
+South Yarra,2038,Household type,Group household,233
+South Yarra,2038,Household type,Lone person,1031
+South Yarra,2038,Structural Private Dwellings,Not applicable,2928
+South Yarra,2039,Household type,Couple family without children,1028
+South Yarra,2039,Household type,Lone person,1030
+South Yarra,2039,Household size,Not applicable,2
+South Yarra,2040,Household type,Couple family with children,413
+South Yarra,2040,Household type,Other family,21
+South Yarra,2041,Household type,Couple family with children,418
+South Yarra,2042,Household type,Lone person,1030
+South Yarra,2042,Household size,Not applicable,2
+South Yarra,2042,Household type,Other family,23
+South Yarra,2043,Household type,Couple family without children,1002
+South Yarra,2043,Household type,One-parent family,75
+Southbank,2023,Household type,Group household,2359
+Southbank,2025,Structural Private Dwellings,Not applicable,17143
+Southbank,2025,Household type,One-parent family,393
+Southbank,2026,Household type,Group household,2669
+Southbank,2026,Household type,Lone person,5556
+Southbank,2026,Household size,Not applicable,2
+Southbank,2026,Household type,One-parent family,395
+Southbank,2027,Household type,Couple family without children,6429
+Southbank,2027,Household type,Group household,2697
+Southbank,2027,Household type,Lone person,5592
+Southbank,2029,Household type,Couple family without children,6822
+Southbank,2029,Household type,Lone person,5764
+Southbank,2030,Household type,Lone person,5753
+Southbank,2030,Structural Private Dwellings,Not applicable,18357
+Southbank,2030,Household size,Not applicable,2
+Southbank,2030,Household type,One-parent family,406
+Southbank,2030,Household type,Other family,456
+Southbank,2031,Household type,Group household,2883
+Southbank,2031,Household size,Not applicable,2
+Southbank,2031,Household type,Other family,449
+Southbank,2032,Household size,Not applicable,2
+Southbank,2032,Household type,Other family,442
+Southbank,2033,Household type,Lone person,5737
+Southbank,2033,Structural Private Dwellings,Not applicable,18595
+Southbank,2033,Household size,Not applicable,2
+Southbank,2034,Household type,Couple family with children,1502
+Southbank,2034,Household type,Group household,2977
+Southbank,2034,Household type,Lone person,5835
+Southbank,2034,Structural Private Dwellings,Not applicable,18959
+Southbank,2034,Household type,One-parent family,425
+Southbank,2034,Household type,Other family,435
+Southbank,2035,Household type,Lone person,5936
+Southbank,2035,Structural Private Dwellings,Not applicable,19311
+Southbank,2035,Household type,One-parent family,433
+Southbank,2036,Household type,Couple family with children,1577
+Southbank,2037,Household type,Couple family with children,1619
+Southbank,2037,Household type,Couple family without children,7469
+Southbank,2037,Household type,Group household,3139
+Southbank,2037,Household size,Not applicable,2
+Southbank,2038,Household type,Other family,447
+Southbank,2039,Household type,Group household,3227
+Southbank,2040,Household type,Couple family with children,1728
+Southbank,2040,Structural Private Dwellings,Not applicable,20862
+Southbank,2041,Household type,Group household,3297
+Southbank,2041,Household type,Lone person,6584
+Southbank,2041,Structural Private Dwellings,Not applicable,21146
+Southbank,2041,Household type,One-parent family,499
+Southbank,2042,Household size,Not applicable,2
+Southbank,2042,Household type,One-parent family,513
+Southbank,2042,Household type,Other family,503
+Southbank,2043,Household type,Couple family with children,1843
+Southbank,2043,Household type,Lone person,6808
+Southbank,2043,Household size,Not applicable,2
+Southbank,2043,Household type,One-parent family,526
+West Melbourne (Industrial),2023,Household type,Group household,0
+West Melbourne (Industrial),2023,Household type,Lone person,0
+West Melbourne (Industrial),2023,Household type,One-parent family,0
+West Melbourne (Industrial),2024,Household type,Couple family with children,0
+West Melbourne (Industrial),2024,Household type,Lone person,0
+West Melbourne (Industrial),2024,Household type,One-parent family,0
+West Melbourne (Industrial),2024,Household type,Other family,0
+West Melbourne (Industrial),2025,Household type,Couple family without children,0
+West Melbourne (Industrial),2025,Household type,Lone person,0
+West Melbourne (Industrial),2025,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2025,Household size,Not applicable,0
+West Melbourne (Industrial),2026,Household type,Group household,0
+West Melbourne (Industrial),2026,Household type,Lone person,0
+West Melbourne (Industrial),2026,Household type,One-parent family,0
+West Melbourne (Industrial),2026,Household type,Other family,0
+West Melbourne (Industrial),2027,Household type,Lone person,0
+West Melbourne (Industrial),2027,Household size,Not applicable,0
+West Melbourne (Industrial),2028,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2028,Household size,Not applicable,0
+West Melbourne (Industrial),2028,Household type,One-parent family,0
+West Melbourne (Industrial),2028,Household type,Other family,0
+West Melbourne (Industrial),2029,Household type,Couple family without children,0
+West Melbourne (Industrial),2029,Household type,Lone person,0
+West Melbourne (Industrial),2029,Household size,Not applicable,0
+West Melbourne (Industrial),2029,Household type,One-parent family,0
+West Melbourne (Industrial),2029,Household type,Other family,0
+West Melbourne (Industrial),2030,Household type,Couple family without children,0
+West Melbourne (Industrial),2030,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2031,Household type,Couple family with children,0
+West Melbourne (Industrial),2031,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2031,Household size,Not applicable,0
+West Melbourne (Industrial),2032,Household size,Not applicable,0
+West Melbourne (Industrial),2033,Household type,Couple family with children,0
+West Melbourne (Industrial),2033,Household type,Group household,0
+West Melbourne (Industrial),2033,Household type,Lone person,0
+West Melbourne (Industrial),2034,Household type,Group household,0
+West Melbourne (Industrial),2034,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2035,Household type,Couple family without children,0
+West Melbourne (Industrial),2035,Household type,Lone person,0
+West Melbourne (Industrial),2036,Household type,One-parent family,0
+West Melbourne (Industrial),2037,Household type,Couple family with children,0
+West Melbourne (Industrial),2037,Household type,Couple family without children,0
+West Melbourne (Industrial),2037,Household type,Group household,0
+West Melbourne (Industrial),2037,Household type,One-parent family,0
+West Melbourne (Industrial),2038,Household type,Group household,0
+West Melbourne (Industrial),2038,Household type,One-parent family,0
+West Melbourne (Industrial),2039,Household type,Couple family with children,0
+West Melbourne (Industrial),2039,Household type,Couple family without children,0
+West Melbourne (Industrial),2039,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2040,Household type,Couple family without children,0
+West Melbourne (Industrial),2040,Household type,Group household,0
+West Melbourne (Industrial),2040,Household size,Not applicable,0
+West Melbourne (Industrial),2041,Household type,Lone person,0
+West Melbourne (Industrial),2041,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2041,Household size,Not applicable,0
+West Melbourne (Industrial),2042,Household type,Couple family with children,0
+West Melbourne (Industrial),2042,Household type,Group household,0
+West Melbourne (Industrial),2042,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2042,Household size,Not applicable,0
+West Melbourne (Industrial),2042,Household type,One-parent family,0
+West Melbourne (Industrial),2043,Household type,Group household,0
+West Melbourne (Residential),2023,Household type,Group household,980
+West Melbourne (Residential),2023,Household size,Not applicable,2
+West Melbourne (Residential),2023,Household type,Other family,100
+West Melbourne (Residential),2024,Household type,Lone person,1491
+West Melbourne (Residential),2025,Household type,Couple family with children,622
+West Melbourne (Residential),2025,Household type,Group household,1040
+West Melbourne (Residential),2025,Household type,Lone person,1486
+West Melbourne (Residential),2025,Structural Private Dwellings,Not applicable,5698
+West Melbourne (Residential),2026,Household type,Group household,1043
+West Melbourne (Residential),2026,Household type,Other family,98
+West Melbourne (Residential),2028,Household type,Lone person,1491
+West Melbourne (Residential),2029,Household type,Group household,1063
+West Melbourne (Residential),2029,Household size,Not applicable,2
+West Melbourne (Residential),2029,Household type,One-parent family,125
+West Melbourne (Residential),2029,Household type,Other family,94
+West Melbourne (Residential),2030,Household type,Couple family with children,701
+West Melbourne (Residential),2030,Household type,Other family,93
+West Melbourne (Residential),2031,Household type,Couple family without children,2436
+West Melbourne (Residential),2031,Household size,Not applicable,2
+West Melbourne (Residential),2032,Household type,Other family,90
+West Melbourne (Residential),2033,Household type,Couple family with children,745
+West Melbourne (Residential),2033,Household type,Couple family without children,2474
+West Melbourne (Residential),2033,Household size,Not applicable,2
+West Melbourne (Residential),2033,Household type,One-parent family,130
+West Melbourne (Residential),2033,Household type,Other family,89
+West Melbourne (Residential),2034,Household type,Couple family with children,782
+West Melbourne (Residential),2034,Household type,Group household,1140
+West Melbourne (Residential),2034,Household type,Other family,91
+West Melbourne (Residential),2035,Household type,Couple family without children,2669
+West Melbourne (Residential),2035,Household type,Lone person,1593
+West Melbourne (Residential),2035,Household size,Not applicable,2
+West Melbourne (Residential),2036,Household type,Couple family without children,2768
+West Melbourne (Residential),2036,Structural Private Dwellings,Not applicable,6887
+West Melbourne (Residential),2036,Household size,Not applicable,2
+West Melbourne (Residential),2036,Household type,One-parent family,150
+West Melbourne (Residential),2037,Household type,Couple family without children,2863
+West Melbourne (Residential),2038,Household type,Couple family without children,2952
+West Melbourne (Residential),2038,Household type,Group household,1317
+West Melbourne (Residential),2039,Household type,One-parent family,168
+West Melbourne (Residential),2040,Household type,Group household,1337
+West Melbourne (Residential),2040,Household type,Lone person,1804
+West Melbourne (Residential),2041,Household size,Not applicable,2
+West Melbourne (Residential),2042,Household type,Lone person,1810
+West Melbourne (Residential),2042,Household type,Other family,111
+West Melbourne (Residential),2043,Household type,Other family,116
+City of Melbourne,2023,Household type,Couple family with children,8815
+City of Melbourne,2023,Household type,Couple family without children,29683
+City of Melbourne,2023,Household type,Group household,18628
+City of Melbourne,2024,Household type,Couple family without children,32232
+City of Melbourne,2024,Household type,Lone person,37563
+City of Melbourne,2024,Household type,One-parent family,3004
+City of Melbourne,2024,Household type,Other family,2976
+City of Melbourne,2025,Household type,Couple family with children,9521
+City of Melbourne,2025,Household type,Couple family without children,32501
+City of Melbourne,2025,Household type,Other family,2906
+City of Melbourne,2026,Household type,Couple family with children,9817
+City of Melbourne,2026,Household type,Other family,2881
+City of Melbourne,2027,Household type,Lone person,38108
+City of Melbourne,2028,Household type,Couple family with children,10340
+City of Melbourne,2029,Household type,Couple family without children,35163
+City of Melbourne,2029,Household type,Group household,21264
+City of Melbourne,2029,Household type,Lone person,38480
+City of Melbourne,2030,Household type,Couple family with children,10769
+City of Melbourne,2030,Household type,One-parent family,2984
+City of Melbourne,2030,Household type,Other family,2748
+City of Melbourne,2031,Structural Private Dwellings,Not applicable,117537
+City of Melbourne,2031,Household size,Not applicable,26
+City of Melbourne,2031,Household type,Other family,2712
+City of Melbourne,2032,Household type,Group household,21708
+City of Melbourne,2032,Household type,Lone person,38628
+City of Melbourne,2032,Structural Private Dwellings,Not applicable,118151
+City of Melbourne,2033,Household type,Couple family with children,11346
+City of Melbourne,2033,Household type,Couple family without children,36403
+City of Melbourne,2033,Household size,Not applicable,26
+City of Melbourne,2033,Household type,One-parent family,3067
+City of Melbourne,2034,Household type,Group household,22346
+City of Melbourne,2034,Household type,One-parent family,3145
+City of Melbourne,2035,Household type,Couple family with children,12086
+City of Melbourne,2035,Household type,Couple family without children,38073
+City of Melbourne,2035,Household size,Not applicable,26
+City of Melbourne,2035,Household type,Other family,2650
+City of Melbourne,2036,Household type,Couple family without children,38706
+City of Melbourne,2036,Household size,Not applicable,26
+City of Melbourne,2036,Household type,Other family,2684
+City of Melbourne,2037,Household type,One-parent family,3429
+City of Melbourne,2038,Household size,Not applicable,26
+City of Melbourne,2039,Household type,Couple family without children,40416
+City of Melbourne,2039,Household type,Lone person,42638
+City of Melbourne,2039,Household size,Not applicable,26
+City of Melbourne,2040,Household type,Couple family with children,14129
+City of Melbourne,2040,Household type,Other family,2799
+City of Melbourne,2041,Structural Private Dwellings,Not applicable,136710
+City of Melbourne,2041,Household type,Other family,2965
+City of Melbourne,2042,Household size,Not applicable,26
+City of Melbourne,2042,Household type,Other family,3129
+City of Melbourne,2043,Household type,Lone person,45146
+City of Melbourne,2043,Household size,Not applicable,26
+City of Melbourne,2043,Household type,Other family,3292
+City of Melbourne,2025,Household type,Total households,2
+City of Melbourne,2034,Household type,Total households,11130
+City of Melbourne,2024,Household type,Total households,10293
+City of Melbourne,2043,Household type,Total households,3390
+City of Melbourne,2023,Household type,Total households,8633
+City of Melbourne,2032,Household type,Total households,5848
+City of Melbourne,2042,Household type,Total households,14463
+City of Melbourne,2043,Household type,Total households,20933
+City of Melbourne,2037,Household type,Total households,19287
+City of Melbourne,2025,Household type,Total households,16313
+City of Melbourne,2036,Household type,Total households,3392
+City of Melbourne,2030,Household type,Total households,14744
+City of Melbourne,2027,Household type,Total households,5704
+City of Melbourne,2027,Household type,Total households,35840
+City of Melbourne,2030,Household type,Total households,2982
+City of Melbourne,2035,Household type,Total households,148
+City of Melbourne,2024,Household type,Total households,0
+City of Melbourne,2034,Household type,Total households,38043
+City of Melbourne,2040,Household type,Total households,13656
+City of Melbourne,2042,Household type,Total households,0
+City of Melbourne,2028,Household type,Total households,36062
+City of Melbourne,2034,Household type,Total households,2782
+City of Melbourne,2031,Household type,Total households,17886
+City of Melbourne,2043,Household type,Total households,781
+City of Melbourne,2041,Household type,Total households,1476
+City of Melbourne,2026,Household type,Total households,10524
+City of Melbourne,2028,Household type,Total households,1486
+City of Melbourne,2035,Household type,Total households,2980
+City of Melbourne,2035,Household type,Total households,2797
+City of Melbourne,2043,Household type,Total households,2786
+City of Melbourne,2031,Household type,Total households,1485
+City of Melbourne,2025,Household type,Total households,0
+City of Melbourne,2035,Household type,Total households,6506
+City of Melbourne,2024,Household type,Total households,5588
+City of Melbourne,2029,Household type,Total households,3379
+City of Melbourne,2036,Household type,Total households,2797
+City of Melbourne,2027,Household type,Total households,16
+City of Melbourne,2036,Household type,Total households,18984
+City of Melbourne,2036,Household type,Total households,1480
+City of Melbourne,2023,Household type,Total households,5276
+City of Melbourne,2032,Household type,Total households,14874
+City of Melbourne,2029,Household type,Total households,17684
+City of Melbourne,2038,Household type,Total households,304
+City of Melbourne,2039,Household type,Total households,1478
+City of Melbourne,2032,Household type,Total households,0
+City of Melbourne,2043,Household type,Total households,2977
+City of Melbourne,2024,Household type,Total households,16243
+City of Melbourne,2040,Household type,Total households,3386
+City of Melbourne,2029,Household type,Total households,1486
+City of Melbourne,2033,Household type,Total households,14974
+City of Melbourne,2035,Household type,Total households,11340
+City of Melbourne,2037,Household type,Total households,15016
+City of Melbourne,2030,Household type,Total households,3403
+City of Melbourne,2028,Household type,Total households,0
+City of Melbourne,2043,Household type,Total households,44208
+City of Melbourne,2038,Household type,Total households,12735
+City of Melbourne,2035,Household type,Total households,6296
+City of Melbourne,2041,Household type,Total households,3385
+City of Melbourne,2026,Household type,Total households,2
+City of Melbourne,2036,Household type,Total households,15005
+City of Melbourne,2039,Household type,Total households,15038
+City of Melbourne,2034,Household type,Total households,2981
+City of Melbourne,2024,Household type,Total households,2966
+City of Melbourne,2035,Household type,Total households,18669
+City of Melbourne,2039,Household type,Total households,3389
+City of Melbourne,2023,Household type,Total households,2791
+City of Melbourne,2034,Household type,Total households,3396
+City of Melbourne,2032,Household type,Total households,17952
+City of Melbourne,2025,Household type,Total households,3228
+City of Melbourne,2030,Household type,Total households,9922
+City of Melbourne,2034,Household type,Total households,0
+City of Melbourne,2033,Household type,Total households,2741
+City of Melbourne,2043,Household type,Total households,7379
+City of Melbourne,2039,Household type,Total households,41652
+City of Melbourne,2037,Household type,Total households,3392
+City of Melbourne,2043,Household type,Total households,13043
+City of Melbourne,2039,Household type,Total households,2978
+City of Melbourne,2041,Household type,Total households,12571
+City of Melbourne,2042,Household type,Total households,15073
+City of Melbourne,2024,Household type,Total households,2
+City of Melbourne,2033,Household type,Total households,2982
+City of Melbourne,2026,Household type,Total households,13920
+City of Melbourne,2032,Household type,Total households,37030
+City of Melbourne,2033,Household type,Total households,56
+City of Melbourne,2043,Household type,Total households,7933
+City of Melbourne,2036,Household type,Total households,39587
+City of Melbourne,2037,Household type,Total households,12280
+City of Melbourne,2029,Household type,Total households,111245
+City of Melbourne,2033,Household type,Total households,113891
+City of Melbourne,2028,Household type,Total households,110202
+City of Melbourne,2043,Household type,Total households,134871
+City of Melbourne,2026,Household type,Total households,107474
+City of Melbourne,2038,Household type,Total households,125331
+City of Melbourne,2030,Household type,Total households,112118
+City of Melbourne,2027,Household type,Total households,108917
+City of Melbourne,2032,Household type,Total households,113412
+Carlton,2023,Household type,Couple family without children,2556
+Carlton,2023,Household type,One-parent family,439
+Carlton,2024,Household type,Couple family with children,799
+Carlton,2024,Structural Private Dwellings,Not applicable,13971
+Carlton,2025,Household type,Couple family with children,800
+Carlton,2025,Household type,Group household,3037
+Carlton,2025,Household type,Other family,400
+Carlton,2026,Household type,Couple family without children,2890
+Carlton,2026,Household type,Group household,3102
+Carlton,2026,Household type,Lone person,6226
+Carlton,2026,Structural Private Dwellings,Not applicable,14082
+Carlton,2026,Household size,Not applicable,2
+Carlton,2026,Household type,One-parent family,470
+Carlton,2027,Household type,Group household,3135
+Carlton,2028,Household type,Lone person,6383
+Carlton,2029,Structural Private Dwellings,Not applicable,14710
+Carlton,2030,Household type,Couple family with children,915
+Carlton,2030,Household type,Lone person,6644
+Carlton,2030,Structural Private Dwellings,Not applicable,14916
+Carlton,2030,Household size,Not applicable,2
+Carlton,2030,Household type,One-parent family,479
+Carlton,2030,Household type,Other family,381
+Carlton,2031,Household type,Couple family without children,3118
+Carlton,2031,Household type,Group household,3222
+Carlton,2031,Structural Private Dwellings,Not applicable,14917
+Carlton,2031,Household type,Other family,374
+Carlton,2032,Household type,Couple family with children,942
+Carlton,2032,Household type,Group household,3249
+Carlton,2032,Structural Private Dwellings,Not applicable,15048
+Carlton,2032,Household type,One-parent family,487
+Carlton,2033,Household type,Group household,3273
+Carlton,2033,Household type,One-parent family,491
+Carlton,2033,Household type,Other family,365
+Carlton,2034,Household type,Couple family without children,3165
+Carlton,2034,Structural Private Dwellings,Not applicable,15173
+Carlton,2034,Household size,Not applicable,2
+Carlton,2034,Household type,One-parent family,493
+Carlton,2035,Household type,Couple family without children,3167
+Carlton,2035,Household size,Not applicable,2
+Carlton,2036,Household type,Lone person,6700
+Carlton,2036,Household size,Not applicable,2
+Carlton,2037,Household type,Couple family with children,996
+Carlton,2037,Household type,Group household,3314
+Carlton,2037,Household size,Not applicable,2
+Carlton,2037,Household type,Other family,354
+Carlton,2038,Household type,Other family,352
+Carlton,2039,Household type,Group household,3315
+Carlton,2039,Household type,Lone person,6713
+Carlton,2039,Household size,Not applicable,2
+Carlton,2040,Household type,Group household,3316
+Carlton,2040,Household type,Other family,349
+Carlton,2041,Household size,Not applicable,2
+Carlton,2042,Household type,Lone person,6735
+Carlton,2043,Structural Private Dwellings,Not applicable,15324
+Carlton,2043,Household size,Not applicable,2
+Carlton,2043,Household type,One-parent family,544
+Docklands,2023,Household type,Couple family with children,1387
+Docklands,2023,Household type,Couple family without children,3591
+Docklands,2023,Household type,Group household,1166
+Docklands,2023,Household type,Other family,189
+Docklands,2024,Household type,Couple family with children,1512
+Docklands,2024,Structural Private Dwellings,Not applicable,10853
+Docklands,2024,Household size,Not applicable,2
+Docklands,2025,Household type,Couple family without children,3966
+Docklands,2025,Household size,Not applicable,2
+Docklands,2025,Household type,Other family,196
+Docklands,2026,Household type,Couple family with children,1563
+Docklands,2026,Household type,Group household,1313
+Docklands,2026,Household size,Not applicable,2
+Docklands,2027,Household type,Couple family with children,1605
+Docklands,2027,Household type,Couple family without children,4125
+Docklands,2028,Household type,Couple family with children,1637
+Docklands,2028,Household size,Not applicable,2
+Docklands,2029,Household type,Couple family with children,1669
+Docklands,2029,Household type,Group household,1319
+Docklands,2029,Household type,One-parent family,385
+Docklands,2030,Household size,Not applicable,2
+Docklands,2031,Household type,Couple family with children,1731
+Docklands,2031,Household type,Couple family without children,4285
+Docklands,2031,Household type,One-parent family,387
+Docklands,2033,Household type,Group household,1341
+Docklands,2033,Household type,One-parent family,391
+Docklands,2033,Household type,Other family,171
+Docklands,2034,Household type,Group household,1367
+Docklands,2034,Household type,Lone person,2964
+Docklands,2034,Structural Private Dwellings,Not applicable,11489
+Docklands,2034,Household type,Other family,171
+Docklands,2035,Household type,Couple family with children,1891
+Docklands,2035,Household size,Not applicable,2
+Docklands,2036,Household type,Group household,1411
+Docklands,2036,Household type,Lone person,3045
+Docklands,2036,Structural Private Dwellings,Not applicable,11900
+Docklands,2037,Household type,Couple family with children,2022
+Docklands,2037,Household type,Group household,1425
+Docklands,2038,Household type,Couple family without children,4622
+Docklands,2039,Household type,Couple family without children,4684
+Docklands,2039,Household type,Other family,177
+Docklands,2040,Household type,Couple family without children,4756
+Docklands,2040,Household type,One-parent family,449
+Docklands,2041,Household type,Couple family with children,2322
+Docklands,2041,Household type,Couple family without children,4815
+Docklands,2041,Household size,Not applicable,2
+Docklands,2041,Household type,Other family,189
+Docklands,2042,Household type,Couple family without children,4873
+Docklands,2042,Household type,Lone person,3356
+Docklands,2042,Household size,Not applicable,2
+Docklands,2042,Household type,Other family,200
+Docklands,2043,Structural Private Dwellings,Not applicable,13463
+Docklands,2043,Household size,Not applicable,2
+Docklands,2043,Household type,Other family,210
+East Melbourne,2023,Household type,Couple family without children,1170
+East Melbourne,2023,Household type,Group household,253
+East Melbourne,2023,Household size,Not applicable,2
+East Melbourne,2024,Household type,Couple family without children,1284
+East Melbourne,2024,Household type,Lone person,1214
+East Melbourne,2024,Household type,Other family,28
+East Melbourne,2025,Structural Private Dwellings,Not applicable,3424
+East Melbourne,2026,Household type,Couple family with children,345
+East Melbourne,2026,Household type,Couple family without children,1328
+East Melbourne,2027,Household type,Couple family without children,1354
+East Melbourne,2027,Household size,Not applicable,2
+East Melbourne,2027,Household type,One-parent family,77
+East Melbourne,2028,Household type,Couple family with children,362
+East Melbourne,2028,Household type,Lone person,1229
+East Melbourne,2029,Household type,Couple family with children,370
+East Melbourne,2029,Household type,Couple family without children,1390
+East Melbourne,2029,Household size,Not applicable,2
+East Melbourne,2029,Household type,Other family,26
+East Melbourne,2030,Structural Private Dwellings,Not applicable,3550
+East Melbourne,2030,Household type,One-parent family,76
+East Melbourne,2031,Household type,Couple family with children,382
+East Melbourne,2031,Household type,Lone person,1219
+East Melbourne,2031,Household type,Other family,25
+East Melbourne,2032,Household type,Couple family without children,1412
+East Melbourne,2032,Household type,Group household,291
+East Melbourne,2033,Household type,Other family,24
+East Melbourne,2034,Household size,Not applicable,2
+East Melbourne,2034,Household type,One-parent family,77
+East Melbourne,2035,Household type,Group household,294
+East Melbourne,2035,Structural Private Dwellings,Not applicable,3550
+East Melbourne,2035,Household size,Not applicable,2
+East Melbourne,2035,Household type,One-parent family,77
+East Melbourne,2035,Household type,Other family,23
+East Melbourne,2036,Household type,Lone person,1192
+East Melbourne,2037,Household type,Group household,294
+East Melbourne,2037,Household type,Lone person,1192
+East Melbourne,2037,Household size,Not applicable,2
+East Melbourne,2038,Household type,Couple family without children,1393
+East Melbourne,2038,Household type,Lone person,1191
+East Melbourne,2038,Structural Private Dwellings,Not applicable,3550
+East Melbourne,2039,Household type,Group household,293
+East Melbourne,2039,Structural Private Dwellings,Not applicable,3550
+East Melbourne,2040,Household type,Couple family with children,417
+East Melbourne,2040,Household size,Not applicable,2
+East Melbourne,2040,Household type,Other family,23
+East Melbourne,2041,Household type,Couple family with children,421
+East Melbourne,2041,Household type,Couple family without children,1374
+East Melbourne,2041,Household type,Group household,292
+East Melbourne,2041,Structural Private Dwellings,Not applicable,3550
+East Melbourne,2041,Household type,One-parent family,82
+East Melbourne,2042,Household size,Not applicable,2
+East Melbourne,2043,Household type,Group household,290
+East Melbourne,2043,Household type,Lone person,1198
+East Melbourne,2043,Household type,Other family,26
+Kensington,2023,Household type,Lone person,1558
+Kensington,2023,Structural Private Dwellings,Not applicable,5616
+Kensington,2024,Household type,Couple family without children,1819
+Kensington,2024,Structural Private Dwellings,Not applicable,5616
+Kensington,2024,Household size,Not applicable,2
+Kensington,2024,Household type,One-parent family,251
+Kensington,2025,Household type,Couple family with children,1201
+Kensington,2025,Household type,Lone person,1634
+Kensington,2025,Structural Private Dwellings,Not applicable,5616
+Kensington,2026,Household type,Couple family without children,1883
+Kensington,2026,Household size,Not applicable,2
+Kensington,2027,Household type,Couple family without children,1900
+Kensington,2027,Household type,Lone person,1645
+Kensington,2027,Household type,One-parent family,248
+Kensington,2028,Household type,Couple family with children,1278
+Kensington,2028,Household type,Couple family without children,1906
+Kensington,2028,Household size,Not applicable,3
+Kensington,2028,Household type,One-parent family,244
+Kensington,2029,Household type,Couple family with children,1300
+Kensington,2029,Household type,Lone person,1622
+Kensington,2029,Structural Private Dwellings,Not applicable,5785
+Kensington,2029,Household type,One-parent family,243
+Kensington,2029,Household type,Other family,71
+Kensington,2030,Household size,Not applicable,3
+Kensington,2032,Household type,Group household,581
+Kensington,2032,Household type,Other family,68
+Kensington,2033,Household type,Lone person,1607
+Kensington,2033,Household size,Not applicable,3
+Kensington,2034,Household type,Couple family with children,1443
+Kensington,2034,Household type,Couple family without children,2052
+Kensington,2034,Household type,Lone person,1662
+Kensington,2035,Household type,Group household,631
+Kensington,2035,Structural Private Dwellings,Not applicable,6327
+Kensington,2036,Household type,Couple family without children,2179
+Kensington,2036,Household type,Lone person,1776
+Kensington,2036,Household size,Not applicable,3
+Kensington,2038,Household size,Not applicable,3
+Kensington,2038,Household type,Other family,73
+Kensington,2039,Household type,Couple family with children,1793
+Kensington,2039,Household type,Couple family without children,2341
+Kensington,2039,Household type,Group household,716
+Kensington,2039,Household size,Not applicable,3
+Kensington,2039,Household type,Other family,73
+Kensington,2040,Household type,Couple family with children,1878
+Kensington,2040,Structural Private Dwellings,Not applicable,7385
+Kensington,2040,Household type,Other family,75
+Kensington,2041,Household type,Group household,761
+Kensington,2042,Household type,Couple family with children,2054
+Kensington,2042,Household type,Lone person,2014
+Kensington,2042,Household type,One-parent family,328
+Kensington,2043,Household type,Couple family with children,2131
+Melbourne (CBD),2023,Household type,Lone person,11817
+Melbourne (CBD),2023,Household size,Not applicable,1
+Melbourne (CBD),2023,Household type,One-parent family,544
+Melbourne (CBD),2024,Household type,Couple family with children,1818
+Melbourne (CBD),2024,Household size,Not applicable,1
+Melbourne (CBD),2024,Household type,One-parent family,578
+Melbourne (CBD),2025,Household type,Couple family without children,9249
+Melbourne (CBD),2025,Structural Private Dwellings,Not applicable,38145
+Melbourne (CBD),2026,Household type,Lone person,12804
+Melbourne (CBD),2026,Household size,Not applicable,2
+Melbourne (CBD),2027,Household type,Lone person,12923
+Melbourne (CBD),2027,Structural Private Dwellings,Not applicable,38705
+Melbourne (CBD),2027,Household size,Not applicable,2
+Melbourne (CBD),2028,Household type,Couple family without children,9828
+Melbourne (CBD),2028,Household size,Not applicable,2
+Melbourne (CBD),2029,Structural Private Dwellings,Not applicable,39254
+Melbourne (CBD),2030,Household type,Group household,9524
+Melbourne (CBD),2030,Household type,Other family,1299
+Melbourne (CBD),2031,Household type,Couple family without children,10258
+Melbourne (CBD),2031,Household type,Group household,9611
+Melbourne (CBD),2031,Household type,Lone person,13013
+Melbourne (CBD),2031,Household type,One-parent family,582
+Melbourne (CBD),2031,Household type,Other family,1283
+Melbourne (CBD),2032,Household type,Couple family without children,10339
+Melbourne (CBD),2032,Household type,Group household,9678
+Melbourne (CBD),2032,Household size,Not applicable,2
+Melbourne (CBD),2032,Household type,Other family,1266
+Melbourne (CBD),2033,Household type,Couple family with children,2197
+Melbourne (CBD),2033,Household type,Group household,9736
+Melbourne (CBD),2033,Household size,Not applicable,2
+Melbourne (CBD),2034,Household type,Group household,9982
+Melbourne (CBD),2034,Structural Private Dwellings,Not applicable,41002
+Melbourne (CBD),2034,Household type,One-parent family,610
+Melbourne (CBD),2035,Household type,Couple family with children,2339
+Melbourne (CBD),2036,Household type,Couple family with children,2423
+Melbourne (CBD),2036,Household type,Couple family without children,11103
+Melbourne (CBD),2036,Household type,Lone person,13772
+Melbourne (CBD),2036,Household size,Not applicable,2
+Melbourne (CBD),2036,Household type,One-parent family,643
+Melbourne (CBD),2036,Household type,Other family,1279
+Melbourne (CBD),2037,Household type,Couple family with children,2503
+Melbourne (CBD),2037,Structural Private Dwellings,Not applicable,43365
+Melbourne (CBD),2038,Household type,Lone person,14291
+Melbourne (CBD),2039,Structural Private Dwellings,Not applicable,44802
+Melbourne (CBD),2039,Household size,Not applicable,2
+Melbourne (CBD),2039,Household type,One-parent family,696
+Melbourne (CBD),2040,Household type,Couple family with children,2722
+Melbourne (CBD),2040,Household size,Not applicable,2
+Melbourne (CBD),2041,Household type,Couple family without children,11908
+Melbourne (CBD),2042,Household size,Not applicable,2
+Melbourne (CBD),2042,Household type,One-parent family,758
+Melbourne (CBD),2043,Household type,Couple family with children,2951
+Melbourne (CBD),2043,Household type,Couple family without children,12125
+Melbourne (CBD),2043,Household type,Group household,11220
+Melbourne (CBD),2043,Structural Private Dwellings,Not applicable,47509
+Melbourne (CBD),2043,Household type,Other family,1577
+Melbourne (Remainder),2023,Household type,Group household,46
+Melbourne (Remainder),2023,Household type,Lone person,519
+Melbourne (Remainder),2023,Household type,Other family,32
+Melbourne (Remainder),2024,Household type,One-parent family,64
+Melbourne (Remainder),2024,Household type,Other family,35
+Melbourne (Remainder),2025,Household type,Couple family without children,595
+Melbourne (Remainder),2025,Household type,Group household,52
+Melbourne (Remainder),2025,Household size,Not applicable,2
+Melbourne (Remainder),2025,Household type,Other family,34
+Melbourne (Remainder),2027,Household type,Couple family without children,614
+Melbourne (Remainder),2027,Household type,Group household,52
+Melbourne (Remainder),2027,Household type,Lone person,568
+Melbourne (Remainder),2027,Household size,Not applicable,2
+Melbourne (Remainder),2027,Household type,One-parent family,63
+Melbourne (Remainder),2028,Household type,Couple family without children,618
+Melbourne (Remainder),2028,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2029,Household type,Couple family with children,161
+Melbourne (Remainder),2029,Household type,Group household,52
+Melbourne (Remainder),2029,Household size,Not applicable,2
+Melbourne (Remainder),2029,Household type,One-parent family,62
+Melbourne (Remainder),2029,Household type,Other family,31
+Melbourne (Remainder),2030,Household type,Couple family without children,626
+Melbourne (Remainder),2030,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2030,Household type,Other family,30
+Melbourne (Remainder),2031,Household type,Couple family without children,626
+Melbourne (Remainder),2031,Household type,Lone person,550
+Melbourne (Remainder),2031,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2032,Household size,Not applicable,2
+Melbourne (Remainder),2032,Household type,Other family,29
+Melbourne (Remainder),2033,Household type,Group household,52
+Melbourne (Remainder),2033,Household size,Not applicable,3
+Melbourne (Remainder),2033,Household type,One-parent family,62
+Melbourne (Remainder),2034,Household type,Couple family without children,629
+Melbourne (Remainder),2034,Household type,Lone person,540
+Melbourne (Remainder),2034,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2035,Household type,Lone person,538
+Melbourne (Remainder),2035,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2036,Household type,One-parent family,63
+Melbourne (Remainder),2037,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2037,Household size,Not applicable,3
+Melbourne (Remainder),2038,Household size,Not applicable,3
+Melbourne (Remainder),2038,Household type,One-parent family,65
+Melbourne (Remainder),2038,Household type,Other family,28
+Melbourne (Remainder),2039,Household type,Couple family with children,179
+Melbourne (Remainder),2039,Household type,Lone person,537
+Melbourne (Remainder),2039,Household type,One-parent family,65
+Melbourne (Remainder),2039,Household type,Other family,27
+Melbourne (Remainder),2040,Household type,Other family,27
+Melbourne (Remainder),2041,Household type,Couple family with children,182
+Melbourne (Remainder),2041,Household type,Group household,52
+Melbourne (Remainder),2041,Household size,Not applicable,3
+Melbourne (Remainder),2042,Household type,Couple family with children,184
+Melbourne (Remainder),2042,Household type,Lone person,537
+Melbourne (Remainder),2042,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2042,Household type,Other family,30
+Melbourne (Remainder),2043,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2043,Household type,Other family,31
+North Melbourne,2023,Household type,Couple family with children,1037
+North Melbourne,2023,Household type,Lone person,3161
+North Melbourne,2023,Structural Private Dwellings,Not applicable,9437
+North Melbourne,2024,Household type,Couple family with children,1104
+North Melbourne,2024,Household type,Group household,1598
+North Melbourne,2024,Household type,Lone person,3337
+North Melbourne,2025,Household type,Group household,1608
+North Melbourne,2025,Structural Private Dwellings,Not applicable,9437
+North Melbourne,2025,Household size,Not applicable,2
+North Melbourne,2026,Household type,Group household,1636
+North Melbourne,2026,Household type,Lone person,3355
+North Melbourne,2026,Household type,Other family,151
+North Melbourne,2027,Household type,Couple family without children,2670
+North Melbourne,2027,Structural Private Dwellings,Not applicable,9719
+North Melbourne,2027,Household type,One-parent family,467
+North Melbourne,2028,Household type,Couple family with children,1210
+North Melbourne,2028,Structural Private Dwellings,Not applicable,9807
+North Melbourne,2029,Household type,Couple family with children,1247
+North Melbourne,2029,Structural Private Dwellings,Not applicable,9974
+North Melbourne,2031,Household type,Couple family with children,1318
+North Melbourne,2031,Household type,Couple family without children,2896
+North Melbourne,2032,Household type,Lone person,3487
+North Melbourne,2032,Household type,Other family,150
+North Melbourne,2033,Household type,Lone person,3496
+North Melbourne,2034,Structural Private Dwellings,Not applicable,11006
+North Melbourne,2034,Household size,Not applicable,2
+North Melbourne,2034,Household type,One-parent family,517
+North Melbourne,2036,Structural Private Dwellings,Not applicable,12035
+North Melbourne,2036,Household type,One-parent family,581
+North Melbourne,2037,Household size,Not applicable,2
+North Melbourne,2038,Household type,Lone person,4270
+North Melbourne,2038,Structural Private Dwellings,Not applicable,12974
+North Melbourne,2038,Household type,Other family,170
+North Melbourne,2039,Household type,Group household,2133
+North Melbourne,2039,Structural Private Dwellings,Not applicable,13431
+North Melbourne,2040,Structural Private Dwellings,Not applicable,13899
+North Melbourne,2040,Household size,Not applicable,2
+North Melbourne,2040,Household type,One-parent family,739
+North Melbourne,2041,Household type,Group household,2229
+North Melbourne,2041,Structural Private Dwellings,Not applicable,14343
+North Melbourne,2042,Household type,Couple family with children,2095
+North Melbourne,2042,Structural Private Dwellings,Not applicable,14712
+North Melbourne,2042,Household type,One-parent family,829
+North Melbourne,2042,Household type,Other family,225
+North Melbourne,2043,Household type,Couple family without children,4324
+North Melbourne,2043,Household type,Lone person,4961
+Parkville,2023,Household type,Couple family with children,410
+Parkville,2023,Structural Private Dwellings,Not applicable,3011
+Parkville,2023,Household size,Not applicable,2
+Parkville,2023,Household type,One-parent family,102
+Parkville,2023,Household type,Other family,45
+Parkville,2024,Household type,One-parent family,106
+Parkville,2024,Household type,Other family,47
+Parkville,2025,Household type,Couple family without children,928
+Parkville,2025,Household type,Group household,544
+Parkville,2025,Structural Private Dwellings,Not applicable,3011
+Parkville,2027,Household type,Couple family without children,945
+Parkville,2027,Household type,Lone person,898
+Parkville,2027,Structural Private Dwellings,Not applicable,3011
+Parkville,2027,Household size,Not applicable,2
+Parkville,2027,Household type,One-parent family,102
+Parkville,2029,Household size,Not applicable,2
+Parkville,2029,Household type,One-parent family,100
+Parkville,2030,Household type,Couple family with children,469
+Parkville,2030,Household type,Group household,538
+Parkville,2031,Household type,Couple family without children,962
+Parkville,2031,Household type,One-parent family,100
+Parkville,2032,Household type,Couple family with children,479
+Parkville,2032,Household type,Couple family without children,963
+Parkville,2032,Household type,Group household,539
+Parkville,2033,Household type,Lone person,856
+Parkville,2033,Household size,Not applicable,2
+Parkville,2033,Household type,Other family,38
+Parkville,2034,Household type,Couple family with children,487
+Parkville,2034,Household type,Couple family without children,963
+Parkville,2034,Household size,Not applicable,2
+Parkville,2034,Household type,Other family,38
+Parkville,2035,Household type,Other family,37
+Parkville,2036,Household type,Couple family without children,956
+Parkville,2036,Household type,Group household,543
+Parkville,2036,Household size,Not applicable,2
+Parkville,2037,Household type,Couple family without children,952
+Parkville,2037,Structural Private Dwellings,Not applicable,3011
+Parkville,2037,Household size,Not applicable,2
+Parkville,2037,Household type,One-parent family,103
+Parkville,2038,Structural Private Dwellings,Not applicable,3011
+Parkville,2038,Household size,Not applicable,2
+Parkville,2039,Household type,Couple family without children,943
+Parkville,2040,Household type,Couple family without children,940
+Parkville,2040,Household type,Group household,540
+Parkville,2041,Household type,Couple family with children,519
+Parkville,2042,Structural Private Dwellings,Not applicable,3011
+Parkville,2043,Household type,One-parent family,110
+Port Melbourne,2023,Household type,Lone person,1
+Port Melbourne,2023,Household type,One-parent family,0
+Port Melbourne,2024,Household type,Group household,0
+Port Melbourne,2024,Household type,One-parent family,0
+Port Melbourne,2025,Household type,Couple family with children,0
+Port Melbourne,2025,Household type,Group household,0
+Port Melbourne,2025,Household type,Lone person,1
+Port Melbourne,2025,Structural Private Dwellings,Not applicable,2
+Port Melbourne,2025,Household type,One-parent family,0
+Port Melbourne,2026,Household type,Lone person,1
+Port Melbourne,2026,Household type,One-parent family,0
+Port Melbourne,2027,Household type,Couple family with children,2
+Port Melbourne,2027,Household type,Couple family without children,6
+Port Melbourne,2027,Household type,Group household,2
+Port Melbourne,2027,Household size,Not applicable,2
+Port Melbourne,2028,Household type,Couple family with children,3
+Port Melbourne,2028,Household size,Not applicable,2
+Port Melbourne,2029,Structural Private Dwellings,Not applicable,27
+Port Melbourne,2029,Household type,Other family,0
+Port Melbourne,2030,Household type,Couple family with children,6
+Port Melbourne,2030,Household type,Lone person,9
+Port Melbourne,2030,Household type,Other family,1
+Port Melbourne,2031,Household type,One-parent family,1
+Port Melbourne,2032,Household type,Couple family without children,19
+Port Melbourne,2032,Household size,Not applicable,3
+Port Melbourne,2032,Household type,One-parent family,2
+Port Melbourne,2032,Household type,Other family,1
+Port Melbourne,2033,Household type,Couple family with children,9
+Port Melbourne,2033,Household type,Couple family without children,21
+Port Melbourne,2033,Household type,Group household,8
+Port Melbourne,2033,Structural Private Dwellings,Not applicable,56
+Port Melbourne,2033,Household size,Not applicable,3
+Port Melbourne,2034,Household type,Couple family with children,17
+Port Melbourne,2034,Household type,Group household,14
+Port Melbourne,2034,Household type,Other family,2
+Port Melbourne,2035,Household type,Couple family with children,25
+Port Melbourne,2035,Household type,Lone person,39
+Port Melbourne,2035,Household size,Not applicable,2
+Port Melbourne,2036,Household type,One-parent family,7
+Port Melbourne,2037,Household type,Couple family without children,96
+Port Melbourne,2037,Household type,Group household,37
+Port Melbourne,2037,Structural Private Dwellings,Not applicable,256
+Port Melbourne,2037,Household type,Other family,4
+Port Melbourne,2038,Household type,Lone person,79
+Port Melbourne,2038,Structural Private Dwellings,Not applicable,304
+Port Melbourne,2038,Household type,One-parent family,10
+Port Melbourne,2039,Household type,Couple family with children,67
+Port Melbourne,2039,Household type,Lone person,99
+Port Melbourne,2040,Household type,Couple family without children,178
+Port Melbourne,2040,Structural Private Dwellings,Not applicable,483
+Port Melbourne,2040,Household size,Not applicable,2
+Port Melbourne,2041,Household type,Lone person,152
+Port Melbourne,2042,Household size,Not applicable,2
+Port Melbourne,2043,Household type,Couple family with children,144
+Port Melbourne,2043,Household type,Group household,110
+South Yarra,2023,Household type,Couple family without children,846
+South Yarra,2023,Structural Private Dwellings,Not applicable,2766
+South Yarra,2024,Household type,Couple family with children,324
+South Yarra,2024,Household type,Couple family without children,929
+South Yarra,2024,Household type,Lone person,1036
+South Yarra,2024,Household type,One-parent family,67
+South Yarra,2025,Household type,Couple family with children,325
+South Yarra,2025,Household type,Couple family without children,939
+South Yarra,2025,Household type,One-parent family,66
+South Yarra,2025,Household type,Other family,25
+South Yarra,2026,Household type,Group household,221
+South Yarra,2026,Structural Private Dwellings,Not applicable,2766
+South Yarra,2026,Household type,One-parent family,66
+South Yarra,2026,Household type,Other family,24
+South Yarra,2027,Household type,Couple family with children,343
+South Yarra,2028,Household type,Couple family without children,986
+South Yarra,2028,Household type,Group household,221
+South Yarra,2028,Household size,Not applicable,2
+South Yarra,2028,Household type,One-parent family,66
+South Yarra,2028,Household type,Other family,23
+South Yarra,2029,Household type,Couple family with children,356
+South Yarra,2030,Household type,Group household,222
+South Yarra,2030,Household type,Lone person,1029
+South Yarra,2030,Household type,One-parent family,65
+South Yarra,2031,Household type,Couple family without children,1015
+South Yarra,2031,Household type,Lone person,1029
+South Yarra,2032,Household type,Couple family without children,1020
+South Yarra,2032,Household type,Lone person,1025
+South Yarra,2033,Structural Private Dwellings,Not applicable,2861
+South Yarra,2034,Household type,Couple family with children,389
+South Yarra,2034,Household type,Couple family without children,1041
+South Yarra,2034,Household type,Group household,231
+South Yarra,2034,Structural Private Dwellings,Not applicable,2909
+South Yarra,2035,Household type,Group household,234
+South Yarra,2035,Structural Private Dwellings,Not applicable,2926
+South Yarra,2035,Household type,Other family,22
+South Yarra,2036,Household type,Couple family with children,398
+South Yarra,2036,Household type,Couple family without children,1042
+South Yarra,2036,Structural Private Dwellings,Not applicable,2928
+South Yarra,2036,Household size,Not applicable,2
+South Yarra,2036,Household type,Other family,22
+South Yarra,2037,Household type,Couple family with children,403
+South Yarra,2037,Household type,Couple family without children,1037
+South Yarra,2038,Household type,Couple family without children,1032
+South Yarra,2038,Household type,Other family,21
+South Yarra,2039,Household type,Couple family with children,410
+South Yarra,2039,Household type,Group household,233
+South Yarra,2039,Household type,One-parent family,71
+South Yarra,2039,Household type,Other family,21
+South Yarra,2040,Household type,Group household,232
+South Yarra,2041,Structural Private Dwellings,Not applicable,2928
+South Yarra,2041,Household size,Not applicable,2
+South Yarra,2041,Household type,One-parent family,72
+South Yarra,2042,Household type,Group household,230
+South Yarra,2043,Household type,Group household,229
+South Yarra,2043,Household type,Lone person,1031
+South Yarra,2043,Household type,Other family,24
+Southbank,2023,Household type,Lone person,5055
+Southbank,2023,Structural Private Dwellings,Not applicable,17143
+Southbank,2023,Household size,Not applicable,2
+Southbank,2023,Household type,One-parent family,370
+Southbank,2024,Household type,Couple family with children,1203
+Southbank,2024,Household type,Couple family without children,6076
+Southbank,2024,Structural Private Dwellings,Not applicable,17143
+Southbank,2024,Household size,Not applicable,2
+Southbank,2024,Household type,Other family,476
+Southbank,2025,Household type,Couple family without children,6134
+Southbank,2025,Household type,Group household,2624
+Southbank,2025,Household type,Lone person,5490
+Southbank,2026,Structural Private Dwellings,Not applicable,17143
+Southbank,2027,Household type,Couple family with children,1281
+Southbank,2027,Structural Private Dwellings,Not applicable,17378
+Southbank,2027,Household type,Other family,457
+Southbank,2028,Household size,Not applicable,2
+Southbank,2029,Household type,Couple family with children,1376
+Southbank,2029,Household type,Group household,2852
+Southbank,2029,Structural Private Dwellings,Not applicable,18250
+Southbank,2029,Household size,Not applicable,2
+Southbank,2029,Household type,One-parent family,408
+Southbank,2029,Household type,Other family,463
+Southbank,2030,Household type,Couple family without children,6906
+Southbank,2031,Household type,Couple family with children,1424
+Southbank,2031,Household type,Couple family without children,6956
+Southbank,2031,Structural Private Dwellings,Not applicable,18467
+Southbank,2032,Household type,Couple family without children,6998
+Southbank,2032,Household type,Group household,2900
+Southbank,2033,Household type,Couple family with children,1469
+Southbank,2033,Household type,Couple family without children,7034
+Southbank,2033,Household type,Group household,2914
+Southbank,2033,Household type,One-parent family,417
+Southbank,2034,Household size,Not applicable,2
+Southbank,2035,Household type,Group household,3043
+Southbank,2035,Household type,Other family,435
+Southbank,2036,Household type,Couple family without children,7380
+Southbank,2036,Household type,Lone person,6052
+Southbank,2036,Structural Private Dwellings,Not applicable,19649
+Southbank,2036,Household type,Other family,439
+Southbank,2037,Household type,Lone person,6161
+Southbank,2038,Household type,Group household,3183
+Southbank,2038,Household type,Lone person,6268
+Southbank,2038,Structural Private Dwellings,Not applicable,20270
+Southbank,2038,Household size,Not applicable,2
+Southbank,2039,Household type,Couple family without children,7634
+Southbank,2039,Household type,Lone person,6373
+Southbank,2039,Household size,Not applicable,2
+Southbank,2039,Household type,Other family,450
+Southbank,2040,Household type,Couple family without children,7716
+Southbank,2040,Household type,Lone person,6475
+Southbank,2040,Household size,Not applicable,2
+Southbank,2041,Household type,Couple family without children,7768
+Southbank,2041,Household type,Other family,478
+Southbank,2042,Household type,Couple family with children,1805
+Southbank,2042,Household type,Lone person,6694
+Southbank,2043,Household type,Couple family without children,7873
+Southbank,2043,Household type,Other family,528
+West Melbourne (Industrial),2023,Household type,Couple family with children,0
+West Melbourne (Industrial),2023,Household size,Not applicable,0
+West Melbourne (Industrial),2024,Household type,Couple family without children,0
+West Melbourne (Industrial),2024,Household type,Group household,0
+West Melbourne (Industrial),2025,Household type,Couple family with children,0
+West Melbourne (Industrial),2025,Household type,One-parent family,0
+West Melbourne (Industrial),2026,Household type,Couple family without children,0
+West Melbourne (Industrial),2026,Household size,Not applicable,0
+West Melbourne (Industrial),2027,Household type,Couple family with children,0
+West Melbourne (Industrial),2027,Household type,Couple family without children,0
+West Melbourne (Industrial),2027,Household type,Group household,0
+West Melbourne (Industrial),2027,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2027,Household type,One-parent family,0
+West Melbourne (Industrial),2027,Household type,Other family,0
+West Melbourne (Industrial),2028,Household type,Couple family with children,0
+West Melbourne (Industrial),2028,Household type,Group household,0
+West Melbourne (Industrial),2028,Household type,Lone person,0
+West Melbourne (Industrial),2029,Household type,Group household,0
+West Melbourne (Industrial),2030,Household size,Not applicable,0
+West Melbourne (Industrial),2031,Household type,Lone person,0
+West Melbourne (Industrial),2031,Household type,Other family,0
+West Melbourne (Industrial),2032,Household type,Couple family without children,0
+West Melbourne (Industrial),2032,Household type,Other family,0
+West Melbourne (Industrial),2033,Household type,Couple family without children,0
+West Melbourne (Industrial),2033,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2033,Household size,Not applicable,0
+West Melbourne (Industrial),2033,Household type,One-parent family,0
+West Melbourne (Industrial),2033,Household type,Other family,0
+West Melbourne (Industrial),2034,Household size,Not applicable,0
+West Melbourne (Industrial),2035,Household type,Group household,0
+West Melbourne (Industrial),2035,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2035,Household size,Not applicable,0
+West Melbourne (Industrial),2036,Household type,Couple family without children,0
+West Melbourne (Industrial),2036,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2037,Household type,Lone person,0
+West Melbourne (Industrial),2037,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2037,Household size,Not applicable,0
+West Melbourne (Industrial),2037,Household type,Other family,0
+West Melbourne (Industrial),2038,Household type,Couple family with children,0
+West Melbourne (Industrial),2038,Household type,Lone person,0
+West Melbourne (Industrial),2038,Household size,Not applicable,0
+West Melbourne (Industrial),2039,Household type,Group household,0
+West Melbourne (Industrial),2039,Household type,One-parent family,0
+West Melbourne (Industrial),2039,Household type,Other family,0
+West Melbourne (Industrial),2040,Household type,One-parent family,0
+West Melbourne (Industrial),2040,Household type,Other family,0
+West Melbourne (Industrial),2041,Household type,Couple family with children,0
+West Melbourne (Industrial),2041,Household type,Couple family without children,0
+West Melbourne (Industrial),2041,Household type,One-parent family,0
+West Melbourne (Industrial),2041,Household type,Other family,0
+West Melbourne (Industrial),2042,Household type,Couple family without children,0
+West Melbourne (Industrial),2042,Household type,Other family,0
+West Melbourne (Industrial),2043,Household type,Couple family with children,0
+West Melbourne (Industrial),2043,Household type,Lone person,0
+West Melbourne (Industrial),2043,Household size,Not applicable,0
+West Melbourne (Industrial),2043,Household type,Other family,0
+West Melbourne (Residential),2023,Household type,Couple family without children,2097
+West Melbourne (Residential),2024,Household type,Couple family with children,623
+West Melbourne (Residential),2024,Household type,Group household,1033
+West Melbourne (Residential),2025,Household size,Not applicable,2
+West Melbourne (Residential),2026,Household type,Couple family with children,635
+West Melbourne (Residential),2026,Household type,Lone person,1485
+West Melbourne (Residential),2026,Household type,One-parent family,123
+West Melbourne (Residential),2027,Household size,Not applicable,2
+West Melbourne (Residential),2027,Household type,One-parent family,125
+West Melbourne (Residential),2027,Household type,Other family,97
+West Melbourne (Residential),2028,Household type,Couple family without children,2337
+West Melbourne (Residential),2028,Household type,Group household,1057
+West Melbourne (Residential),2028,Structural Private Dwellings,Not applicable,5839
+West Melbourne (Residential),2028,Household type,One-parent family,124
+West Melbourne (Residential),2028,Household type,Other family,95
+West Melbourne (Residential),2029,Household type,Lone person,1490
+West Melbourne (Residential),2030,Household type,Couple family without children,2409
+West Melbourne (Residential),2030,Household type,Group household,1068
+West Melbourne (Residential),2030,Household type,Lone person,1488
+West Melbourne (Residential),2030,Household size,Not applicable,2
+West Melbourne (Residential),2031,Household type,Couple family with children,718
+West Melbourne (Residential),2031,Household type,Group household,1080
+West Melbourne (Residential),2031,Household type,Lone person,1494
+West Melbourne (Residential),2031,Household type,Other family,92
+West Melbourne (Residential),2032,Household type,Couple family with children,732
+West Melbourne (Residential),2032,Household type,Couple family without children,2456
+West Melbourne (Residential),2032,Household type,Group household,1088
+West Melbourne (Residential),2032,Household size,Not applicable,2
+West Melbourne (Residential),2032,Household type,One-parent family,128
+West Melbourne (Residential),2033,Household type,Group household,1095
+West Melbourne (Residential),2033,Household type,Lone person,1491
+West Melbourne (Residential),2033,Structural Private Dwellings,Not applicable,6102
+West Melbourne (Residential),2034,Household type,Lone person,1540
+West Melbourne (Residential),2035,Household type,Couple family with children,821
+West Melbourne (Residential),2035,Household type,One-parent family,142
+West Melbourne (Residential),2036,Household type,Couple family with children,867
+West Melbourne (Residential),2036,Household type,Group household,1233
+West Melbourne (Residential),2036,Household type,Lone person,1656
+West Melbourne (Residential),2037,Household type,Lone person,1716
+West Melbourne (Residential),2037,Household size,Not applicable,2
+West Melbourne (Residential),2037,Household type,One-parent family,157
+West Melbourne (Residential),2037,Household type,Other family,99
+West Melbourne (Residential),2038,Household type,Lone person,1775
+West Melbourne (Residential),2038,Structural Private Dwellings,Not applicable,7411
+West Melbourne (Residential),2038,Household type,Other family,102
+West Melbourne (Residential),2039,Household type,Couple family with children,980
+West Melbourne (Residential),2039,Household type,Lone person,1805
+West Melbourne (Residential),2039,Structural Private Dwellings,Not applicable,7534
+West Melbourne (Residential),2040,Household type,Couple family with children,988
+West Melbourne (Residential),2040,Structural Private Dwellings,Not applicable,7534
+West Melbourne (Residential),2040,Household size,Not applicable,2
+West Melbourne (Residential),2040,Household type,One-parent family,170
+West Melbourne (Residential),2040,Household type,Other family,102
+West Melbourne (Residential),2041,Household type,One-parent family,172
+West Melbourne (Residential),2042,Structural Private Dwellings,Not applicable,7534
+West Melbourne (Residential),2042,Household size,Not applicable,2
+West Melbourne (Residential),2042,Household type,One-parent family,175
+West Melbourne (Residential),2043,Household type,Lone person,1814
+West Melbourne (Residential),2043,Structural Private Dwellings,Not applicable,7534
+West Melbourne (Residential),2043,Household size,Not applicable,2
+West Melbourne (Residential),2043,Household type,One-parent family,178
+City of Melbourne,2023,Structural Private Dwellings,Not applicable,111631
+City of Melbourne,2024,Household size,Not applicable,20
+City of Melbourne,2025,Household type,Group household,20430
+City of Melbourne,2025,Household type,One-parent family,2960
+City of Melbourne,2026,Household type,Group household,20694
+City of Melbourne,2026,Household type,Lone person,37836
+City of Melbourne,2026,Household size,Not applicable,21
+City of Melbourne,2026,Household type,One-parent family,2973
+City of Melbourne,2027,Household type,Couple family with children,10088
+City of Melbourne,2027,Household type,Couple family without children,33969
+City of Melbourne,2027,Household size,Not applicable,24
+City of Melbourne,2028,Household type,Couple family without children,34608
+City of Melbourne,2028,Household type,Group household,21113
+City of Melbourne,2028,Household type,One-parent family,2988
+City of Melbourne,2029,Household type,Couple family with children,10565
+City of Melbourne,2029,Household size,Not applicable,25
+City of Melbourne,2029,Household type,One-parent family,2988
+City of Melbourne,2030,Household type,Couple family without children,35656
+City of Melbourne,2030,Household type,Group household,21383
+City of Melbourne,2030,Household type,Lone person,38577
+City of Melbourne,2030,Structural Private Dwellings,Not applicable,116802
+City of Melbourne,2031,Household type,Couple family with children,10977
+City of Melbourne,2031,Household type,Group household,21557
+City of Melbourne,2031,Household type,Lone person,38619
+City of Melbourne,2031,Household type,One-parent family,3015
+City of Melbourne,2032,Household type,Couple family with children,11169
+City of Melbourne,2033,Household type,Group household,21836
+City of Melbourne,2033,Household type,Lone person,38604
+City of Melbourne,2033,Household type,Other family,2635
+City of Melbourne,2034,Household type,Couple family without children,37251
+City of Melbourne,2035,Household type,Group household,22841
+City of Melbourne,2035,Household type,Lone person,39888
+City of Melbourne,2035,Structural Private Dwellings,Not applicable,123720
+City of Melbourne,2036,Structural Private Dwellings,Not applicable,126109
+City of Melbourne,2037,Household type,Couple family with children,12929
+City of Melbourne,2037,Household type,Group household,23540
+City of Melbourne,2037,Household type,Lone person,41325
+City of Melbourne,2037,Structural Private Dwellings,Not applicable,128392
+City of Melbourne,2037,Household size,Not applicable,26
+City of Melbourne,2037,Household type,Other family,2715
+City of Melbourne,2038,Household type,One-parent family,3529
+City of Melbourne,2038,Household type,Other family,2745
+City of Melbourne,2039,Structural Private Dwellings,Not applicable,132677
+City of Melbourne,2040,Household type,Couple family without children,40941
+City of Melbourne,2040,Household type,Lone person,43262
+City of Melbourne,2041,Household type,Couple family without children,41296
+City of Melbourne,2041,Household type,Lone person,43910
+City of Melbourne,2043,Household type,Couple family with children,15400
+City of Melbourne,2043,Household type,Couple family without children,41949
+City of Melbourne,2037,Household type,Total households,40295
+City of Melbourne,2027,Household type,Total households,1487
+City of Melbourne,2030,Household type,Total households,5769
+City of Melbourne,2039,Household type,Total households,380
+City of Melbourne,2025,Household type,Total households,10338
+City of Melbourne,2034,Household type,Total households,10789
+City of Melbourne,2028,Household type,Total households,14286
+City of Melbourne,2023,Household type,Total households,32153
+City of Melbourne,2043,Household type,Total households,15083
+City of Melbourne,2032,Household type,Total households,1484
+City of Melbourne,2038,Household type,Total households,15027
+City of Melbourne,2033,Household type,Total households,18005
+City of Melbourne,2042,Household type,Total households,683
+City of Melbourne,2035,Household type,Total households,14994
+City of Melbourne,2041,Household type,Total households,7551
+City of Melbourne,2027,Household type,Total households,3332
+City of Melbourne,2043,Household type,Total households,1476
+City of Melbourne,2024,Household type,Total households,5549
+City of Melbourne,2024,Household type,Total households,1454
+City of Melbourne,2034,Household type,Total households,100
+City of Melbourne,2037,Household type,Total households,2795
+City of Melbourne,2025,Household type,Total households,9187
+City of Melbourne,2041,Household type,Total households,2789
+City of Melbourne,2037,Household type,Total households,0
+City of Melbourne,2031,Household type,Total households,5822
+City of Melbourne,2030,Household type,Total households,17781
+City of Melbourne,2028,Household type,Total households,9614
+City of Melbourne,2030,Household type,Total households,0
+City of Melbourne,2033,Household type,Total households,1484
+City of Melbourne,2030,Household type,Total households,10799
+City of Melbourne,2029,Household type,Total households,9777
+City of Melbourne,2026,Household type,Total households,2983
+City of Melbourne,2040,Household type,Total households,20126
+City of Melbourne,2038,Household type,Total households,7265
+City of Melbourne,2040,Household type,Total households,7384
+City of Melbourne,2026,Household type,Total households,9356
+City of Melbourne,2027,Household type,Total households,2677
+City of Melbourne,2042,Household type,Total households,12817
+City of Melbourne,2038,Household type,Total households,11880
+City of Melbourne,2042,Household type,Total households,20662
+City of Melbourne,2041,Household type,Total households,2978
+City of Melbourne,2029,Household type,Total households,2698
+City of Melbourne,2042,Household type,Total households,7758
+City of Melbourne,2024,Household type,Total households,34829
+City of Melbourne,2037,Household type,Total households,6735
+City of Melbourne,2023,Household type,Total households,2
+City of Melbourne,2030,Household type,Total households,36608
+City of Melbourne,2040,Household type,Total households,12325
+City of Melbourne,2033,Household type,Total households,5871
+City of Melbourne,2034,Household type,Total households,1482
+City of Melbourne,2040,Household type,Total households,42315
+City of Melbourne,2037,Household type,Total households,256
+City of Melbourne,2026,Household type,Total households,0
+City of Melbourne,2025,Household type,Total households,2607
+City of Melbourne,2035,Household type,Total households,38821
+City of Melbourne,2041,Household type,Total households,15060
+City of Melbourne,2031,Household type,Total households,2982
+City of Melbourne,2038,Household type,Total households,3391
+City of Melbourne,2027,Household type,Total households,14133
+City of Melbourne,2042,Household type,Total households,43612
+City of Melbourne,2038,Household type,Total households,1479
+City of Melbourne,2031,Household type,Total households,3402
+City of Melbourne,2025,Household type,Total households,13639
+City of Melbourne,2023,Household type,Total households,14863
+City of Melbourne,2040,Household type,Total households,7347
+City of Melbourne,2028,Household type,Total households,17566
+City of Melbourne,2029,Household type,Total households,0
+City of Melbourne,2034,Household type,Total households,6255
+City of Melbourne,2037,Household type,Total households,7024
+City of Melbourne,2039,Household type,Total households,7386
+City of Melbourne,2042,Household type,Total households,7381
+City of Melbourne,2032,Household type,Total households,2733
+City of Melbourne,2032,Household type,Total households,5986
+City of Melbourne,2026,Household type,Total households,3288
+City of Melbourne,2042,Household type,Total households,1477
+City of Melbourne,2025,Household type,Total households,5599
+City of Melbourne,2033,Household type,Total households,37165
+City of Melbourne,2037,Household type,Total households,11702
+City of Melbourne,2025,Household type,Total households,1460
+City of Melbourne,2028,Household type,Total households,20
+City of Melbourne,2026,Household type,Total households,2657
+City of Melbourne,2026,Household type,Total households,16629
+City of Melbourne,2036,Household type,Total households,0
+City of Melbourne,2036,Household type,Total households,6528
+City of Melbourne,2036,Household type,Total households,204
+City of Melbourne,2032,Household type,Total households,10901
+City of Melbourne,2036,Household type,Total households,2979
+City of Melbourne,2029,Household type,Total households,14541
+City of Melbourne,2023,Household type,Total households,2377
+City of Melbourne,2039,Household type,Total households,19853
+City of Melbourne,2023,Household type,Total households,5313
+City of Melbourne,2026,Household type,Total households,1487
+City of Melbourne,2040,Household type,Total households,15048
+City of Melbourne,2039,Household type,Total households,2792
+City of Melbourne,2024,Household type,Total households,2596
+City of Melbourne,2040,Household type,Total households,0
+City of Melbourne,2023,Household type,Total households,97763
+City of Melbourne,2041,Household type,Total households,131227
+City of Melbourne,2039,Household type,Total households,127355
+City of Melbourne,2040,Household type,Total households,129316
+City of Melbourne,2024,Household type,Total households,105524
+City of Melbourne,2034,Household type,Total households,116365
+Carlton,2023,Household type,Couple family with children,735
+Carlton,2023,Household type,Group household,2759
+Carlton,2023,Household type,Lone person,5761
+Carlton,2023,Structural Private Dwellings,Not applicable,13971
+Carlton,2023,Household size,Not applicable,2
+Carlton,2023,Household type,Other family,390
+Carlton,2025,Household type,Couple family without children,2801
+Carlton,2025,Household type,Lone person,6138
+Carlton,2025,Household size,Not applicable,2
+Carlton,2025,Household type,One-parent family,463
+Carlton,2026,Household type,Couple family with children,833
+Carlton,2027,Household type,Couple family with children,859
+Carlton,2027,Household type,One-parent family,474
+Carlton,2027,Household type,Other family,394
+Carlton,2028,Household type,Couple family with children,880
+Carlton,2028,Household type,Group household,3151
+Carlton,2028,Structural Private Dwellings,Not applicable,14455
+Carlton,2028,Household type,One-parent family,476
+Carlton,2029,Household type,Couple family without children,3065
+Carlton,2029,Household type,Group household,3186
+Carlton,2029,Household type,Lone person,6529
+Carlton,2029,Household type,Other family,385
+Carlton,2030,Household type,Couple family without children,3113
+Carlton,2031,Household type,One-parent family,481
+Carlton,2032,Household size,Not applicable,2
+Carlton,2032,Household type,Other family,370
+Carlton,2033,Household type,Couple family without children,3163
+Carlton,2033,Household type,Lone person,6725
+Carlton,2033,Structural Private Dwellings,Not applicable,15149
+Carlton,2033,Household size,Not applicable,2
+Carlton,2034,Household type,Lone person,6711
+Carlton,2034,Household type,Other family,360
+Carlton,2035,Household type,Couple family with children,971
+Carlton,2036,Household type,Couple family with children,983
+Carlton,2036,Household type,One-parent family,500
+Carlton,2036,Household type,Other family,354
+Carlton,2037,Structural Private Dwellings,Not applicable,15222
+Carlton,2037,Household type,One-parent family,506
+Carlton,2038,Household type,Lone person,6708
+Carlton,2038,Household size,Not applicable,2
+Carlton,2039,Household type,Couple family with children,1018
+Carlton,2039,Household type,Couple family without children,3127
+Carlton,2039,Household type,One-parent family,516
+Carlton,2039,Household type,Other family,351
+Carlton,2040,Household type,Lone person,6717
+Carlton,2040,Structural Private Dwellings,Not applicable,15271
+Carlton,2040,Household type,One-parent family,520
+Carlton,2041,Household type,Lone person,6726
+Carlton,2042,Household type,Couple family without children,3083
+Carlton,2042,Structural Private Dwellings,Not applicable,15306
+Carlton,2042,Household type,One-parent family,537
+Carlton,2043,Household type,Couple family with children,1067
+Carlton,2043,Household type,Other family,393
+Docklands,2023,Structural Private Dwellings,Not applicable,10853
+Docklands,2023,Household size,Not applicable,2
+Docklands,2024,Household type,Couple family without children,3928
+Docklands,2024,Household type,Group household,1281
+Docklands,2024,Household type,Lone person,2976
+Docklands,2024,Household type,Other family,200
+Docklands,2025,Household type,Lone person,2974
+Docklands,2025,Structural Private Dwellings,Not applicable,10853
+Docklands,2026,Household type,Couple family without children,4060
+Docklands,2026,Household type,Lone person,3002
+Docklands,2026,Structural Private Dwellings,Not applicable,10853
+Docklands,2026,Household type,One-parent family,392
+Docklands,2027,Structural Private Dwellings,Not applicable,10966
+Docklands,2028,Household type,Lone person,2985
+Docklands,2028,Structural Private Dwellings,Not applicable,11012
+Docklands,2028,Household type,One-parent family,387
+Docklands,2029,Structural Private Dwellings,Not applicable,11080
+Docklands,2029,Household size,Not applicable,2
+Docklands,2030,Household type,Couple family without children,4257
+Docklands,2030,Household type,Group household,1322
+Docklands,2031,Household type,Group household,1331
+Docklands,2031,Household type,Lone person,2957
+Docklands,2031,Structural Private Dwellings,Not applicable,11206
+Docklands,2031,Household size,Not applicable,2
+Docklands,2032,Household type,Couple family without children,4303
+Docklands,2032,Household type,Lone person,2942
+Docklands,2032,Household type,One-parent family,389
+Docklands,2032,Household type,Other family,174
+Docklands,2033,Household type,Couple family without children,4318
+Docklands,2033,Household type,Lone person,2928
+Docklands,2033,Household size,Not applicable,2
+Docklands,2034,Household type,Couple family with children,1837
+Docklands,2035,Household type,Couple family without children,4469
+Docklands,2035,Household type,Group household,1395
+Docklands,2035,Household type,Lone person,3001
+Docklands,2035,Structural Private Dwellings,Not applicable,11697
+Docklands,2035,Household type,Other family,171
+Docklands,2036,Household type,Couple family with children,1958
+Docklands,2036,Household type,Couple family without children,4523
+Docklands,2036,Household size,Not applicable,2
+Docklands,2036,Household type,Other family,173
+Docklands,2037,Household type,Couple family without children,4573
+Docklands,2037,Household type,Lone person,3085
+Docklands,2037,Structural Private Dwellings,Not applicable,12086
+Docklands,2037,Household size,Not applicable,2
+Docklands,2037,Household type,Other family,174
+Docklands,2038,Household type,Group household,1440
+Docklands,2038,Structural Private Dwellings,Not applicable,12265
+Docklands,2038,Household size,Not applicable,2
+Docklands,2038,Household type,Other family,176
+Docklands,2039,Household type,Group household,1457
+Docklands,2039,Household type,One-parent family,440
+Docklands,2040,Household type,Couple family with children,2234
+Docklands,2040,Household type,Lone person,3232
+Docklands,2040,Structural Private Dwellings,Not applicable,12726
+Docklands,2040,Household size,Not applicable,2
+Docklands,2043,Household type,Couple family with children,2496
+Docklands,2043,Household type,Couple family without children,4923
+Docklands,2043,Household type,Group household,1513
+Docklands,2043,Household type,Lone person,3414
+Docklands,2043,Household type,One-parent family,487
+East Melbourne,2023,Household type,Couple family with children,305
+East Melbourne,2023,Household type,Lone person,1116
+East Melbourne,2023,Household type,One-parent family,72
+East Melbourne,2024,Household type,Couple family with children,333
+East Melbourne,2024,Household type,Group household,278
+East Melbourne,2024,Structural Private Dwellings,Not applicable,3424
+East Melbourne,2024,Household type,One-parent family,78
+East Melbourne,2025,Household type,Couple family without children,1296
+East Melbourne,2025,Household type,Group household,281
+East Melbourne,2025,Household type,One-parent family,77
+East Melbourne,2026,Household type,Group household,285
+East Melbourne,2026,Household type,Other family,27
+East Melbourne,2027,Household type,Couple family with children,355
+East Melbourne,2027,Structural Private Dwellings,Not applicable,3471
+East Melbourne,2028,Structural Private Dwellings,Not applicable,3492
+East Melbourne,2030,Household type,Couple family with children,377
+East Melbourne,2030,Household type,Couple family without children,1408
+East Melbourne,2030,Household type,Group household,290
+East Melbourne,2030,Household type,Lone person,1226
+East Melbourne,2030,Household size,Not applicable,2
+East Melbourne,2030,Household type,Other family,25
+East Melbourne,2031,Household type,Couple family without children,1409
+East Melbourne,2031,Structural Private Dwellings,Not applicable,3550
+East Melbourne,2031,Household type,One-parent family,77
+East Melbourne,2032,Household type,Couple family with children,387
+East Melbourne,2032,Household type,Lone person,1211
+East Melbourne,2032,Household size,Not applicable,2
+East Melbourne,2033,Household type,Couple family with children,391
+East Melbourne,2033,Household type,Couple family without children,1414
+East Melbourne,2033,Household type,Lone person,1203
+East Melbourne,2033,Structural Private Dwellings,Not applicable,3550
+East Melbourne,2034,Household type,Couple family with children,394
+East Melbourne,2035,Household type,Couple family with children,396
+East Melbourne,2035,Household type,Lone person,1193
+East Melbourne,2036,Household type,Couple family with children,401
+East Melbourne,2036,Household type,Couple family without children,1404
+East Melbourne,2036,Structural Private Dwellings,Not applicable,3550
+East Melbourne,2036,Household type,One-parent family,78
+East Melbourne,2036,Household type,Other family,23
+East Melbourne,2037,Household type,One-parent family,79
+East Melbourne,2037,Household type,Other family,23
+East Melbourne,2038,Household type,Couple family with children,410
+East Melbourne,2039,Household type,Couple family with children,413
+East Melbourne,2039,Household type,Couple family without children,1388
+East Melbourne,2039,Household type,Lone person,1191
+East Melbourne,2039,Household size,Not applicable,2
+East Melbourne,2039,Household type,One-parent family,80
+East Melbourne,2039,Household type,Other family,23
+East Melbourne,2040,Household type,Lone person,1190
+East Melbourne,2040,Structural Private Dwellings,Not applicable,3550
+East Melbourne,2040,Household type,One-parent family,81
+East Melbourne,2041,Household type,Lone person,1192
+East Melbourne,2041,Household type,Other family,24
+East Melbourne,2042,Household type,Couple family with children,427
+East Melbourne,2042,Household type,Couple family without children,1369
+East Melbourne,2043,Household type,Couple family with children,431
+East Melbourne,2043,Household type,Couple family without children,1360
+East Melbourne,2043,Structural Private Dwellings,Not applicable,3559
+Kensington,2023,Household type,Couple family with children,1147
+Kensington,2023,Household type,Couple family without children,1721
+Kensington,2023,Household type,Group household,531
+Kensington,2023,Household size,Not applicable,2
+Kensington,2023,Household type,One-parent family,242
+Kensington,2024,Household type,Couple family with children,1201
+Kensington,2024,Household type,Group household,560
+Kensington,2024,Household type,Other family,79
+Kensington,2025,Household type,Couple family without children,1832
+Kensington,2025,Household type,Group household,565
+Kensington,2025,Household size,Not applicable,2
+Kensington,2025,Household type,Other family,77
+Kensington,2026,Household type,Group household,575
+Kensington,2026,Structural Private Dwellings,Not applicable,5727
+Kensington,2026,Household type,One-parent family,249
+Kensington,2027,Structural Private Dwellings,Not applicable,5751
+Kensington,2027,Household size,Not applicable,2
+Kensington,2027,Household type,Other family,75
+Kensington,2028,Household type,Other family,72
+Kensington,2029,Household type,Group household,571
+Kensington,2029,Household size,Not applicable,3
+Kensington,2030,Household type,Couple family with children,1321
+Kensington,2030,Household type,Couple family without children,1948
+Kensington,2030,Household type,Group household,572
+Kensington,2030,Structural Private Dwellings,Not applicable,5819
+Kensington,2030,Household type,One-parent family,242
+Kensington,2031,Household type,Group household,578
+Kensington,2031,Household size,Not applicable,3
+Kensington,2031,Household type,One-parent family,245
+Kensington,2031,Household type,Other family,69
+Kensington,2032,Household type,Couple family with children,1366
+Kensington,2032,Household type,Couple family without children,1974
+Kensington,2032,Structural Private Dwellings,Not applicable,5900
+Kensington,2032,Household size,Not applicable,3
+Kensington,2033,Household type,Couple family with children,1385
+Kensington,2033,Household type,Couple family without children,1982
+Kensington,2034,Household type,Group household,607
+Kensington,2034,Household size,Not applicable,3
+Kensington,2034,Household type,One-parent family,257
+Kensington,2034,Household type,Other family,68
+Kensington,2035,Household type,Couple family without children,2118
+Kensington,2035,Household type,Lone person,1713
+Kensington,2036,Household type,Couple family with children,1571
+Kensington,2036,Household type,Group household,655
+Kensington,2036,Structural Private Dwellings,Not applicable,6560
+Kensington,2037,Household type,Couple family with children,1640
+Kensington,2037,Household type,Group household,675
+Kensington,2037,Household type,Lone person,1831
+Kensington,2037,Structural Private Dwellings,Not applicable,6770
+Kensington,2037,Household type,Other family,72
+Kensington,2038,Household type,Couple family without children,2288
+Kensington,2038,Household type,One-parent family,293
+Kensington,2040,Household type,Couple family without children,2404
+Kensington,2040,Household type,Lone person,1942
+Kensington,2040,Household size,Not applicable,3
+Kensington,2040,Household type,One-parent family,308
+Kensington,2041,Household type,Couple family with children,1965
+Kensington,2041,Household type,Couple family without children,2450
+Kensington,2041,Structural Private Dwellings,Not applicable,7591
+Kensington,2041,Household type,One-parent family,318
+Kensington,2042,Household type,Couple family without children,2497
+Kensington,2042,Household size,Not applicable,3
+Kensington,2043,Household type,Couple family without children,2532
+Kensington,2043,Household type,Lone person,2047
+Kensington,2043,Household type,One-parent family,338
+Melbourne (CBD),2023,Household type,Couple family without children,8417
+Melbourne (CBD),2023,Household type,Group household,8353
+Melbourne (CBD),2023,Structural Private Dwellings,Not applicable,38145
+Melbourne (CBD),2024,Household type,Couple family without children,9176
+Melbourne (CBD),2024,Household type,Group household,9087
+Melbourne (CBD),2024,Structural Private Dwellings,Not applicable,38145
+Melbourne (CBD),2024,Household type,Other family,1419
+Melbourne (CBD),2025,Household type,Couple family with children,1821
+Melbourne (CBD),2025,Household type,Group household,9167
+Melbourne (CBD),2025,Household size,Not applicable,1
+Melbourne (CBD),2025,Household type,Other family,1385
+Melbourne (CBD),2026,Household type,Couple family without children,9441
+Melbourne (CBD),2026,Household type,Group household,9252
+Melbourne (CBD),2026,Structural Private Dwellings,Not applicable,38145
+Melbourne (CBD),2027,Household type,Couple family without children,9682
+Melbourne (CBD),2028,Household type,Group household,9404
+Melbourne (CBD),2028,Structural Private Dwellings,Not applicable,38940
+Melbourne (CBD),2029,Household type,Couple family with children,2032
+Melbourne (CBD),2029,Household type,Other family,1316
+Melbourne (CBD),2030,Household type,Couple family with children,2076
+Melbourne (CBD),2030,Household type,Couple family without children,10161
+Melbourne (CBD),2030,Household type,Lone person,12972
+Melbourne (CBD),2030,Structural Private Dwellings,Not applicable,39515
+Melbourne (CBD),2030,Household size,Not applicable,2
+Melbourne (CBD),2030,Household type,One-parent family,575
+Melbourne (CBD),2031,Household size,Not applicable,2
+Melbourne (CBD),2032,Household type,Lone person,13000
+Melbourne (CBD),2033,Household type,Lone person,12982
+Melbourne (CBD),2033,Structural Private Dwellings,Not applicable,40099
+Melbourne (CBD),2034,Household type,Couple family without children,10672
+Melbourne (CBD),2034,Household type,Other family,1255
+Melbourne (CBD),2035,Household type,Couple family without children,10909
+Melbourne (CBD),2035,Structural Private Dwellings,Not applicable,41825
+Melbourne (CBD),2035,Household size,Not applicable,2
+Melbourne (CBD),2036,Household type,Group household,10367
+Melbourne (CBD),2036,Structural Private Dwellings,Not applicable,42614
+Melbourne (CBD),2037,Household type,Couple family without children,11279
+Melbourne (CBD),2037,Household size,Not applicable,2
+Melbourne (CBD),2038,Household type,Couple family without children,11447
+Melbourne (CBD),2038,Household type,Group household,10665
+Melbourne (CBD),2038,Household size,Not applicable,2
+Melbourne (CBD),2039,Household type,Couple family with children,2652
+Melbourne (CBD),2039,Household type,Couple family without children,11620
+Melbourne (CBD),2039,Household type,Lone person,14549
+Melbourne (CBD),2040,Household type,Couple family without children,11790
+Melbourne (CBD),2040,Structural Private Dwellings,Not applicable,45505
+Melbourne (CBD),2040,Household type,Other family,1340
+Melbourne (CBD),2041,Household type,Couple family with children,2799
+Melbourne (CBD),2041,Household size,Not applicable,2
+Melbourne (CBD),2041,Household type,One-parent family,735
+Melbourne (CBD),2041,Household type,Other family,1419
+Melbourne (CBD),2042,Household type,Group household,11139
+Melbourne (CBD),2042,Household type,Other family,1499
+Melbourne (CBD),2043,Household type,One-parent family,780
+Melbourne (Remainder),2023,Household type,Couple family with children,136
+Melbourne (Remainder),2023,Household type,Couple family without children,535
+Melbourne (Remainder),2023,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2023,Household size,Not applicable,2
+Melbourne (Remainder),2024,Household type,Lone person,567
+Melbourne (Remainder),2024,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2024,Household size,Not applicable,2
+Melbourne (Remainder),2025,Household type,Couple family with children,150
+Melbourne (Remainder),2025,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2026,Household type,Couple family with children,154
+Melbourne (Remainder),2026,Household type,Couple family without children,610
+Melbourne (Remainder),2026,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2026,Household type,One-parent family,64
+Melbourne (Remainder),2026,Household type,Other family,34
+Melbourne (Remainder),2027,Household type,Couple family with children,157
+Melbourne (Remainder),2028,Household type,Couple family with children,159
+Melbourne (Remainder),2028,Household size,Not applicable,2
+Melbourne (Remainder),2028,Household type,Other family,32
+Melbourne (Remainder),2029,Household type,Lone person,558
+Melbourne (Remainder),2029,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2030,Household type,Couple family with children,163
+Melbourne (Remainder),2030,Household type,Group household,51
+Melbourne (Remainder),2030,Household type,One-parent family,62
+Melbourne (Remainder),2031,Household type,One-parent family,62
+Melbourne (Remainder),2032,Household type,Couple family without children,628
+Melbourne (Remainder),2032,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2032,Household type,One-parent family,62
+Melbourne (Remainder),2033,Household type,Couple family with children,169
+Melbourne (Remainder),2033,Household type,Couple family without children,629
+Melbourne (Remainder),2033,Household type,Lone person,543
+Melbourne (Remainder),2033,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2034,Household type,Couple family with children,170
+Melbourne (Remainder),2034,Household type,Group household,52
+Melbourne (Remainder),2034,Household size,Not applicable,3
+Melbourne (Remainder),2034,Household type,One-parent family,63
+Melbourne (Remainder),2035,Household type,Couple family without children,629
+Melbourne (Remainder),2035,Household type,Group household,52
+Melbourne (Remainder),2036,Household type,Group household,52
+Melbourne (Remainder),2036,Household type,Lone person,538
+Melbourne (Remainder),2036,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2036,Household size,Not applicable,3
+Melbourne (Remainder),2037,Household type,Couple family with children,175
+Melbourne (Remainder),2037,Household type,Couple family without children,623
+Melbourne (Remainder),2037,Household type,Lone person,538
+Melbourne (Remainder),2037,Household type,One-parent family,64
+Melbourne (Remainder),2038,Household type,Couple family without children,620
+Melbourne (Remainder),2039,Household type,Couple family without children,618
+Melbourne (Remainder),2039,Household type,Group household,52
+Melbourne (Remainder),2040,Household type,Couple family without children,615
+Melbourne (Remainder),2040,Household type,Lone person,537
+Melbourne (Remainder),2040,Structural Private Dwellings,Not applicable,1565
+Melbourne (Remainder),2040,Household type,One-parent family,66
+Melbourne (Remainder),2041,Household type,Lone person,537
+Melbourne (Remainder),2041,Household type,One-parent family,67
+Melbourne (Remainder),2041,Household type,Other family,28
+Melbourne (Remainder),2042,Household type,Couple family without children,607
+Melbourne (Remainder),2042,Household type,Group household,52
+Melbourne (Remainder),2043,Household type,Couple family with children,186
+Melbourne (Remainder),2043,Household type,Group household,51
+Melbourne (Remainder),2043,Household type,Lone person,538
+Melbourne (Remainder),2043,Household size,Not applicable,3
+Melbourne (Remainder),2043,Household type,One-parent family,69
+North Melbourne,2023,Household type,Group household,1482
+North Melbourne,2023,Household type,One-parent family,451
+North Melbourne,2023,Household type,Other family,152
+North Melbourne,2024,Household size,Not applicable,2
+North Melbourne,2024,Household type,Other family,156
+North Melbourne,2025,Household type,Couple family without children,2534
+North Melbourne,2025,Household type,Lone person,3326
+North Melbourne,2025,Household type,One-parent family,462
+North Melbourne,2025,Household type,Other family,152
+North Melbourne,2026,Household type,Couple family with children,1145
+North Melbourne,2026,Household type,Couple family without children,2605
+North Melbourne,2026,Structural Private Dwellings,Not applicable,9548
+North Melbourne,2027,Household type,Group household,1661
+North Melbourne,2027,Household type,Lone person,3394
+North Melbourne,2027,Household size,Not applicable,2
+North Melbourne,2028,Household type,Couple family without children,2710
+North Melbourne,2028,Household type,Lone person,3404
+North Melbourne,2028,Household size,Not applicable,2
+North Melbourne,2028,Household type,One-parent family,467
+North Melbourne,2029,Household type,Couple family without children,2781
+North Melbourne,2029,Household type,Group household,1696
+North Melbourne,2029,Household type,Lone person,3432
+North Melbourne,2029,Household type,One-parent family,469
+North Melbourne,2030,Household type,Couple family with children,1282
+North Melbourne,2030,Household type,Couple family without children,2845
+North Melbourne,2030,Household type,Lone person,3455
+North Melbourne,2031,Household type,Lone person,3472
+North Melbourne,2031,Structural Private Dwellings,Not applicable,10258
+North Melbourne,2031,Household type,Other family,151
+North Melbourne,2032,Household type,Couple family without children,2938
+North Melbourne,2032,Household type,Group household,1762
+North Melbourne,2032,Household size,Not applicable,2
+North Melbourne,2032,Household type,One-parent family,483
+North Melbourne,2033,Household type,Couple family with children,1377
+North Melbourne,2033,Household type,Couple family without children,2971
+North Melbourne,2033,Household type,Group household,1777
+North Melbourne,2034,Household type,Couple family with children,1465
+North Melbourne,2034,Household type,Group household,1852
+North Melbourne,2035,Household type,Couple family with children,1552
+North Melbourne,2035,Household type,Couple family without children,3349
+North Melbourne,2036,Household type,Couple family without children,3492
+North Melbourne,2036,Household type,Group household,1981
+North Melbourne,2036,Household type,Lone person,3961
+North Melbourne,2036,Household size,Not applicable,2
+North Melbourne,2037,Household type,Couple family with children,1708
+North Melbourne,2037,Household type,Couple family without children,3638
+North Melbourne,2037,Household type,Group household,2031
+North Melbourne,2037,Household type,One-parent family,617
+North Melbourne,2038,Household type,Couple family with children,1787
+North Melbourne,2038,Household type,Group household,2082
+North Melbourne,2038,Household size,Not applicable,2
+North Melbourne,2038,Household type,One-parent family,657
+North Melbourne,2039,Household type,Lone person,4417
+North Melbourne,2039,Household size,Not applicable,2
+North Melbourne,2039,Household type,One-parent family,697
+North Melbourne,2040,Household type,Couple family without children,4033
+North Melbourne,2040,Household type,Group household,2186
+North Melbourne,2041,Household type,Lone person,4709
+North Melbourne,2041,Household type,One-parent family,786
+North Melbourne,2041,Household type,Other family,206
+North Melbourne,2042,Household type,Group household,2259
+North Melbourne,2042,Household size,Not applicable,2
+North Melbourne,2043,Structural Private Dwellings,Not applicable,15135
+North Melbourne,2043,Household type,One-parent family,875
+Parkville,2024,Household type,Couple family with children,438
+Parkville,2024,Household type,Group household,540
+Parkville,2024,Structural Private Dwellings,Not applicable,3011
+Parkville,2025,Household type,One-parent family,104
+Parkville,2025,Household type,Other family,46
+Parkville,2026,Household type,Couple family with children,445
+Parkville,2026,Household type,Lone person,906
+Parkville,2026,Household type,One-parent family,103
+Parkville,2027,Household type,Other family,44
+Parkville,2028,Household type,Couple family without children,950
+Parkville,2028,Household type,One-parent family,101
+Parkville,2029,Household type,Couple family with children,463
+Parkville,2029,Household type,Couple family without children,956
+Parkville,2029,Structural Private Dwellings,Not applicable,3011
+Parkville,2029,Household type,Other family,41
+Parkville,2030,Household type,Couple family without children,962
+Parkville,2030,Household type,One-parent family,99
+Parkville,2030,Household type,Other family,41
+Parkville,2031,Household type,Couple family with children,474
+Parkville,2031,Household size,Not applicable,2
+Parkville,2032,Structural Private Dwellings,Not applicable,3011
+Parkville,2032,Household type,One-parent family,100
+Parkville,2033,Household type,Couple family without children,964
+Parkville,2033,Household type,Group household,539
+Parkville,2033,Structural Private Dwellings,Not applicable,3011
+Parkville,2035,Household type,Couple family with children,490
+Parkville,2035,Household type,Couple family without children,961
+Parkville,2035,Household type,Group household,544
+Parkville,2035,Household type,Lone person,848
+Parkville,2035,Structural Private Dwellings,Not applicable,3011
+Parkville,2035,Household size,Not applicable,2
+Parkville,2035,Household type,One-parent family,101
+Parkville,2036,Household type,Couple family with children,495
+Parkville,2036,Household type,Lone person,847
+Parkville,2036,Structural Private Dwellings,Not applicable,3011
+Parkville,2036,Household type,One-parent family,102
+Parkville,2037,Household type,Couple family with children,500
+Parkville,2037,Household type,Group household,542
+Parkville,2037,Household type,Lone person,845
+Parkville,2038,Household type,Couple family without children,947
+Parkville,2038,Household type,Lone person,845
+Parkville,2038,Household type,One-parent family,104
+Parkville,2038,Household type,Other family,36
+Parkville,2039,Household type,Couple family with children,509
+Parkville,2039,Household type,Group household,541
+Parkville,2039,Household type,Lone person,844
+Parkville,2039,Structural Private Dwellings,Not applicable,3011
+Parkville,2039,Household size,Not applicable,2
+Parkville,2039,Household type,Other family,36
+Parkville,2040,Household type,Couple family with children,513
+Parkville,2040,Household type,Lone person,844
+Parkville,2040,Household type,Other family,36
+Parkville,2041,Household type,Group household,538
+Parkville,2041,Household type,Lone person,844
+Parkville,2041,Household size,Not applicable,2
+Parkville,2042,Household type,Couple family with children,524
+Parkville,2042,Household type,Lone person,845
+Parkville,2042,Household size,Not applicable,2
+Parkville,2042,Household type,Other family,39
+Parkville,2043,Household type,Couple family without children,920
+Parkville,2043,Household type,Group household,532
+Parkville,2043,Structural Private Dwellings,Not applicable,3011
+Parkville,2043,Household type,Other family,41
+Port Melbourne,2023,Household type,Couple family with children,0
+Port Melbourne,2023,Structural Private Dwellings,Not applicable,2
+Port Melbourne,2023,Household type,Other family,0
+Port Melbourne,2024,Household type,Couple family with children,0
+Port Melbourne,2024,Household type,Couple family without children,1
+Port Melbourne,2024,Household type,Lone person,1
+Port Melbourne,2024,Structural Private Dwellings,Not applicable,2
+Port Melbourne,2025,Household type,Couple family without children,1
+Port Melbourne,2026,Household size,Not applicable,0
+Port Melbourne,2027,Structural Private Dwellings,Not applicable,16
+Port Melbourne,2028,Household type,Group household,3
+Port Melbourne,2028,Household type,Lone person,6
+Port Melbourne,2029,Household type,Couple family with children,4
+Port Melbourne,2029,Household type,Couple family without children,10
+Port Melbourne,2029,Household type,One-parent family,1
+Port Melbourne,2030,Household type,Couple family without children,13
+Port Melbourne,2030,Household type,Group household,5
+Port Melbourne,2030,Household size,Not applicable,3
+Port Melbourne,2031,Household type,Couple family with children,7
+Port Melbourne,2031,Household type,Couple family without children,17
+Port Melbourne,2031,Household type,Group household,6
+Port Melbourne,2031,Household type,Lone person,12
+Port Melbourne,2031,Household size,Not applicable,3
+Port Melbourne,2033,Household type,One-parent family,2
+Port Melbourne,2033,Household type,Other family,1
+Port Melbourne,2034,Household type,Lone person,26
+Port Melbourne,2034,Structural Private Dwellings,Not applicable,100
+Port Melbourne,2034,Household size,Not applicable,3
+Port Melbourne,2035,Household type,Group household,21
+Port Melbourne,2035,Household type,Other family,2
+Port Melbourne,2036,Household type,Couple family with children,35
+Port Melbourne,2036,Household type,Lone person,53
+Port Melbourne,2036,Household size,Not applicable,2
+Port Melbourne,2036,Household type,Other family,3
+Port Melbourne,2037,Household type,Lone person,67
+Port Melbourne,2037,Household type,One-parent family,8
+Port Melbourne,2038,Household type,Couple family with children,53
+Port Melbourne,2038,Household type,Couple family without children,113
+Port Melbourne,2038,Household type,Group household,44
+Port Melbourne,2038,Household type,Other family,5
+Port Melbourne,2039,Household type,Couple family without children,141
+Port Melbourne,2039,Household type,Group household,54
+Port Melbourne,2039,Household type,One-parent family,13
+Port Melbourne,2039,Household type,Other family,6
+Port Melbourne,2040,Household type,Group household,69
+Port Melbourne,2040,Household type,Other family,7
+Port Melbourne,2041,Household type,Couple family with children,105
+Port Melbourne,2041,Household type,Group household,83
+Port Melbourne,2041,Structural Private Dwellings,Not applicable,583
+Port Melbourne,2041,Household size,Not applicable,2
+Port Melbourne,2041,Household type,One-parent family,20
+Port Melbourne,2042,Household type,Couple family without children,249
+Port Melbourne,2042,Structural Private Dwellings,Not applicable,683
+Port Melbourne,2042,Household type,One-parent family,24
+Port Melbourne,2043,Household type,Couple family without children,283
+Port Melbourne,2043,Household type,Lone person,204
+Port Melbourne,2043,Structural Private Dwellings,Not applicable,781
+Port Melbourne,2043,Household size,Not applicable,2
+Port Melbourne,2043,Household type,One-parent family,27
+South Yarra,2023,Household type,Group household,195
+South Yarra,2023,Household type,Lone person,951
+South Yarra,2023,Household type,Other family,24
+South Yarra,2024,Household type,Other family,25
+South Yarra,2026,Household type,Couple family with children,336
+South Yarra,2026,Household type,Couple family without children,963
+South Yarra,2026,Household type,Lone person,1047
+South Yarra,2026,Household size,Not applicable,2
+South Yarra,2027,Household type,Couple family without children,977
+South Yarra,2027,Household type,Lone person,1045
+South Yarra,2027,Household type,One-parent family,66
+South Yarra,2027,Household type,Other family,24
+South Yarra,2028,Household type,Couple family with children,350
+South Yarra,2029,Household type,Couple family without children,997
+South Yarra,2029,Household type,Group household,222
+South Yarra,2029,Household type,Lone person,1034
+South Yarra,2029,Structural Private Dwellings,Not applicable,2812
+South Yarra,2029,Household type,One-parent family,65
+South Yarra,2030,Household type,Couple family without children,1007
+South Yarra,2030,Household size,Not applicable,2
+South Yarra,2031,Household type,Couple family with children,368
+South Yarra,2031,Household type,Group household,224
+South Yarra,2031,Household size,Not applicable,2
+South Yarra,2031,Household type,Other family,22
+South Yarra,2032,Household type,Couple family with children,374
+South Yarra,2032,Household type,Group household,225
+South Yarra,2032,Household type,One-parent family,66
+South Yarra,2032,Household type,Other family,22
+South Yarra,2033,Household type,Couple family without children,1025
+South Yarra,2033,Household type,Lone person,1021
+South Yarra,2035,Household type,Couple family with children,394
+South Yarra,2036,Household type,Group household,234
+South Yarra,2037,Household type,Lone person,1031
+South Yarra,2037,Structural Private Dwellings,Not applicable,2928
+South Yarra,2037,Household size,Not applicable,2
+South Yarra,2037,Household type,Other family,21
+South Yarra,2038,Household size,Not applicable,2
+South Yarra,2038,Household type,One-parent family,70
+South Yarra,2039,Structural Private Dwellings,Not applicable,2928
+South Yarra,2040,Household type,Couple family without children,1023
+South Yarra,2040,Household type,Lone person,1029
+South Yarra,2040,Structural Private Dwellings,Not applicable,2928
+South Yarra,2040,Household size,Not applicable,2
+South Yarra,2040,Household type,One-parent family,71
+South Yarra,2041,Household type,Couple family without children,1016
+South Yarra,2041,Household type,Group household,231
+South Yarra,2041,Household type,Lone person,1029
+South Yarra,2041,Household type,Other family,22
+South Yarra,2042,Household type,Couple family with children,422
+South Yarra,2042,Household type,Couple family without children,1009
+South Yarra,2042,Structural Private Dwellings,Not applicable,2928
+South Yarra,2042,Household type,One-parent family,74
+South Yarra,2043,Household type,Couple family with children,426
+South Yarra,2043,Structural Private Dwellings,Not applicable,2928
+South Yarra,2043,Household size,Not applicable,2
+Southbank,2023,Household type,Couple family with children,1098
+Southbank,2023,Household type,Couple family without children,5533
+Southbank,2023,Household type,Other family,448
+Southbank,2024,Household type,Group household,2596
+Southbank,2024,Household type,Lone person,5494
+Southbank,2024,Household type,One-parent family,398
+Southbank,2025,Household type,Couple family with children,1207
+Southbank,2025,Household size,Not applicable,2
+Southbank,2025,Household type,Other family,465
+Southbank,2026,Household type,Couple family with children,1248
+Southbank,2026,Household type,Couple family without children,6298
+Southbank,2026,Household type,Other family,463
+Southbank,2027,Household size,Not applicable,2
+Southbank,2027,Household type,One-parent family,396
+Southbank,2028,Household type,Couple family with children,1350
+Southbank,2028,Household type,Couple family without children,6727
+Southbank,2028,Household type,Group household,2839
+Southbank,2028,Household type,Lone person,5770
+Southbank,2028,Structural Private Dwellings,Not applicable,18121
+Southbank,2028,Household type,One-parent family,408
+Southbank,2028,Household type,Other family,471
+Southbank,2030,Household type,Couple family with children,1399
+Southbank,2030,Household type,Group household,2860
+Southbank,2031,Household type,Lone person,5764
+Southbank,2031,Household type,One-parent family,411
+Southbank,2032,Household type,Couple family with children,1447
+Southbank,2032,Household type,Lone person,5751
+Southbank,2032,Structural Private Dwellings,Not applicable,18538
+Southbank,2032,Household type,One-parent family,414
+Southbank,2033,Household type,Other family,435
+Southbank,2034,Household type,Couple family without children,7160
+Southbank,2035,Household type,Couple family with children,1536
+Southbank,2035,Household type,Couple family without children,7288
+Southbank,2035,Household size,Not applicable,2
+Southbank,2036,Household type,Group household,3091
+Southbank,2036,Household size,Not applicable,2
+Southbank,2036,Household type,One-parent family,444
+Southbank,2037,Structural Private Dwellings,Not applicable,19968
+Southbank,2037,Household type,One-parent family,455
+Southbank,2037,Household type,Other family,444
+Southbank,2038,Household type,Couple family with children,1658
+Southbank,2038,Household type,Couple family without children,7552
+Southbank,2038,Household type,One-parent family,466
+Southbank,2039,Household type,Couple family with children,1694
+Southbank,2039,Structural Private Dwellings,Not applicable,20570
+Southbank,2039,Household type,One-parent family,476
+Southbank,2040,Household type,Group household,3269
+Southbank,2040,Household type,One-parent family,486
+Southbank,2040,Household type,Other family,453
+Southbank,2041,Household type,Couple family with children,1767
+Southbank,2041,Household size,Not applicable,2
+Southbank,2042,Household type,Couple family without children,7822
+Southbank,2042,Household type,Group household,3325
+Southbank,2042,Structural Private Dwellings,Not applicable,21434
+Southbank,2043,Household type,Group household,3354
+Southbank,2043,Structural Private Dwellings,Not applicable,21719
+West Melbourne (Industrial),2023,Household type,Couple family without children,0
+West Melbourne (Industrial),2023,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2023,Household type,Other family,0
+West Melbourne (Industrial),2024,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2024,Household size,Not applicable,0
+West Melbourne (Industrial),2025,Household type,Group household,0
+West Melbourne (Industrial),2025,Household type,Other family,0
+West Melbourne (Industrial),2026,Household type,Couple family with children,0
+West Melbourne (Industrial),2026,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2028,Household type,Couple family without children,0
+West Melbourne (Industrial),2029,Household type,Couple family with children,0
+West Melbourne (Industrial),2029,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2030,Household type,Couple family with children,0
+West Melbourne (Industrial),2030,Household type,Group household,0
+West Melbourne (Industrial),2030,Household type,Lone person,0
+West Melbourne (Industrial),2030,Household type,One-parent family,0
+West Melbourne (Industrial),2030,Household type,Other family,0
+West Melbourne (Industrial),2031,Household type,Couple family without children,0
+West Melbourne (Industrial),2031,Household type,Group household,0
+West Melbourne (Industrial),2031,Household type,One-parent family,0
+West Melbourne (Industrial),2032,Household type,Couple family with children,0
+West Melbourne (Industrial),2032,Household type,Group household,0
+West Melbourne (Industrial),2032,Household type,Lone person,0
+West Melbourne (Industrial),2032,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2032,Household type,One-parent family,0
+West Melbourne (Industrial),2034,Household type,Couple family with children,0
+West Melbourne (Industrial),2034,Household type,Couple family without children,0
+West Melbourne (Industrial),2034,Household type,Lone person,0
+West Melbourne (Industrial),2034,Household type,One-parent family,0
+West Melbourne (Industrial),2034,Household type,Other family,0
+West Melbourne (Industrial),2035,Household type,Couple family with children,0
+West Melbourne (Industrial),2035,Household type,One-parent family,0
+West Melbourne (Industrial),2035,Household type,Other family,0
+West Melbourne (Industrial),2036,Household type,Couple family with children,0
+West Melbourne (Industrial),2036,Household type,Group household,0
+West Melbourne (Industrial),2036,Household type,Lone person,0
+West Melbourne (Industrial),2036,Household size,Not applicable,0
+West Melbourne (Industrial),2036,Household type,Other family,0
+West Melbourne (Industrial),2038,Household type,Couple family without children,0
+West Melbourne (Industrial),2038,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2038,Household type,Other family,0
+West Melbourne (Industrial),2039,Household type,Lone person,0
+West Melbourne (Industrial),2039,Household size,Not applicable,0
+West Melbourne (Industrial),2040,Household type,Couple family with children,0
+West Melbourne (Industrial),2040,Household type,Lone person,0
+West Melbourne (Industrial),2040,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2041,Household type,Group household,0
+West Melbourne (Industrial),2042,Household type,Lone person,0
+West Melbourne (Industrial),2043,Household type,Couple family without children,0
+West Melbourne (Industrial),2043,Structural Private Dwellings,Not applicable,0
+West Melbourne (Industrial),2043,Household type,One-parent family,0
+West Melbourne (Residential),2023,Household type,Couple family with children,590
+West Melbourne (Residential),2023,Household type,Lone person,1424
+West Melbourne (Residential),2023,Structural Private Dwellings,Not applicable,5698
+West Melbourne (Residential),2023,Household type,One-parent family,122
+West Melbourne (Residential),2024,Household type,Couple family without children,2212
+West Melbourne (Residential),2024,Structural Private Dwellings,Not applicable,5698
+West Melbourne (Residential),2024,Household size,Not applicable,2
+West Melbourne (Residential),2024,Household type,One-parent family,127
+West Melbourne (Residential),2024,Household type,Other family,103
+West Melbourne (Residential),2025,Household type,Couple family without children,2226
+West Melbourne (Residential),2025,Household type,One-parent family,124
+West Melbourne (Residential),2025,Household type,Other family,100
+West Melbourne (Residential),2026,Household type,Couple family without children,2257
+West Melbourne (Residential),2026,Structural Private Dwellings,Not applicable,5698
+West Melbourne (Residential),2026,Household size,Not applicable,2
+West Melbourne (Residential),2027,Household type,Couple family with children,656
+West Melbourne (Residential),2027,Household type,Couple family without children,2309
+West Melbourne (Residential),2027,Household type,Group household,1055
+West Melbourne (Residential),2027,Household type,Lone person,1494
+West Melbourne (Residential),2027,Structural Private Dwellings,Not applicable,5797
+West Melbourne (Residential),2028,Household type,Couple family with children,671
+West Melbourne (Residential),2028,Household size,Not applicable,2
+West Melbourne (Residential),2029,Household type,Couple family with children,687
+West Melbourne (Residential),2029,Household type,Couple family without children,2376
+West Melbourne (Residential),2029,Structural Private Dwellings,Not applicable,5901
+West Melbourne (Residential),2030,Structural Private Dwellings,Not applicable,5954
+West Melbourne (Residential),2030,Household type,One-parent family,125
+West Melbourne (Residential),2031,Structural Private Dwellings,Not applicable,6019
+West Melbourne (Residential),2031,Household type,One-parent family,127
+West Melbourne (Residential),2032,Household type,Lone person,1492
+West Melbourne (Residential),2032,Structural Private Dwellings,Not applicable,6061
+West Melbourne (Residential),2034,Household type,Couple family without children,2568
+West Melbourne (Residential),2034,Structural Private Dwellings,Not applicable,6342
+West Melbourne (Residential),2034,Household size,Not applicable,2
+West Melbourne (Residential),2034,Household type,One-parent family,135
+West Melbourne (Residential),2035,Household type,Group household,1188
+West Melbourne (Residential),2035,Structural Private Dwellings,Not applicable,6606
+West Melbourne (Residential),2035,Household type,Other family,93
+West Melbourne (Residential),2036,Household type,Other family,96
+West Melbourne (Residential),2037,Household type,Couple family with children,913
+West Melbourne (Residential),2037,Household type,Group household,1277
+West Melbourne (Residential),2037,Structural Private Dwellings,Not applicable,7155
+West Melbourne (Residential),2038,Household type,Couple family with children,955
+West Melbourne (Residential),2038,Household size,Not applicable,2
+West Melbourne (Residential),2038,Household type,One-parent family,164
+West Melbourne (Residential),2039,Household type,Couple family without children,2993
+West Melbourne (Residential),2039,Household type,Group household,1338
+West Melbourne (Residential),2039,Household size,Not applicable,2
+West Melbourne (Residential),2039,Household type,Other family,103
+West Melbourne (Residential),2040,Household type,Couple family without children,2983
+West Melbourne (Residential),2041,Household type,Couple family with children,999
+West Melbourne (Residential),2041,Household type,Couple family without children,2965
+West Melbourne (Residential),2041,Household type,Group household,1332
+West Melbourne (Residential),2041,Household type,Lone person,1807
+West Melbourne (Residential),2041,Structural Private Dwellings,Not applicable,7534
+West Melbourne (Residential),2041,Household type,Other family,107
+West Melbourne (Residential),2042,Household type,Couple family with children,1010
+West Melbourne (Residential),2042,Household type,Couple family without children,2947
+West Melbourne (Residential),2042,Household type,Group household,1327
+West Melbourne (Residential),2043,Household type,Couple family with children,1020
+West Melbourne (Residential),2043,Household type,Couple family without children,2930
+West Melbourne (Residential),2043,Household type,Group household,1321
+City of Melbourne,2023,Household type,Lone person,34969
+City of Melbourne,2023,Household size,Not applicable,20
+City of Melbourne,2023,Household type,One-parent family,2834
+City of Melbourne,2023,Household type,Other family,2834
+City of Melbourne,2024,Household type,Couple family with children,9504
+City of Melbourne,2024,Household type,Group household,20245
+City of Melbourne,2024,Structural Private Dwellings,Not applicable,111631
+City of Melbourne,2025,Household type,Lone person,37495
+City of Melbourne,2025,Structural Private Dwellings,Not applicable,111631
+City of Melbourne,2025,Household size,Not applicable,21
+City of Melbourne,2026,Household type,Couple family without children,33273
+City of Melbourne,2026,Structural Private Dwellings,Not applicable,111964
+City of Melbourne,2027,Household type,Group household,20918
+City of Melbourne,2027,Structural Private Dwellings,Not applicable,113467
+City of Melbourne,2027,Household type,One-parent family,2982
+City of Melbourne,2027,Household type,Other family,2852
+City of Melbourne,2028,Household type,Lone person,38332
+City of Melbourne,2028,Structural Private Dwellings,Not applicable,114806
+City of Melbourne,2028,Household size,Not applicable,24
+City of Melbourne,2028,Household type,Other family,2820
+City of Melbourne,2029,Structural Private Dwellings,Not applicable,115892
+City of Melbourne,2029,Household type,Other family,2785
+City of Melbourne,2030,Household size,Not applicable,25
+City of Melbourne,2031,Household type,Couple family without children,35943
+City of Melbourne,2032,Household type,Couple family without children,36191
+City of Melbourne,2032,Household size,Not applicable,26
+City of Melbourne,2032,Household type,One-parent family,3043
+City of Melbourne,2032,Household type,Other family,2674
+City of Melbourne,2033,Structural Private Dwellings,Not applicable,118650
+City of Melbourne,2034,Household type,Couple family with children,11720
+City of Melbourne,2034,Household type,Lone person,39260
+City of Melbourne,2034,Structural Private Dwellings,Not applicable,121227
+City of Melbourne,2034,Household size,Not applicable,26
+City of Melbourne,2034,Household type,Other family,2643
+City of Melbourne,2035,Household type,One-parent family,3221
+City of Melbourne,2036,Household type,Couple family with children,12512
+City of Melbourne,2036,Household type,Group household,23200
+City of Melbourne,2036,Household type,Lone person,40624
+City of Melbourne,2036,Household type,One-parent family,3326
+City of Melbourne,2037,Household type,Couple family without children,39305
+City of Melbourne,2038,Household type,Couple family with children,13335
+City of Melbourne,2038,Household type,Couple family without children,39871
+City of Melbourne,2038,Household type,Group household,23859
+City of Melbourne,2038,Household type,Lone person,41992
+City of Melbourne,2038,Structural Private Dwellings,Not applicable,130567
+City of Melbourne,2039,Household type,Couple family with children,13735
+City of Melbourne,2039,Household type,Group household,24166
+City of Melbourne,2039,Household type,One-parent family,3627
+City of Melbourne,2039,Household type,Other family,2773
+City of Melbourne,2040,Household type,Group household,24461
+City of Melbourne,2040,Structural Private Dwellings,Not applicable,134719
+City of Melbourne,2040,Household size,Not applicable,26
+City of Melbourne,2040,Household type,One-parent family,3723
+City of Melbourne,2041,Household type,Couple family with children,14559
+City of Melbourne,2041,Household type,Group household,24649
+City of Melbourne,2041,Household size,Not applicable,26
+City of Melbourne,2041,Household type,One-parent family,3849
+City of Melbourne,2042,Household type,Couple family with children,14983
+City of Melbourne,2042,Household type,Couple family without children,41633
+City of Melbourne,2042,Household type,Group household,24826
+City of Melbourne,2042,Household type,Lone person,44539
+City of Melbourne,2042,Structural Private Dwellings,Not applicable,138643
+City of Melbourne,2042,Household type,One-parent family,3972
+City of Melbourne,2043,Household type,Group household,24991
+City of Melbourne,2043,Structural Private Dwellings,Not applicable,140507
+City of Melbourne,2043,Household type,One-parent family,4094
+City of Melbourne,2023,Household type,Total households,12640
+City of Melbourne,2029,Household type,Total households,36364
+City of Melbourne,2036,Household type,Total households,11803
+City of Melbourne,2038,Household type,Total households,19574
+City of Melbourne,2038,Household type,Total households,40972
+City of Melbourne,2027,Household type,Total households,9527
+City of Melbourne,2034,Household type,Total households,6089
+City of Melbourne,2031,Household type,Total households,2725
+City of Melbourne,2024,Household type,Total households,13607
+City of Melbourne,2026,Household type,Total households,5680
+City of Melbourne,2028,Household type,Total households,2983
+City of Melbourne,2028,Household type,Total households,10674
+City of Melbourne,2034,Household type,Total households,18334
+City of Melbourne,2036,Household type,Total households,6771
+City of Melbourne,2030,Household type,Total households,35
+City of Melbourne,2035,Household type,Total households,0
+City of Melbourne,2033,Household type,Total households,6025
+City of Melbourne,2041,Household type,Total households,0
+City of Melbourne,2031,Household type,Total households,36866
+City of Melbourne,2027,Household type,Total households,0
+City of Melbourne,2039,Household type,Total households,0
+City of Melbourne,2041,Household type,Total households,42965
+City of Melbourne,2041,Household type,Total households,14096
+City of Melbourne,2042,Household type,Total households,3392
+City of Melbourne,2033,Household type,Total households,10258
+City of Melbourne,2039,Household type,Total households,13191
+City of Melbourne,2032,Household type,Total households,51
+City of Melbourne,2023,Household type,Total households,0
+City of Melbourne,2039,Household type,Total households,12091
+City of Melbourne,2028,Household type,Total households,3350
+City of Melbourne,2035,Household type,Total households,1481
+City of Melbourne,2029,Household type,Total households,10736
+City of Melbourne,2026,Household type,Total households,5642
+City of Melbourne,2041,Household type,Total households,20392
+City of Melbourne,2038,Household type,Total households,6931
+City of Melbourne,2027,Household type,Total households,16851
+City of Melbourne,2026,Household type,Total households,35305
+City of Melbourne,2031,Household type,Total households,0
+City of Melbourne,2028,Household type,Total households,5699
+City of Melbourne,2033,Household type,Total households,3401
+City of Melbourne,2042,Household type,Total households,2787
+City of Melbourne,2035,Household type,Total households,3395
+City of Melbourne,2025,Household type,Total households,5557
+City of Melbourne,2038,Household type,Total households,0
+City of Melbourne,2043,Household type,Total households,0
+City of Melbourne,2040,Household type,Total households,1477
+City of Melbourne,2033,Household type,Total households,10931
+City of Melbourne,2040,Household type,Total households,2978
+City of Melbourne,2032,Household type,Total households,10169
+City of Melbourne,2031,Household type,Total households,14744
+City of Melbourne,2038,Household type,Total households,2978
+City of Melbourne,2034,Household type,Total households,14983
+City of Melbourne,2024,Household type,Total households,9182
+City of Melbourne,2040,Household type,Total households,483
+City of Melbourne,2033,Household type,Total households,0
+City of Melbourne,2024,Household type,Total households,3214
+City of Melbourne,2023,Household type,Total households,2943
+City of Melbourne,2031,Household type,Total households,45
+City of Melbourne,2029,Household type,Total households,2982
+City of Melbourne,2032,Household type,Total households,2982
+City of Melbourne,2028,Household type,Total households,2686
+City of Melbourne,2031,Household type,Total households,10055
+City of Melbourne,2025,Household type,Total households,2969
+City of Melbourne,2042,Household type,Total households,2977
+City of Melbourne,2030,Household type,Total households,2708
+City of Melbourne,2030,Household type,Total households,1485
+City of Melbourne,2029,Household type,Total households,5835
+City of Melbourne,2032,Household type,Total households,3402
+City of Melbourne,2028,Household type,Total households,5776
+City of Melbourne,2035,Household type,Total households,11330
+City of Melbourne,2041,Household type,Total households,583
+City of Melbourne,2031,Household type,Total households,5947
+City of Melbourne,2036,Household type,Total households,11522
+City of Melbourne,2023,Household type,Total households,9445
+City of Melbourne,2025,Household type,Total households,34914
+City of Melbourne,2030,Household type,Total households,5884
+City of Melbourne,2031,Household type,Total households,10866
+City of Melbourne,2037,Household type,Total households,2979
+City of Melbourne,2037,Household type,Total households,1479
+City of Melbourne,2040,Household type,Total households,2790
+City of Melbourne,2041,Household type,Total households,7383
+City of Melbourne,2023,Household type,Total households,1328
+City of Melbourne,2029,Household type,Total households,27
+City of Melbourne,2039,Household type,Total households,7126
+City of Melbourne,2038,Household type,Total households,2794
+City of Melbourne,2029,Household type,Total households,5736
+City of Melbourne,2027,Household type,Total households,10631
+City of Melbourne,2043,Household type,Total households,14883
+City of Melbourne,2027,Household type,Total households,5736
+City of Melbourne,2027,Household type,Total households,2983
+City of Melbourne,2042,Household type,Total households,133082
+City of Melbourne,2037,Household type,Total households,123243
+City of Melbourne,2025,Household type,Total households,105813
+City of Melbourne,2031,Household type,Total households,112823
+City of Melbourne,2036,Household type,Total households,121051
+City of Melbourne,2035,Household type,Total households,118758

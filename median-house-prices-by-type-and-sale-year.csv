@@ -1,0 +1,35 @@
+sale_year,type,median_price,transaction_count
+2000,Residential Apartment,302500.0,3660
+2002,House/Townhouse,381500.0,650
+2002,Residential Apartment,369500.0,4888
+2007,House/Townhouse,615000.0,778
+2008,Residential Apartment,422000.0,4860
+2009,House/Townhouse,585796.5,661
+2010,House/Townhouse,740000.0,670
+2010,Residential Apartment,508000.0,8186
+2011,House/Townhouse,710000.0,531
+2013,House/Townhouse,737750.0,592
+2014,Residential Apartment,525000.0,7359
+2015,Residential Apartment,510000.0,4248
+2000,House/Townhouse,275000.0,649
+2001,House/Townhouse,320000.0,779
+2001,Residential Apartment,330545.0,5789
+2003,House/Townhouse,385000.0,630
+2003,Residential Apartment,310000.0,4092
+2004,Residential Apartment,336000.0,2617
+2006,House/Townhouse,490500.0,600
+2006,Residential Apartment,370000.0,3437
+2008,House/Townhouse,543500.0,599
+2014,House/Townhouse,800000.0,577
+2015,House/Townhouse,890000.0,537
+2016,Residential Apartment,508000.0,3333
+2004,House/Townhouse,395000.0,572
+2005,House/Townhouse,450000.0,600
+2005,Residential Apartment,335000.0,2860
+2007,Residential Apartment,400000.0,5399
+2009,Residential Apartment,450000.0,5381
+2011,Residential Apartment,510000.0,6267
+2012,House/Townhouse,675000.0,531
+2012,Residential Apartment,493960.0,5740
+2013,Residential Apartment,520000.0,7611
+2016,House/Townhouse,950000.0,454

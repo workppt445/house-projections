@@ -276,3 +276,24 @@ elif page == "Favorites & Notes":
 
 # ---- About ----
 elif page == "About":
+    st.header("ℹ️ About this Dashboard")
+    st.markdown(
+        """
+        This interactive dashboard uses open data from the City of Melbourne to visualize and
+        forecast house prices by suburb. Features include:
+        - Interactive Map & Trends
+        - Heatmap View
+        - Suburb Comparison
+        - Favorites & Notes
+        - Editable homepage via secret code `7477`
+
+        Data sources: City of Melbourne Open Data Portal.
+        Built with Streamlit, PyDeck, Folium, Plotly, Altair, and Scikit-Learn.
+        """
+    )
+
+# ---- Footer ----
+st.markdown("---")
+st.write("*Data source: City of Melbourne Open Data Portal.*")
+
+# =========== End of App ===========

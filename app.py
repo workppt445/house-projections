@@ -2,17 +2,18 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pydeck as pdk
-import altair as alt
-import folium
-from folium.plugins import HeatMap
-from streamlit_folium import st_folium
-from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.metrics import mean_squared_error
+import plotly.express as px
 import json
 import os
 import base64
 from io import BytesIO
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.metrics import mean_squared_error
+import folium
+from folium.plugins import HeatMap
+from streamlit_folium import st_folium
+import altair as alt
 
 # ================= Configuration =================
 st.set_page_config(
@@ -21,182 +22,244 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Constants
-SECRET_CODE = "7477"
+# ------------------ Constants ------------------
+DATA_PATH = "house-prices-by-small-area-sale-year.csv"  # adjust if needed
 EDITOR_STATE_FILE = "editor_state.json"
 CONTENT_FILE = "editable_content.md"
+SECRET_CODE = "7477"
 MAX_FUTURE_YEARS = 5
-DATA_DIR = "data"
 
-# Initialize session state
-if 'live_editor' not in st.session_state:
-    st.session_state.live_editor = False
-if 'homepage_md' not in st.session_state:
-    st.session_state.homepage_md = (
-        "# 🏡 Melbourne House Price Explorer\n"
-        "Explore historical and projected house prices.\n"
-        "Select a point on the map to view detailed analytics."
-    )
-if 'favorites' not in st.session_state:
-    st.session_state.favorites = []
+# ================= Helper Functions =================
 
-# Editor mode toggle
+@st.cache_data
+def load_data(path=DATA_PATH):
+    """Load and preprocess house price data from CSV."""
+    df = pd.read_csv(path)
+    # Standardize columns
+    df.columns = [c.strip().lower().replace(' ', '_') for c in df.columns]
+    # Ensure essential columns exist
+    required_cols = ['small_area', 'sale_year', 'median_price', 'latitude', 'longitude', 'property_type']
+    missing = [col for col in required_cols if col not in df.columns]
+    if missing:
+        st.error(f"Missing required columns in data: {missing}")
+        return pd.DataFrame()
+    # Clean numeric columns
+    for col in ['latitude', 'longitude', 'sale_year', 'median_price']:
+        df[col] = pd.to_numeric(df[col], errors='coerce')
+    # Drop incomplete rows
+    df = df.dropna(subset=['latitude', 'longitude', 'sale_year', 'median_price', 'small_area', 'property_type'])
+    # Filter data to City of Melbourne if jurisdiction present
+    if 'jurisdiction' in df.columns:
+        df = df[df['jurisdiction'].str.lower() == 'city of melbourne']
+    return df
+
 def load_editor_state():
     if os.path.exists(EDITOR_STATE_FILE):
-        return json.load(open(EDITOR_STATE_FILE))
+        try:
+            return json.load(open(EDITOR_STATE_FILE))
+        except:
+            return {'live_editor': False}
     return {'live_editor': False}
 
 def save_editor_state(state):
-    json.dump(state, open(EDITOR_STATE_FILE, 'w'))
+    with open(EDITOR_STATE_FILE, 'w') as f:
+        json.dump(state, f)
 
-editor_state = load_editor_state()
-code_input = st.sidebar.text_input("Enter secret code:", type="password")
-if code_input == SECRET_CODE:
-    editor_state['live_editor'] = not editor_state['live_editor']
-    save_editor_state(editor_state)
-    st.experimental_rerun()
-if editor_state['live_editor']:
-    st.sidebar.success("Live editor mode ON")
-
-# Editable homepage
-if editor_state['live_editor']:
-    md = st.sidebar.text_area("Homepage Markdown:", value=st.session_state.homepage_md, height=300)
-    if st.sidebar.button("Save Homepage"):
-        st.session_state.homepage_md = md
-st.markdown(st.session_state.homepage_md, unsafe_allow_html=True)
-st.markdown("---")
-
-# Sidebar navigation and theme
-theme = st.sidebar.selectbox("Theme:", ["Light", "Dark"])
-bg = "#FFFFFF" if theme == "Light" else "#111111"
-fg = "#000000" if theme == "Light" else "#EEEEEE"
-st.markdown(f"<style>body{{background-color:{bg};color:{fg}}}</style>", unsafe_allow_html=True)
-
-page = st.sidebar.radio("Go to:", ["Map & Analytics", "Heatmap", "Comparison", "Favorites & Notes"])
-
-# Load data
-@st.cache_data
- def load_datasets():
-    prices = pd.read_csv(os.path.join(DATA_DIR, "house-prices-by-small-area-sale-year.csv"))
-    dwellings = pd.read_csv(os.path.join(DATA_DIR, "residential-dwellings.csv"))
-    addresses = pd.read_csv(os.path.join(DATA_DIR, "street-addresses.csv"))
-    return prices, dwellings, addresses
-
-prices_df, dwell_df, addr_df = load_datasets()
-
-# Helper functions
-
-def filter_data(area, ptype, y_min, y_max):
-    df = prices_df.copy()
-    return df[(df['small_area']==area) & (df['property_type']==ptype) &
-              (df['sale_year']>=y_min) & (df['sale_year']<=y_max)]
-
-def download_csv(df, name):
-    csv = df.to_csv(index=False).encode()
-    return base64.b64encode(csv).decode()
-
-# Map & Analytics page
-if page == "Map & Analytics":
-    st.header("📍 Interactive Map & Analytics")
-    midpoint = (prices_df['latitude'].mean(), prices_df['longitude'].mean())
-    view_state = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=11)
-    layer = pdk.Layer(
-        "ScatterplotLayer",
-        data=prices_df,
-        get_position='[longitude, latitude]',
-        get_fill_color='[255, 140, 0, 160]',
-        get_radius=200,
-        pickable=True,
-        auto_highlight=True
+def get_homepage_content(editor_state):
+    if editor_state.get('live_editor') and os.path.exists(CONTENT_FILE):
+        return open(CONTENT_FILE).read()
+    return (
+        "# 🏡 Melbourne House Price Explorer\n\n"
+        "Welcome! Explore Melbourne house prices historically and forecast the next 5 years.\n\n"
+        "Use the sidebar to navigate, select areas on the map, and save favorites."
     )
-    r = pdk.Deck(layers=[layer], initial_view_state=view_state,
-                 tooltip={"html": "<b>Area:</b> {small_area}<br/><b>Price:</b> ${median_price}"})
-    selected = st.pydeck_chart(r, use_container_width=True)
 
-    # User selections
-    areas = sorted(prices_df['small_area'].unique())
-    types = sorted(prices_df['property_type'].unique())
-    area = st.selectbox("Select Small Area:", areas)
-    ptype = st.selectbox("Select Property Type:", types)
-    years = st.slider("Year Range:", int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max()), (2005, 2020))
+def generate_download_link(df, filename="data.csv"):
+    csv = df.to_csv(index=False)
+    b64 = base64.b64encode(csv.encode()).decode()
+    return f'<a href="data:file/csv;base64,{b64}" download="{filename}">📥 Download CSV</a>'
 
-    sub_df = filter_data(area, ptype, years[0], years[1])
-    if sub_df.empty:
-        st.warning("No data for these filters.")
+def add_favorite(area):
+    if 'favorites' not in st.session_state:
+        st.session_state['favorites'] = []
+    if area not in st.session_state['favorites']:
+        st.session_state['favorites'].append(area)
+        st.success(f"Added {area} to favorites.")
     else:
-        # Pie chart of property types
-        mix = dwell_df[dwell_df['small_area']==area].groupby('dwelling_type')['dwelling_number'].
-             sum().reset_index()
-        mix.columns=['Type','Count']
-        pie = alt.Chart(mix).mark_arc().encode(theta='Count:Q', color='Type:N', tooltip=['Type','Count'])
-        st.altair_chart(pie, use_container_width=False)
+        st.info(f"{area} is already in your favorites.")
 
-        # Historical line chart
-        line = alt.Chart(sub_df).mark_line(point=True).encode(
-            x='sale_year:O', y='median_price:Q', color='property_type:N', tooltip=['sale_year','median_price']
-        )
-        st.altair_chart(line, use_container_width=True)
+def remove_favorite(area):
+    if 'favorites' in st.session_state and area in st.session_state['favorites']:
+        st.session_state['favorites'].remove(area)
+        st.success(f"Removed {area} from favorites.")
 
-        # Forecast
-        X = sub_df['sale_year'].values.reshape(-1,1)
-        y = sub_df['median_price'].values
-        poly = PolynomialFeatures(2)
-        Xp = poly.fit_transform(X)
-        model = LinearRegression().fit(Xp, y)
-        future = np.arange(max(sub_df['sale_year'])+1, max(sub_df['sale_year'])+MAX_FUTURE_YEARS+1)
-        preds = model.predict(poly.transform(future.reshape(-1,1)))
-        df_pred = pd.DataFrame({'sale_year':future,'median_price':preds})
-        forecast = alt.Chart(df_pred).mark_line(color='green', strokeDash=[5,5]).encode(
-            x='sale_year:O', y='median_price:Q'
-        )
-        st.altair_chart(line + forecast, use_container_width=True)
+def fit_projection_model(df_sub):
+    """Fit polynomial regression for price projection."""
+    X = df_sub['sale_year'].values.reshape(-1, 1)
+    y = df_sub['median_price'].values
+    poly = PolynomialFeatures(degree=2)
+    X_poly = poly.fit_transform(X)
+    model = LinearRegression().fit(X_poly, y)
+    return model, poly
 
-        # RMSE
-        rmse = np.sqrt(mean_squared_error(y, model.predict(Xp)))
-        st.metric("Forecast RMSE", f"${rmse:,.0f}")
+def predict_future_prices(model, poly, start_year, years_ahead=MAX_FUTURE_YEARS):
+    future_years = np.arange(start_year + 1, start_year + years_ahead + 1)
+    future_poly = poly.transform(future_years.reshape(-1, 1))
+    preds = model.predict(future_poly)
+    df_pred = pd.DataFrame({'sale_year': future_years, 'median_price': preds})
+    return df_pred
 
-        # Download
-        b64 = download_csv(sub_df, f"{area}_{ptype}.csv")
-        st.markdown(f"[Download Data](data:text/csv;base64,{b64})")
+def calculate_rmse(y_true, y_pred):
+    return np.sqrt(mean_squared_error(y_true, y_pred))
 
-        # Favorites
-        if area not in st.session_state.favorites:
-            if st.button("Add to Favorites"):
-                st.session_state.favorites.append(area)
-                st.success(f"Added {area}")
+# ==================== Load Data ====================
+df = load_data()
+editor_state = load_editor_state()
 
-# Heatmap page
-elif page == "Heatmap":
-    st.header("🌡️ Price Heatmap")
-    m = folium.Map(location=midpoint, zoom_start=11)
-    HeatMap(prices_df[['latitude','longitude','median_price']].values.tolist(), radius=15).add_to(m)
-    st_folium(m, width=700, height=500)
+# ==================== Sidebar: Secret Code & Editor ====================
+st.sidebar.title("🔐 Unlock Features")
+code = st.sidebar.text_input("Enter secret code:", type="password")
 
-# Comparison page
-elif page == "Comparison":
-    st.header("Compare Areas")
-    area1 = st.selectbox("Area 1", areas, key='comp1')
-    area2 = st.selectbox("Area 2", areas, key='comp2')
-    df1 = prices_df[prices_df['small_area']==area1]
-    df2 = prices_df[prices_df['small_area']==area2]
-    comp_df = pd.concat([df1.assign(area=area1), df2.assign(area=area2)])
-    comp_chart = alt.Chart(comp_df).mark_line(point=True).encode(
-        x='sale_year:O', y='median_price:Q', color='area:N', tooltip=['sale_year','median_price']
-    )
-    st.altair_chart(comp_chart, use_container_width=True)
+if code == SECRET_CODE:
+    editor_state['live_editor'] = not editor_state.get('live_editor', False)
+    save_editor_state(editor_state)
+    if editor_state['live_editor']:
+        st.sidebar.success("Live Editor Mode ENABLED")
+    else:
+        # Reset content
+        if os.path.exists(CONTENT_FILE):
+            os.remove(CONTENT_FILE)
+        st.sidebar.warning("Live Editor Mode DISABLED. Content reset.")
+    st.experimental_rerun()
 
-# Favorites & Notes page
-elif page == "Favorites & Notes":
-    st.header("Favorites & Community Notes")
-    st.write(st.session_state.favorites)
-    note = st.text_area("Leave a note:")
-    if st.button("Post Note"):
-        st.write(f"Note posted: {note}")
+if editor_state.get('live_editor'):
+    st.sidebar.subheader("Live Editor")
+    current_md = open(CONTENT_FILE).read() if os.path.exists(CONTENT_FILE) else ""
+    new_md = st.sidebar.text_area("Edit Homepage Markdown:", current_md, height=250)
+    if st.sidebar.button("Save Content"):
+        with open(CONTENT_FILE, 'w') as f:
+            f.write(new_md)
+        st.sidebar.success("Homepage content updated!")
+        st.experimental_rerun()
 
-# Footer
+# ==================== Main Page Content ====================
+st.markdown(get_homepage_content(editor_state))
 st.markdown("---")
-st.write("*Data from City of Melbourne. Built with Streamlit.*")
 
-# Additional comments to reach 900 lines
-" + "
-".join([f"# Line filler {i}" for i in range(1, 700)])}]}
+# ==================== Navigation ====================
+st.sidebar.title("🏠 Navigation")
+nav_option = st.sidebar.radio("Select a page:", 
+                             ['Map & Trends', 'Heatmap', 'Comparison', 'Favorites & Notes', 'About'])
+
+# ==================== Theming ====================
+theme = st.sidebar.selectbox("Select Theme", ["Light", "Dark"])
+if theme == "Light":
+    bg_color = "#FFFFFF"
+    fg_color = "#000000"
+else:
+    bg_color = "#121212"
+    fg_color = "#EEEEEE"
+st.markdown(f"<style>body{{background-color: {bg_color}; color: {fg_color};}}</style>", unsafe_allow_html=True)
+
+# ==================== Pages ====================
+
+if nav_option == 'Map & Trends':
+    st.header("📍 Interactive Map & Price Trends")
+
+    if df.empty:
+        st.warning("No data loaded.")
+    else:
+        # Map center
+        midpoint = (df['latitude'].mean(), df['longitude'].mean())
+        view_state = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=11)
+
+        # Scatter layer for houses
+        scatter = pdk.Layer(
+            "ScatterplotLayer",
+            data=df,
+            get_position='[longitude, latitude]',
+            get_fill_color='[0, 120, 255, 180]',
+            get_radius=250,
+            pickable=True,
+            auto_highlight=True,
+        )
+
+        r = pdk.Deck(
+            layers=[scatter],
+            initial_view_state=view_state,
+            map_style='mapbox://styles/mapbox/light-v9',
+            tooltip={
+                "html": "<b>Area:</b> {small_area} <br/>"
+                        "<b>Year:</b> {sale_year} <br/>"
+                        "<b>Median Price:</b> ${median_price:,.0f} <br/>"
+                        "<b>Property Type:</b> {property_type}"
+            },
+            mapbox_key=os.getenv('MAPBOX_TOKEN', ''),
+        )
+        st.pydeck_chart(r)
+
+        # Filter options
+        st.subheader("Filter Options")
+        cols = st.columns([1,1,1])
+        with cols[0]:
+            area_selected = st.selectbox("Select Suburb", sorted(df['small_area'].unique()))
+        with cols[1]:
+            prop_selected = st.selectbox("Select Property Type", sorted(df['property_type'].unique()))
+        with cols[2]:
+            year_min = int(df['sale_year'].min())
+            year_max = int(df['sale_year'].max())
+            year_range = st.slider("Select Year Range", year_min, year_max, (year_min, year_max))
+
+        filtered_df = df[
+            (df['small_area'] == area_selected) &
+            (df['property_type'] == prop_selected) &
+            (df['sale_year'] >= year_range[0]) &
+            (df['sale_year'] <= year_range[1])
+        ]
+
+        if filtered_df.empty:
+            st.warning("No data for selected filters.")
+        else:
+            # Historical Price Plot
+            st.subheader(f"Historical Prices for {area_selected} ({prop_selected})")
+            hist_fig = px.line(
+                filtered_df, x='sale_year', y='median_price', markers=True,
+                labels={"sale_year": "Year", "median_price": "Median Price ($)"},
+                title=f"Median House Price Over Years in {area_selected}"
+            )
+            st.plotly_chart(hist_fig, use_container_width=True)
+
+            # Fit and show projection
+            model, poly = fit_projection_model(filtered_df)
+            future_df = predict_future_prices(model, poly, filtered_df['sale_year'].max(), MAX_FUTURE_YEARS)
+
+            st.subheader(f"{MAX_FUTURE_YEARS}-Year Price Projection")
+            proj_fig = px.line(
+                future_df, x='sale_year', y='median_price', markers=True,
+                labels={"sale_year": "Year", "median_price": "Projected Median Price ($)"},
+                title=f"Projected Median Prices for {area_selected}"
+            )
+            st.plotly_chart(proj_fig, use_container_width=True)
+
+            # Show model accuracy RMSE
+            train_preds = model.predict(poly.transform(filtered_df['sale_year'].values.reshape(-1,1)))
+            rmse = calculate_rmse(filtered_df['median_price'], train_preds)
+            st.metric("Model RMSE", f"${rmse:,.2f}")
+
+            # Download filtered data CSV
+            st.markdown(generate_download_link(filtered_df, f"{area_selected}_{prop_selected}_data.csv"), unsafe_allow_html=True)
+
+            # Add to favorites
+            if st.button("⭐ Add this area to Favorites"):
+                add_favorite(area_selected)
+
+            # Show favorites if any
+            if 'favorites' in st.session_state and st.session_state['favorites']:
+                st.markdown("### ⭐ Your Favorites")
+                for fav in st.session_state['favorites']:
+                    st.write(f"- {fav}")
+
+elif nav_option == 'Heatmap':
+    st.header("🌡️ Melbourne House Price Heatmap")
+    if df
+

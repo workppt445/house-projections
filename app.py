@@ -108,7 +108,7 @@ def load_data():
                 dwellings[col] = pd.to_numeric(dwellings[col], errors='coerce')
         
         st.write("✅ Done loading data.")
-        return prices.dropna(subset=['sale_year', 'median_price', 'latitude', 'longitude']), dwellings
+        return prices.dropna(subset=['sale_year', 'median_price']), dwellings
 
     except Exception as e:
         st.error(f"❌ Failed to load data: {e}")
@@ -154,21 +154,25 @@ if page == "Map & Trends":
     if prices_df.empty:
         st.error("No price data loaded.")
     else:
-        midpoint = (prices_df['latitude'].mean(), prices_df['longitude'].mean())
-        view = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=11)
-        layer = pdk.Layer(
-            "ScatterplotLayer",
-            data=prices_df,
-            get_position='[longitude, latitude]',
-            get_fill_color='[0, 150, 255, 180]',
-            get_radius=200,
-            pickable=True
-        )
-        deck = pdk.Deck(layers=[layer], initial_view_state=view,
-                        tooltip={"html": "<b>Area:</b> {small_area}<br/>"
-                                        "<b>Year:</b> {sale_year}<br/>"
-                                        "<b>Price:</b> ${median_price:,.0f}"})
-        st.pydeck_chart(deck)
+        # Check if latitude/longitude columns exist
+        if 'latitude' not in prices_df.columns or 'longitude' not in prices_df.columns:
+            st.warning("Map data is missing latitude/longitude columns; map disabled.")
+        else:
+            midpoint = (prices_df['latitude'].mean(), prices_df['longitude'].mean())
+            view = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=11)
+            layer = pdk.Layer(
+                "ScatterplotLayer",
+                data=prices_df,
+                get_position='[longitude, latitude]',
+                get_fill_color='[0, 150, 255, 180]',
+                get_radius=200,
+                pickable=True
+            )
+            deck = pdk.Deck(layers=[layer], initial_view_state=view,
+                            tooltip={"html": "<b>Area:</b> {small_area}<br/>"
+                                            "<b>Year:</b> {sale_year}<br/>"
+                                            "<b>Price:</b> ${median_price:,.0f}"})
+            st.pydeck_chart(deck)
 
         # Filters
         st.subheader("Filters")
@@ -187,7 +191,7 @@ if page == "Map & Trends":
         else:
             # Pie chart: dwelling types
             dwell = dwellings_df[dwellings_df['small_area']==area]
-            if not dwell.empty:
+            if not dwell.empty and 'dwelling_type' in dwell.columns:
                 mix = dwell.groupby('dwelling_type')['dwelling_number'].sum().reset_index()
                 mix.columns = ['Type','Count']
                 pie = alt.Chart(mix).mark_arc().encode(

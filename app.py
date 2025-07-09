@@ -26,7 +26,6 @@ SECRET_CODE = "7477"
 EDITOR_STATE_FILE = "editor_state.json"
 CONTENT_FILE = "editable_content.md"
 MAX_FUTURE_YEARS = 5
-DATA_DIR = "data"
 
 # -------------- Session State Init --------------
 if 'live_editor' not in st.session_state:
@@ -115,8 +114,8 @@ def load_data():
         st.error(f"❌ Failed to load data: {e}")
         return pd.DataFrame(), pd.DataFrame()
 
-
-
+# >>> Add the actual loading call here <<<
+prices_df, dwellings_df = load_data()
 
 # ================ Helper Functions ================
 def filter_data(area, ptype, y_min, y_max):
@@ -277,20 +276,3 @@ elif page == "Favorites & Notes":
 
 # ---- About ----
 elif page == "About":
-    st.header("ℹ️ About this Dashboard")
-    st.markdown(
-        """
-        This interactive dashboard uses open data from the City of Melbourne to visualize and
-        forecast house prices by suburb. Features include maps, projections, heatmaps,
-        comparison tools, and bookmarking.
-        Built with Streamlit, PyDeck, Folium, Plotly, and Scikit-Learn.
-        """
-    )
-
-# ---- Footer ----
-st.markdown("---")
-st.write("*Data source: City of Melbourne Open Data Portal.*")
-
-# =========== End of App ===========
-
-

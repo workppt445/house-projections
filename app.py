@@ -93,19 +93,20 @@ page = st.sidebar.radio("Go to:", ["Map & Trends", "Heatmap", "Comparison", "Fav
 
 # ================= Data Loading =================
 @st.cache_data
-
 def load_data():
-    prices = pd.read_csv(os.path.join(DATA_DIR, "house-prices-by-small-area-sale-year.csv"))
-    dwellings = pd.read_csv(os.path.join(DATA_DIR, "residential-dwellings.csv"))
+    prices = pd.read_csv("house-prices-by-small-area-sale-year.csv")
+    dwellings = pd.read_csv("city-of-melbourne-dwellings-and-household-forecasts-by-small-area-2020-2040.csv")
+    
     # Ensure numeric conversion
-    for col in ['sale_year','median_price','latitude','longitude','dwelling_number']:
+    for col in ['sale_year', 'median_price', 'latitude', 'longitude', 'dwelling_number']:
         if col in prices.columns:
             prices[col] = pd.to_numeric(prices[col], errors='coerce')
         if col in dwellings.columns:
             dwellings[col] = pd.to_numeric(dwellings[col], errors='coerce')
-    return prices.dropna(subset=['sale_year','median_price','latitude','longitude']), dwellings
+    
+    return prices.dropna(subset=['sale_year', 'median_price', 'latitude', 'longitude']), dwellings
 
-prices_df, dwellings_df = load_data()
+
 
 # ================ Helper Functions ================
 def filter_data(area, ptype, y_min, y_max):

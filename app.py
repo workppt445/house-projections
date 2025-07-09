@@ -96,19 +96,31 @@ def load_data():
     try:
         st.write("📦 Loading price data...")
         prices = pd.read_csv("house-prices-by-small-area-sale-year.csv")
+        # Standardize column names
+        prices.columns = [c.strip().lower().replace(' ', '_') for c in prices.columns]
         
         st.write("🏠 Loading dwellings data...")
         dwellings = pd.read_csv("city-of-melbourne-dwellings-and-household-forecasts-by-small-area-2020-2040.csv")
+        dwellings.columns = [c.strip().lower().replace(' ', '_') for c in dwellings.columns]
         
         st.write("🔧 Converting data...")
-        for col in ['sale_year', 'median_price', 'latitude', 'longitude', 'dwelling_number']:
+        # Numeric conversion
+        for col in ['sale_year', 'median_price']:
             if col in prices.columns:
                 prices[col] = pd.to_numeric(prices[col], errors='coerce')
+        for col in ['sale_year', 'dwelling_number']:
             if col in dwellings.columns:
                 dwellings[col] = pd.to_numeric(dwellings[col], errors='coerce')
         
+        # Drop rows missing critical data
+        prices = prices.dropna(subset=['sale_year', 'median_price'])
+        
         st.write("✅ Done loading data.")
-        return prices.dropna(subset=['sale_year', 'median_price']), dwellings
+        return prices, dwellings
+
+    except Exception as e:
+        st.error(f"❌ Failed to load data: {e}")
+        return pd.DataFrame(), pd.DataFrame()(subset=['sale_year', 'median_price']), dwellings
 
     except Exception as e:
         st.error(f"❌ Failed to load data: {e}")

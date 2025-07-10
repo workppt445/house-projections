@@ -26,7 +26,6 @@ SECRET_CODE = "7477"
 EDITOR_STATE_FILE = "editor_state.json"
 CONTENT_FILE = "editable_content.md"
 MAX_FUTURE_YEARS = 5
-DATA_DIR = "data"
 
 # -------------- Session State Init --------------
 if 'live_editor' not in st.session_state:
@@ -48,7 +47,6 @@ def load_editor_state():
         except:
             return {'live_editor': False}
     return {'live_editor': False}
-
 
 def save_editor_state(state):
     with open(EDITOR_STATE_FILE, 'w') as f:
@@ -102,29 +100,49 @@ def load_data():
         dwellings = pd.read_csv("city-of-melbourne-dwellings-and-household-forecasts-by-small-area-2020-2040.csv")
 
         st.write("🔧 Converting data...")
-
-        # Fix column names to lowercase for consistency
-        prices.columns = [c.strip().lower() for c in prices.columns]
-        dwellings.columns = [c.strip().lower() for c in dwellings.columns]
-
-        for col in ['sale_year', 'median_price', 'latitude', 'longitude', 'dwelling_number']:
+        for col in ['sale_year', 'median_price']:
             if col in prices.columns:
                 prices[col] = pd.to_numeric(prices[col], errors='coerce')
             if col in dwellings.columns:
                 dwellings[col] = pd.to_numeric(dwellings[col], errors='coerce')
 
-        # Confirm columns present
-        st.write("✅ Columns in price data:", list(prices.columns))
-        st.write("✅ Columns in dwellings data:", list(dwellings.columns))
-
-        # Ensure required columns exist
-        if 'latitude' not in prices.columns or 'longitude' not in prices.columns:
-            st.warning("⚠️ 'latitude' or 'longitude' column missing in prices data.")
-        if 'small_area' not in dwellings.columns:
-            st.warning("⚠️ 'small_area' column missing in dwellings data.")
-
+        st.write("✅ Done loading data.")
         return prices.dropna(subset=['sale_year', 'median_price']), dwellings
 
     except Exception as e:
         st.error(f"❌ Failed to load data: {e}")
         return pd.DataFrame(), pd.DataFrame()
+
+prices_df, dwellings_df = load_data()
+
+# ================= Pages =================
+if page == "Map & Trends":
+    st.header("📍 Interactive Map & Trends")
+
+    st.subheader("🧪 Debug Info")
+    st.write("Available columns in price data:")
+    st.write(prices_df.columns.tolist())
+
+    if prices_df.empty or 'latitude' not in prices_df.columns or 'longitude' not in prices_df.columns:
+        st.warning("Map data is missing latitude/longitude columns; map disabled.")
+    else:
+        midpoint = (prices_df['latitude'].mean(), prices_df['longitude'].mean())
+        view = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=11)
+        layer = pdk.Layer(
+            "ScatterplotLayer",
+            data=prices_df,
+            get_position='[longitude, latitude]',
+            get_fill_color='[0, 150, 255, 180]',
+            get_radius=200,
+            pickable=True
+        )
+        deck = pdk.Deck(layers=[layer], initial_view_state=view,
+                        tooltip={"html": "<b>Area:</b> {small_area}<br/>"
+                                         "<b>Year:</b> {sale_year}<br/>"
+                                         "<b>Price:</b> ${median_price:,.0f}"})
+        st.pydeck_chart(deck)
+
+# ---- Add other pages (Heatmap, Comparison, etc.) here if needed ----
+
+st.markdown("---")
+st.write("*Data source: City of Melbourne Open Data Portal.*")

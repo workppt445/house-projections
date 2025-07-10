@@ -175,6 +175,7 @@ if page == "Map & Trends":
         st.subheader("Filters")
         col1, col2, col3 = st.columns(3)
         with col1:
+            # Determine area field
             if 'small_area' in prices_df.columns:
                 area_field = 'small_area'
             elif 'area' in prices_df.columns:
@@ -187,6 +188,7 @@ if page == "Map & Trends":
             areas = sorted(prices_df[area_field].dropna().unique())
             area = st.selectbox("Suburb:", areas)
         with col2:
+            # Determine property type field
             if 'property_type' in prices_df.columns:
                 ptype_field = 'property_type'
             elif 'type' in prices_df.columns:
@@ -197,6 +199,7 @@ if page == "Map & Trends":
             ptypes = sorted(prices_df[ptype_field].dropna().unique())
             ptype = st.selectbox("Property Type:", ptypes)
         with col3:
+            # Determine year field
             if 'sale_year' in prices_df.columns:
                 year_field = 'sale_year'
             elif 'year' in prices_df.columns:
@@ -217,8 +220,14 @@ if page == "Map & Trends":
         if sub.empty:
             st.warning("No data for these filters.")
         else:
-            # Pie chart and subsequent code now uses 'sub' and dwellings_df filtering by area_field
-            dwell_field = area_field if area_field in dwellings_df.columns else 'small_area'
+            # Debug: show dwelling columns
+            st.write("Dwelling data columns:", list(dwellings_df.columns))
+            # Determine dwell field
+            if area_field in dwellings_df.columns:
+                dwell_field = area_field
+            else:
+                dwell_field = 'small_area' if 'small_area' in dwellings_df.columns else dwellings_df.columns[0]
+                st.warning(f"Using '{dwell_field}' as the dwellings area field.")
             dwell = dwellings_df[dwellings_df[dwell_field] == area]
             if not dwell.empty and 'dwelling_type' in dwell.columns:
                 mix = dwell.groupby('dwelling_type')['dwelling_number'].sum().reset_index()
@@ -248,59 +257,6 @@ if page == "Map & Trends":
 
             st.markdown(generate_download_link(sub, f"{area}_{ptype}.csv"), unsafe_allow_html=True)
 
-            if area not in st.session_state.favorites:
-                if st.button("➕ Add to Favorites"):
-                    st.session_state.favorites.append(area)
-                    st.success(f"{area} bookmarked.")
-
-# ---- Heatmap ----
-        st.subheader("Filters")
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            area = st.selectbox("Suburb:", sorted(prices_df['small_area'].unique()))
-        with col2:
-            ptype = st.selectbox("Property Type:", sorted(prices_df['property_type'].unique()))
-        with col3:
-            yrs = st.slider("Sale Year Range:", int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max()),
-                            (int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max())))
-
-        sub = filter_data(area, ptype, yrs[0], yrs[1])
-        if sub.empty:
-            st.warning("No data for these filters.")
-        else:
-            # Pie chart: dwelling types
-            dwell = dwellings_df[dwellings_df['small_area']==area]
-            if not dwell.empty and 'dwelling_type' in dwell.columns:
-                mix = dwell.groupby('dwelling_type')['dwelling_number'].sum().reset_index()
-                mix.columns = ['Type','Count']
-                pie = alt.Chart(mix).mark_arc().encode(
-                    theta='Count:Q', color='Type:N', tooltip=['Type','Count']
-                ).properties(title="Dwelling Type Mix")
-                st.altair_chart(pie, use_container_width=False)
-            
-            # Historical trend
-            st.subheader("Historical Median Price")
-            hist = px.line(sub, x='sale_year', y='median_price', color='property_type', markers=True,
-                           title=f"{area} - {ptype} Price Trend")
-            st.plotly_chart(hist)
-
-            # Forecast
-            model, poly = fit_poly_model(sub)
-            future_df = project_prices(model, poly, sub['sale_year'].max())
-            st.subheader(f"{MAX_FUTURE_YEARS}-Year Forecast")
-            fc = px.line(future_df, x='sale_year', y='median_price', markers=True,
-                         title="Projected Median Prices")
-            st.plotly_chart(fc)
-
-            # RMSE
-            preds = model.predict(poly.transform(sub['sale_year'].values.reshape(-1,1)))
-            rmse = np.sqrt(mean_squared_error(sub['median_price'], preds))
-            st.metric("Forecast RMSE", f"${rmse:,.2f}")
-
-            # Download link
-            st.markdown(generate_download_link(sub, f"{area}_{ptype}.csv"), unsafe_allow_html=True)
-
-            # Favorites
             if area not in st.session_state.favorites:
                 if st.button("➕ Add to Favorites"):
                     st.session_state.favorites.append(area)

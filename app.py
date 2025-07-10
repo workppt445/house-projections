@@ -96,37 +96,32 @@ def load_data():
     try:
         st.write("📦 Loading price data...")
         prices = pd.read_csv("house-prices-by-small-area-sale-year.csv")
-        # Standardize column names
         prices.columns = [c.strip().lower().replace(' ', '_') for c in prices.columns]
-        
+
         st.write("🏠 Loading dwellings data...")
         dwellings = pd.read_csv("city-of-melbourne-dwellings-and-household-forecasts-by-small-area-2020-2040.csv")
         dwellings.columns = [c.strip().lower().replace(' ', '_') for c in dwellings.columns]
-        
+
         st.write("🔧 Converting data...")
-        # Numeric conversion
         for col in ['sale_year', 'median_price']:
             if col in prices.columns:
                 prices[col] = pd.to_numeric(prices[col], errors='coerce')
         for col in ['sale_year', 'dwelling_number']:
             if col in dwellings.columns:
                 dwellings[col] = pd.to_numeric(dwellings[col], errors='coerce')
-        
+
         # Drop rows missing critical data
         prices = prices.dropna(subset=['sale_year', 'median_price'])
-        
+
         st.write("✅ Done loading data.")
         return prices, dwellings
 
     except Exception as e:
-        st.error(f"❌ Failed to load data: {e}")
-        return pd.DataFrame(), pd.DataFrame()(subset=['sale_year', 'median_price']), dwellings
-
-    except Exception as e:
-        st.error(f"❌ Failed to load data: {e}")
+        st.error(f"❌ Failed to load data: {str(e)}")
         return pd.DataFrame(), pd.DataFrame()
 
 # >>> Add the actual loading call here <<<
+prices_df, dwellings_df = load_data()
 prices_df, dwellings_df = load_data()
 
 # ================ Helper Functions ================
@@ -245,11 +240,20 @@ elif page == "Heatmap":
     if prices_df.empty:
         st.warning("No data to display heatmap.")
     else:
+        # Calculate midpoint for map centering
+        if 'latitude' in prices_df.columns and 'longitude' in prices_df.columns:
+            midpoint = (prices_df['latitude'].mean(), prices_df['longitude'].mean())
+        else:
+            midpoint = (-37.8136, 144.9631)  # Default to Melbourne CBD
+
         m = folium.Map(location=[midpoint[0], midpoint[1]], zoom_start=11)
-        heat_data = prices_df[['latitude','longitude','median_price']]
-        heat_data = heat_data.dropna()
-        heat_data['intensity'] = (heat_data['median_price'] - heat_data['median_price'].min()) / \
-                                   (heat_data['median_price'].max() - heat_data['median_price'].min())
+        heat_data = prices_df[['latitude','longitude','median_price']].dropna()
+        # Normalize for intensity
+        heat_data['intensity'] = (
+            heat_data['median_price'] - heat_data['median_price'].min()
+        ) / (
+            heat_data['median_price'].max() - heat_data['median_price'].min()
+        )
         points = heat_data[['latitude','longitude','intensity']].values.tolist()
         HeatMap(points, radius=15).add_to(m)
         st_folium(m, width=700, height=500)

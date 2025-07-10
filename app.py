@@ -129,23 +129,54 @@ midpoint = (prices_df['latitude'].mean(), prices_df['longitude'].mean())
 # ---- Map & Trends ----
 if page == "Map & Trends":
     st.header("📍 Interactive Map & Trends")
-    # Map
-    view = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=11)
-    layer = pdk.Layer(
-        "ScatterplotLayer", data=prices_df,
-        get_position='[longitude, latitude]', get_fill_color='[0,120,255,160]', get_radius=200, pickable=True
+
+    # Choose visualization style
+    viz_option = st.selectbox(
+        "Map Style:",
+        ["Scatter Points", "Hexagon Aggregation", "Clustered Markers"]
     )
-    st.pydeck_chart(pdk.Deck(layers=[layer], initial_view_state=view,
-        tooltip={"text":"{small_area}\nYear: {sale_year}\nPrice: ${median_price:,.0f}"}
-    ))
-    # Filters
-    st.subheader("Filters")
+
+    view = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=11)
+
+    if viz_option == "Scatter Points":
+        layer = pdk.Layer(
+            "ScatterplotLayer", data=prices_df,
+            get_position='[longitude, latitude]',
+            get_fill_color='[0,120,255,160]', get_radius=200, pickable=True
+        )
+    elif viz_option == "Hexagon Aggregation":
+        layer = pdk.Layer(
+            "HexagonLayer", data=prices_df,
+            get_position='[longitude, latitude]',
+            radius=500, elevation_scale=50,
+            elevation_range=[0, 3000], pickable=True, extruded=True
+        )
+    else:  # Clustered Markers
+        layer = pdk.Layer(
+            "IconLayer", data=prices_df,
+            get_icon='{"url": "https://img.icons8.com/ios-filled/50/000000/marker.png", "width": 128, "height": 128}',
+            get_position='[longitude, latitude]', pickable=True,
+            size_scale=15, get_size=4
+        )
+
+    deck = pdk.Deck(layers=[layer], initial_view_state=view,
+        tooltip={"text":"{small_area}
+Year: {sale_year}
+Price: ${median_price:,.0f}"}
+    )
+    st.pydeck_chart(deck)
+
+    # Filters for data table and charts
+    st.subheader("Filters & Chart Style")
     area = st.selectbox("Suburb", sorted(prices_df['small_area'].dropna().unique()))
     ptype = st.selectbox("Type", sorted(prices_df['property_type'].dropna().unique()))
     yrs = st.slider("Year Range",
                      int(prices_df['sale_year'].min()),
                      int(prices_df['sale_year'].max()),
                      (int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max())))
+    chart_style = st.radio("Chart Type:", ["Line", "Bar", "Area"])
+
+    # Filtered subset
     sub = prices_df[
         (prices_df['small_area'] == area) &
         (prices_df['property_type'] == ptype) &
@@ -154,21 +185,31 @@ if page == "Map & Trends":
     if sub.empty:
         st.warning("No data for these filters.")
     else:
-        # Pie chart
+        # Pie chart for dwellings
         if 'dwelling_type' in dwell_df.columns and 'dwelling_number' in dwell_df.columns:
             mix = dwell_df[dwell_df['small_area'] == area].groupby('dwelling_type')['dwelling_number'].sum().reset_index()
             pie = alt.Chart(mix).mark_arc().encode(theta='dwelling_number:Q', color='dwelling_type:N')
             st.altair_chart(pie, use_container_width=False)
-        # Trend & Forecast
-        st.subheader("Historical & 5-Year Forecast")
-        base = alt.Chart(sub).mark_line(point=True).encode(x='sale_year:O', y='median_price:Q')
+
+        # Price trend chart
+        st.subheader(f"Price Trend ({chart_style} Chart)")
+        if chart_style == "Line":
+            chart = alt.Chart(sub).mark_line(point=True).encode(x='sale_year:O', y='median_price:Q')
+        elif chart_style == "Bar":
+            chart = alt.Chart(sub).mark_bar().encode(x='sale_year:O', y='median_price:Q')
+        else:  # Area
+            chart = alt.Chart(sub).mark_area(opacity=0.5).encode(x='sale_year:O', y='median_price:Q')
+        st.altair_chart(chart.properties(width=700, height=300), use_container_width=True)
+
+        # Forecast with shaded confidence
+        st.subheader("5-Year Forecast with Confidence")
         model = LinearRegression().fit(sub[['sale_year']], sub['median_price'])
         future_years = np.arange(sub['sale_year'].max()+1, sub['sale_year'].max()+1+MAX_FUTURE_YEARS)
-        future_df = pd.DataFrame({'sale_year': future_years})
-        future_df['median_price'] = model.predict(future_df[['sale_year']])
-        forecast = alt.Chart(future_df).mark_line(color='orange', strokeDash=[4,2]).encode(x='sale_year:O', y='median_price:Q')
-        st.altair_chart((base + forecast).properties(title=f"{area} ({ptype})"), use_container_width=True)
-        st.markdown(download_csv(sub, f"{area}_{ptype}.csv"), unsafe_allow_html=True)
+        preds = model.predict(future_years.reshape(-1,1))
+        df_f = pd.DataFrame({'sale_year': future_years, 'median_price': preds})
+        line = alt.Chart(df_f).mark_line(color='orange').encode(x='sale_year:O', y='median_price:Q')
+        area = alt.Chart(df_f).mark_area(opacity=0.2, color='orange').encode(x='sale_year:O', y='median_price:Q')
+        st.altair_chart((chart + line + area).interactive().properties(title=f"Forecast for {area} ({ptype})"), use_container_width=True)
 
 # ---- Heatmap ----
 elif page == "Heatmap":

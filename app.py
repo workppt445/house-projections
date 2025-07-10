@@ -54,7 +54,10 @@ code_input = st.sidebar.text_input("Enter secret code:", type="password")
 if code_input == SECRET_CODE:
     editor_state['live_editor'] = not editor_state.get('live_editor', False)
     save_editor_state(editor_state)
-    st.experimental_rerun()
+    try:
+        st.rerun()
+    except AttributeError:
+        pass
 if editor_state.get('live_editor'):
     st.sidebar.success("🔓 Developer Mode Active")
 

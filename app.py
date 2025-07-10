@@ -90,87 +90,119 @@ page = st.sidebar.radio("Go to:", ["Map & Trends", "Heatmap", "Comparison", "Fav
 # ================= Data Loading =================
 @st.cache_data
 def load_data():
+    # Load price data
     prices = pd.read_csv("house-prices-by-small-area-sale-year.csv")
     prices.columns = [c.strip().lower().replace(' ', '_') for c in prices.columns]
-    dwell = pd.read_csv("city-of-melbourne-dwellings-and-household-forecasts-by-small-area-2020-2040.csv")
-    dwell.columns = [c.strip().lower().replace(' ', '_') for c in dwell.columns]
+    # Ensure property_type column exists
+    if 'type' in prices.columns and 'property_type' not in prices.columns:
+        prices.rename(columns={'type': 'property_type'}, inplace=True)
+    # Add dummy coords if missing
     if 'latitude' not in prices.columns:
         prices['latitude'] = -37.8136
     if 'longitude' not in prices.columns:
         prices['longitude'] = 144.9631
-    if 'property_type' not in prices.columns:
-        prices['property_type'] = "House/Townhouse"
-    if 'dwelling_type' not in dwell.columns:
-        dwell['dwelling_type'] = "Unknown"
+
+    # Load dwellings data
+    dwell = pd.read_csv("city-of-melbourne-dwellings-and-household-forecasts-by-small-area-2020-2040.csv")
+    dwell.columns = [c.strip().lower().replace(' ', '_') for c in dwell.columns]
+    # Ensure small_area and dwelling fields exist
+    if 'geography' in dwell.columns:
+        dwell.rename(columns={'geography': 'small_area'}, inplace=True)
+    if 'category' in dwell.columns and 'dwelling_type' not in dwell.columns:
+        dwell.rename(columns={'category': 'dwelling_type'}, inplace=True)
+    if 'households' in dwell.columns and 'dwelling_number' not in dwell.columns:
+        dwell.rename(columns={'households': 'dwelling_number'}, inplace=True)
+
     return prices, dwell
 
 prices_df, dwell_df = load_data()
 
+# Helper: download link
+def download_csv(df, fname):
+    csv = df.to_csv(index=False).encode()
+    b64 = base64.b64encode(csv).decode()
+    return f"<a href='data:file/csv;base64,{b64}' download='{fname}'>📥 Download {fname}</a>"
+
+# Pre-calculate midpoint
+midpoint = (prices_df['latitude'].mean(), prices_df['longitude'].mean())
+
 # ---- Map & Trends ----
 if page == "Map & Trends":
     st.header("📍 Interactive Map & Trends")
-    midpoint = (prices_df['latitude'].mean(), prices_df['longitude'].mean())
+    # Map
     view = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=11)
-    scatter = pdk.Layer("ScatterplotLayer", data=prices_df, get_position='[longitude, latitude]', get_radius=200,
-                        get_fill_color='[0,120,255,160]', pickable=True)
-    st.pydeck_chart(pdk.Deck(layers=[scatter], initial_view_state=view,
-                             tooltip={"text": "{small_area}\nYear:{sale_year}\nPrice:${median_price}"}))
+    layer = pdk.Layer(
+        "ScatterplotLayer", data=prices_df,
+        get_position='[longitude, latitude]', get_fill_color='[0,120,255,160]', get_radius=200, pickable=True
+    )
+    st.pydeck_chart(pdk.Deck(layers=[layer], initial_view_state=view,
+        tooltip={"text":"{small_area}\nYear: {sale_year}\nPrice: ${median_price:,.0f}"}
+    ))
+    # Filters
     st.subheader("Filters")
-    area = st.selectbox("Suburb", sorted(prices_df['small_area'].unique()))
-    ptype = st.selectbox("Type", sorted(prices_df['property_type'].unique()))
-    yrs = st.slider("Year Range", int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max()),
-                    (int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max())))
-    sub = prices_df[(prices_df['small_area'] == area) & (prices_df['property_type'] == ptype) &
-                    (prices_df['sale_year'] >= yrs[0]) & (prices_df['sale_year'] <= yrs[1])]
+    area = st.selectbox("Suburb", sorted(prices_df['small_area'].dropna().unique()))
+    ptype = st.selectbox("Type", sorted(prices_df['property_type'].dropna().unique()))
+    yrs = st.slider("Year Range",
+                     int(prices_df['sale_year'].min()),
+                     int(prices_df['sale_year'].max()),
+                     (int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max())))
+    sub = prices_df[
+        (prices_df['small_area'] == area) &
+        (prices_df['property_type'] == ptype) &
+        (prices_df['sale_year'] >= yrs[0]) & (prices_df['sale_year'] <= yrs[1])
+    ]
     if sub.empty:
         st.warning("No data for these filters.")
     else:
-        mix = dwell_df[dwell_df['small_area'] == area].groupby('dwelling_type')['dwelling_number'].sum().reset_index()
-        if not mix.empty:
+        # Pie chart
+        if 'dwelling_type' in dwell_df.columns and 'dwelling_number' in dwell_df.columns:
+            mix = dwell_df[dwell_df['small_area'] == area].groupby('dwelling_type')['dwelling_number'].sum().reset_index()
             pie = alt.Chart(mix).mark_arc().encode(theta='dwelling_number:Q', color='dwelling_type:N')
             st.altair_chart(pie, use_container_width=False)
-        st.subheader("Historical & Forecast")
-        fig = alt.Chart(sub).mark_line(point=True).encode(x='sale_year:O', y='median_price:Q')
+        # Trend & Forecast
+        st.subheader("Historical & 5-Year Forecast")
+        base = alt.Chart(sub).mark_line(point=True).encode(x='sale_year:O', y='median_price:Q')
         model = LinearRegression().fit(sub[['sale_year']], sub['median_price'])
-        future = pd.DataFrame({'sale_year': np.arange(sub['sale_year'].max() + 1, sub['sale_year'].max() + MAX_FUTURE_YEARS + 1)})
-        future['median_price'] = model.predict(future[['sale_year']])
-        fig2 = alt.Chart(future).mark_line(color='green').encode(x='sale_year:O', y='median_price:Q')
-        st.altair_chart(fig + fig2, use_container_width=True)
+        future_years = np.arange(sub['sale_year'].max()+1, sub['sale_year'].max()+1+MAX_FUTURE_YEARS)
+        future_df = pd.DataFrame({'sale_year': future_years})
+        future_df['median_price'] = model.predict(future_df[['sale_year']])
+        forecast = alt.Chart(future_df).mark_line(color='orange', strokeDash=[4,2]).encode(x='sale_year:O', y='median_price:Q')
+        st.altair_chart((base + forecast).properties(title=f"{area} ({ptype})"), use_container_width=True)
+        st.markdown(download_csv(sub, f"{area}_{ptype}.csv"), unsafe_allow_html=True)
 
 # ---- Heatmap ----
 elif page == "Heatmap":
-    st.header("\U0001f321️ Price Heatmap")
-    midpoint = (prices_df['latitude'].mean(), prices_df['longitude'].mean())
+    st.header("🌡️ Price Heatmap")
     m = folium.Map(location=midpoint, zoom_start=11)
-    data = prices_df[['latitude', 'longitude', 'median_price']].dropna()
-    data['intensity'] = (data['median_price'] - data['median_price'].min()) / (
-        data['median_price'].max() - data['median_price'].min())
-    HeatMap(data[['latitude', 'longitude', 'intensity']].values.tolist(), radius=15).add_to(m)
+    data = prices_df[['latitude','longitude','median_price']].dropna()
+    data['intensity'] = (data['median_price'] - data['median_price'].min()) / (data['median_price'].max() - data['median_price'].min())
+    HeatMap(data[['latitude','longitude','intensity']].values.tolist(), radius=15).add_to(m)
     st_folium(m, width=700, height=500)
 
 # ---- Comparison ----
 elif page == "Comparison":
-    st.header("\U0001f50d Compare Two Suburbs")
-    a1, a2 = st.columns(2)
-    with a1:
-        c1 = st.selectbox("Suburb 1", sorted(prices_df['small_area'].unique()))
-    with a2:
-        c2 = st.selectbox("Suburb 2", sorted(prices_df['small_area'].unique()))
-    d1 = prices_df[prices_df['small_area'] == c1]
-    d2 = prices_df[prices_df['small_area'] == c2]
-    comp = pd.concat([d1.assign(area=c1), d2.assign(area=c2)])
-    st.altair_chart(
-        alt.Chart(comp).mark_line(point=True).encode(
+    st.header("🔍 Compare Two Suburbs")
+    c1, c2 = st.columns(2)
+    with c1:
+        s1 = st.selectbox("Suburb 1", sorted(prices_df['small_area'].dropna().unique()))
+    with c2:
+        s2 = st.selectbox("Suburb 2", sorted(prices_df['small_area'].dropna().unique()), index=1)
+    d1 = prices_df[prices_df['small_area'] == s1]
+    d2 = prices_df[prices_df['small_area'] == s2]
+    if d1.empty or d2.empty:
+        st.warning("Insufficient data for selected suburbs.")
+    else:
+        comp = pd.concat([d1.assign(suburb=s1), d2.assign(suburb=s2)])
+        chart = alt.Chart(comp).mark_line(point=True).encode(
             x=alt.X('sale_year:O', title='Year'),
             y=alt.Y('median_price:Q', title='Median Price'),
-            color=alt.Color('area:N', title='Suburb')
-        ).properties(title=f"{c1} vs {c2}: Price Comparison"),
-        use_container_width=True
-    )
+            color=alt.Color('suburb:N', title='Suburb')
+        ).properties(title=f"Comparison: {s1} vs {s2}")
+        st.altair_chart(chart, use_container_width=True)
 
 # ---- Favorites & Notes ----
 elif page == "Favorites & Notes":
-    st.header("\u2b50 Favorites & Notes")
+    st.header("⭐ Favorites & Notes")
     for fav in st.session_state.favorites:
         st.write(fav)
         st.text_area(f"Notes for {fav}", key=f"note_{fav}")
@@ -179,7 +211,7 @@ elif page == "Favorites & Notes":
 
 # ---- About ----
 elif page == "About":
-    st.header("\u2139\ufe0f About")
+    st.header("ℹ️ About")
     st.write("Dashboard uses City of Melbourne open data to explore house prices.")
 
 st.markdown("---")

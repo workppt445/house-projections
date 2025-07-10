@@ -91,16 +91,17 @@ page = st.sidebar.radio("Go to:", ["Map & Trends", "Heatmap", "Comparison", "Fav
 
 # ================= Data Loading =================
 @st.cache_data
- def load_data():
+def load_data():
     prices = pd.read_csv("house-prices-by-small-area-sale-year.csv")
     prices.columns = [c.strip().lower().replace(' ', '_') for c in prices.columns]
-    dwell = pd.read_csv("city-of-melbourne-dwellings-and-household-forecasts-by-small-area-2020-2040.csv")
-    dwell.columns = [c.strip().lower().replace(' ', '_') for c in dwell.columns]
-    # Add dummy coords if missing
     if 'latitude' not in prices.columns:
         prices['latitude'] = -37.8136
     if 'longitude' not in prices.columns:
         prices['longitude'] = 144.9631
+    if 'property_type' not in prices.columns and 'type' in prices.columns:
+        prices.rename(columns={'type': 'property_type'}, inplace=True)
+    dwell = pd.read_csv("city-of-melbourne-dwellings-and-household-forecasts-by-small-area-2020-2040.csv")
+    dwell.columns = [c.strip().lower().replace(' ', '_') for c in dwell.columns]
     return prices, dwell
 
 prices_df, dwell_df = load_data()
@@ -109,12 +110,11 @@ prices_df, dwell_df = load_data()
 def download_csv(df, fname):
     csv = df.to_csv(index=False).encode()
     b64 = base64.b64encode(csv).decode()
-    return f"<a href='data:file/csv;base64,{b64}' download='{fname}'>📥 Download {fname}</a>"
+    return f"<a href='data:file/csv;base64,{b64}' download='{fname}'>📅 Download {fname}</a>"
 
 # ---- Map & Trends ----
 if page == "Map & Trends":
     st.header("📍 Interactive Map & Trends")
-    # Map
     midpoint = (prices_df['latitude'].mean(), prices_df['longitude'].mean())
     view = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=11)
     scatter = pdk.Layer(
@@ -125,10 +125,9 @@ if page == "Map & Trends":
     st.pydeck_chart(pdk.Deck(layers=[scatter], initial_view_state=view,
         tooltip={"text":"{small_area}\nYear:{sale_year}\nPrice:${median_price}"}
     ))
-    # Filters
     st.subheader("Filters")
-    area = st.selectbox("Suburb", sorted(prices_df['small_area'].unique()))
-    ptype = st.selectbox("Type", sorted(prices_df['property_type'].unique()))
+    area = st.selectbox("Suburb", sorted(prices_df['small_area'].dropna().unique()))
+    ptype = st.selectbox("Type", sorted(prices_df['property_type'].dropna().unique()))
     yrs = st.slider("Year Range", int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max()),
                      (int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max())))
     sub = prices_df[(prices_df['small_area']==area)&(prices_df['property_type']==ptype)&
@@ -136,11 +135,9 @@ if page == "Map & Trends":
     if sub.empty:
         st.warning("No data for these filters.")
     else:
-        # Pie
         mix = dwell_df[dwell_df['small_area']==area].groupby('dwelling_type')['dwelling_number'].sum().reset_index()
         pie = alt.Chart(mix).mark_arc().encode(theta='dwelling_number:Q', color='dwelling_type:N')
         st.altair_chart(pie, use_container_width=False)
-        # Trend & Forecast
         st.subheader("Historical & Forecast")
         fig = alt.Chart(sub).mark_line(point=True).encode(x='sale_year:O', y='median_price:Q')
         model = LinearRegression().fit(sub[['sale_year']], sub['median_price'])
@@ -155,9 +152,8 @@ elif page == "Heatmap":
     st.header("🌡️ Price Heatmap")
     m = folium.Map(location=midpoint, zoom_start=11)
     data = prices_df[['latitude','longitude','median_price']].dropna()
-    data['intensity']=(data['median_price']-data['median_price'].min())/
-                     (data['median_price'].max()-data['median_price'].min())
-    HeatMap(data.values.tolist(), radius=15).add_to(m)
+    data['intensity']=(data['median_price']-data['median_price'].min())/(data['median_price'].max()-data['median_price'].min())
+    HeatMap(data[['latitude','longitude','intensity']].values.tolist(), radius=15).add_to(m)
     st_folium(m, width=700, height=500)
 
 # ---- Comparison ----
@@ -165,9 +161,9 @@ elif page == "Comparison":
     st.header("🔍 Compare Two Suburbs")
     a1,a2=st.columns(2)
     with a1:
-        c1=st.selectbox("Suburb 1", sorted(prices_df['small_area'].unique()))
+        c1=st.selectbox("Suburb 1", sorted(prices_df['small_area'].dropna().unique()))
     with a2:
-        c2=st.selectbox("Suburb 2", sorted(prices_df['small_area'].unique()))
+        c2=st.selectbox("Suburb 2", sorted(prices_df['small_area'].dropna().unique()))
     d1=prices_df[prices_df['small_area']==c1]
     d2=prices_df[prices_df['small_area']==c2]
     comp=pd.concat([d1.assign(area=c1),d2.assign(area=c2)])

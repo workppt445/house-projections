@@ -33,8 +33,8 @@ if 'live_editor' not in st.session_state:
 if 'homepage_md' not in st.session_state:
     st.session_state.homepage_md = (
         "# 🏡 Melbourne House Price Explorer\n"
-        "Explore historical and forecasted house prices across Melbourne.\n"
-        "Select a map point, set filters, and dive into the data!"
+        "Explore Melbourne house prices historically and forecast the next 5 years.\n"
+        "Use the sidebar to navigate between map, heatmap, comparison, and favorites."
     )
 if 'favorites' not in st.session_state:
     st.session_state.favorites = []
@@ -66,7 +66,7 @@ if editor_state.get('live_editor'):
 
 # ------------- Editable Homepage -------------
 if editor_state.get('live_editor'):
-    md_text = st.sidebar.text_area("Edit Homepage Markdown:", value=st.session_state.homepage_md, height=250)
+    md_text = st.sidebar.text_area("Edit Homepage Markdown:", value=st.session_state.homepage_md, height=200)
     if st.sidebar.button("Save Homepage"):
         st.session_state.homepage_md = md_text
         with open(CONTENT_FILE, 'w') as f:
@@ -91,64 +91,102 @@ page = st.sidebar.radio("Go to:", ["Map & Trends", "Heatmap", "Comparison", "Fav
 
 # ================= Data Loading =================
 @st.cache_data
-def load_data():
-    try:
-        st.write("📦 Loading price data...")
-        prices = pd.read_csv("house-prices-by-small-area-sale-year.csv")
+ def load_data():
+    prices = pd.read_csv("house-prices-by-small-area-sale-year.csv")
+    prices.columns = [c.strip().lower().replace(' ', '_') for c in prices.columns]
+    dwell = pd.read_csv("city-of-melbourne-dwellings-and-household-forecasts-by-small-area-2020-2040.csv")
+    dwell.columns = [c.strip().lower().replace(' ', '_') for c in dwell.columns]
+    # Add dummy coords if missing
+    if 'latitude' not in prices.columns:
+        prices['latitude'] = -37.8136
+    if 'longitude' not in prices.columns:
+        prices['longitude'] = 144.9631
+    return prices, dwell
 
-        st.write("🏠 Loading dwellings data...")
-        dwellings = pd.read_csv("city-of-melbourne-dwellings-and-household-forecasts-by-small-area-2020-2040.csv")
+prices_df, dwell_df = load_data()
 
-        st.write("🔧 Converting data...")
-        for col in ['sale_year', 'median_price']:
-            if col in prices.columns:
-                prices[col] = pd.to_numeric(prices[col], errors='coerce')
-            if col in dwellings.columns:
-                dwellings[col] = pd.to_numeric(dwellings[col], errors='coerce')
+# Helper: download link
+def download_csv(df, fname):
+    csv = df.to_csv(index=False).encode()
+    b64 = base64.b64encode(csv).decode()
+    return f"<a href='data:file/csv;base64,{b64}' download='{fname}'>📥 Download {fname}</a>"
 
-        # Inject dummy latitude and longitude if missing
-        if 'latitude' not in prices.columns:
-            prices['latitude'] = -37.8136  # Melbourne CBD latitude
-        if 'longitude' not in prices.columns:
-            prices['longitude'] = 144.9631  # Melbourne CBD longitude
-
-        st.write("✅ Done loading data.")
-        return prices.dropna(subset=['sale_year', 'median_price']), dwellings
-
-    except Exception as e:
-        st.error(f"❌ Failed to load data: {e}")
-        return pd.DataFrame(), pd.DataFrame()
-
-prices_df, dwellings_df = load_data()
-
-# ================= Pages =================
+# ---- Map & Trends ----
 if page == "Map & Trends":
     st.header("📍 Interactive Map & Trends")
-
-    st.subheader("🧪 Debug Info")
-    st.write("Available columns in price data:")
-    st.write(prices_df.columns.tolist())
-
-    if prices_df.empty or 'latitude' not in prices_df.columns or 'longitude' not in prices_df.columns:
-        st.warning("Map data is missing latitude/longitude columns; map disabled.")
+    # Map
+    midpoint = (prices_df['latitude'].mean(), prices_df['longitude'].mean())
+    view = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=11)
+    scatter = pdk.Layer(
+        "ScatterplotLayer", data=prices_df,
+        get_position='[longitude, latitude]', get_radius=200,
+        get_fill_color='[0,120,255,160]', pickable=True
+    )
+    st.pydeck_chart(pdk.Deck(layers=[scatter], initial_view_state=view,
+        tooltip={"text":"{small_area}\nYear:{sale_year}\nPrice:${median_price}"}
+    ))
+    # Filters
+    st.subheader("Filters")
+    area = st.selectbox("Suburb", sorted(prices_df['small_area'].unique()))
+    ptype = st.selectbox("Type", sorted(prices_df['property_type'].unique()))
+    yrs = st.slider("Year Range", int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max()),
+                     (int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max())))
+    sub = prices_df[(prices_df['small_area']==area)&(prices_df['property_type']==ptype)&
+                    (prices_df['sale_year']>=yrs[0])&(prices_df['sale_year']<=yrs[1])]
+    if sub.empty:
+        st.warning("No data for these filters.")
     else:
-        midpoint = (prices_df['latitude'].mean(), prices_df['longitude'].mean())
-        view = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=11)
-        layer = pdk.Layer(
-            "ScatterplotLayer",
-            data=prices_df,
-            get_position='[longitude, latitude]',
-            get_fill_color='[0, 150, 255, 180]',
-            get_radius=200,
-            pickable=True
-        )
-        deck = pdk.Deck(layers=[layer], initial_view_state=view,
-                        tooltip={"html": "<b>Area:</b> {small_area}<br/>"
-                                         "<b>Year:</b> {sale_year}<br/>"
-                                         "<b>Price:</b> ${median_price:,.0f}"})
-        st.pydeck_chart(deck)
+        # Pie
+        mix = dwell_df[dwell_df['small_area']==area].groupby('dwelling_type')['dwelling_number'].sum().reset_index()
+        pie = alt.Chart(mix).mark_arc().encode(theta='dwelling_number:Q', color='dwelling_type:N')
+        st.altair_chart(pie, use_container_width=False)
+        # Trend & Forecast
+        st.subheader("Historical & Forecast")
+        fig = alt.Chart(sub).mark_line(point=True).encode(x='sale_year:O', y='median_price:Q')
+        model = LinearRegression().fit(sub[['sale_year']], sub['median_price'])
+        future = pd.DataFrame({'sale_year':np.arange(sub['sale_year'].max()+1, sub['sale_year'].max()+MAX_FUTURE_YEARS+1)})
+        future['median_price'] = model.predict(future[['sale_year']])
+        fig2 = alt.Chart(future).mark_line(color='green').encode(x='sale_year:O', y='median_price:Q')
+        st.altair_chart(fig + fig2, use_container_width=True)
+        st.markdown(download_csv(sub, f"{area}_{ptype}.csv"), unsafe_allow_html=True)
 
-# ---- Add other pages (Heatmap, Comparison, etc.) here if needed ----
+# ---- Heatmap ----
+elif page == "Heatmap":
+    st.header("🌡️ Price Heatmap")
+    m = folium.Map(location=midpoint, zoom_start=11)
+    data = prices_df[['latitude','longitude','median_price']].dropna()
+    data['intensity']=(data['median_price']-data['median_price'].min())/
+                     (data['median_price'].max()-data['median_price'].min())
+    HeatMap(data.values.tolist(), radius=15).add_to(m)
+    st_folium(m, width=700, height=500)
+
+# ---- Comparison ----
+elif page == "Comparison":
+    st.header("🔍 Compare Two Suburbs")
+    a1,a2=st.columns(2)
+    with a1:
+        c1=st.selectbox("Suburb 1", sorted(prices_df['small_area'].unique()))
+    with a2:
+        c2=st.selectbox("Suburb 2", sorted(prices_df['small_area'].unique()))
+    d1=prices_df[prices_df['small_area']==c1]
+    d2=prices_df[prices_df['small_area']==c2]
+    comp=pd.concat([d1.assign(area=c1),d2.assign(area=c2)])
+    fig=alt.Chart(comp).mark_line(point=True).encode(x='sale_year:O',y='median_price:Q',color='area:N')
+    st.altair_chart(fig, use_container_width=True)
+
+# ---- Favorites & Notes ----
+elif page == "Favorites & Notes":
+    st.header("⭐ Favorites & Notes")
+    for fav in st.session_state.favorites:
+        st.write(fav)
+        st.text_area(f"Notes for {fav}", key=f"note_{fav}")
+    if st.button("Clear Favorites"):
+        st.session_state.favorites = []
+
+# ---- About ----
+elif page == "About":
+    st.header("ℹ️ About")
+    st.write("Dashboard uses City of Melbourne open data to explore house prices.")
 
 st.markdown("---")
-st.write("*Data source: City of Melbourne Open Data Portal.*")
+st.write("*Data source: City of Melbourne.*")

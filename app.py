@@ -154,31 +154,32 @@ if page == "Map & Trends":
     else:  # Clustered Markers
         layer = pdk.Layer(
             "IconLayer", data=prices_df,
-            get_icon={"url": "https://img.icons8.com/ios-filled/50/000000/marker.png", "width": 128, "height": 128},
+            get_icon='{"url": "https://img.icons8.com/ios-filled/50/000000/marker.png", "width": 128, "height": 128}',
             get_position='[longitude, latitude]', pickable=True,
             size_scale=15, get_size=4
         )
 
-    st.pydeck_chart(pdk.Deck(
+    deck = pdk.Deck(
         layers=[layer],
         initial_view_state=view,
-        tooltip={"text": "{small_area}
-Year: {sale_year}
-Price: ${median_price:,.0f}"}
-    ))
+        tooltip={"text": "{small_area}\nYear: {sale_year}\nPrice: ${median_price:,.0f}"}
+    )
+    st.pydeck_chart(deck)
 
-    # Filters & Charts
+    # Filters for data table and charts
     st.subheader("Filters & Chart Style")
     area = st.selectbox("Suburb", sorted(prices_df['small_area'].dropna().unique()))
-    ptype_col = 'property_type' if 'property_type' in prices_df.columns else 'type'
-    ptype = st.selectbox("Type", sorted(prices_df[ptype_col].dropna().unique()))
-    years = (int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max()))
-    yrs = st.slider("Year Range", years[0], years[1], years)
+    ptype = st.selectbox("Type", sorted(prices_df['property_type'].dropna().unique()))
+    yrs = st.slider("Year Range",
+                     int(prices_df['sale_year'].min()),
+                     int(prices_df['sale_year'].max()),
+                     (int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max())))
     chart_style = st.radio("Chart Type:", ["Line", "Bar", "Area"])
 
+    # Filtered subset
     sub = prices_df[
         (prices_df['small_area'] == area) &
-        (prices_df[ptype_col] == ptype) &
+        (prices_df['property_type'] == ptype) &
         (prices_df['sale_year'] >= yrs[0]) & (prices_df['sale_year'] <= yrs[1])
     ]
     if sub.empty:
@@ -187,29 +188,28 @@ Price: ${median_price:,.0f}"}
         # Pie chart for dwellings
         if 'dwelling_type' in dwell_df.columns and 'dwelling_number' in dwell_df.columns:
             mix = dwell_df[dwell_df['small_area'] == area].groupby('dwelling_type')['dwelling_number'].sum().reset_index()
-            if not mix.empty:
-                pie = alt.Chart(mix).mark_arc().encode(theta='dwelling_number:Q', color='dwelling_type:N')
-                st.altair_chart(pie, use_container_width=False)
+            pie = alt.Chart(mix).mark_arc().encode(theta='dwelling_number:Q', color='dwelling_type:N')
+            st.altair_chart(pie, use_container_width=False)
 
         # Price trend chart
         st.subheader(f"Price Trend ({chart_style} Chart)")
         if chart_style == "Line":
-            trend = alt.Chart(sub).mark_line(point=True).encode(x='sale_year:O', y='median_price:Q')
+            chart = alt.Chart(sub).mark_line(point=True).encode(x='sale_year:O', y='median_price:Q')
         elif chart_style == "Bar":
-            trend = alt.Chart(sub).mark_bar().encode(x='sale_year:O', y='median_price:Q')
-        else:
-            trend = alt.Chart(sub).mark_area(opacity=0.5).encode(x='sale_year:O', y='median_price:Q')
-        st.altair_chart(trend.properties(width=700, height=300), use_container_width=True)
+            chart = alt.Chart(sub).mark_bar().encode(x='sale_year:O', y='median_price:Q')
+        else:  # Area
+            chart = alt.Chart(sub).mark_area(opacity=0.5).encode(x='sale_year:O', y='median_price:Q')
+        st.altair_chart(chart.properties(width=700, height=300), use_container_width=True)
 
-        # Forecast
+        # Forecast with shaded confidence
         st.subheader("5-Year Forecast with Confidence")
         model = LinearRegression().fit(sub[['sale_year']], sub['median_price'])
         future_years = np.arange(sub['sale_year'].max()+1, sub['sale_year'].max()+1+MAX_FUTURE_YEARS)
         preds = model.predict(future_years.reshape(-1,1))
         df_f = pd.DataFrame({'sale_year': future_years, 'median_price': preds})
-        line = alt.Chart(df_f).mark_line(color='orange', strokeWidth=2).encode(x='sale_year:O', y='median_price:Q')
-        band = alt.Chart(df_f).mark_area(opacity=0.2, color='orange').encode(x='sale_year:O', y='median_price:Q')
-        st.altair_chart((trend + line + band).interactive().properties(title=f"Forecast for {area} ({ptype})"), use_container_width=True)
+        line = alt.Chart(df_f).mark_line(color='orange').encode(x='sale_year:O', y='median_price:Q')
+        area = alt.Chart(df_f).mark_area(opacity=0.2, color='orange').encode(x='sale_year:O', y='median_price:Q')
+        st.altair_chart((chart + line + area).interactive().properties(title=f"Forecast for {area} ({ptype})"), use_container_width=True)
 
 # ---- Heatmap ----
 elif page == "Heatmap":
@@ -223,66 +223,36 @@ elif page == "Heatmap":
 # ---- Comparison ----
 elif page == "Comparison":
     st.header("🔍 Compare Two Suburbs")
-    # Sidebar controls
     col1, col2, col3 = st.columns([1,1,2])
     with col1:
         suburb1 = st.selectbox("Suburb 1", sorted(prices_df['small_area'].dropna().unique()), key='comp1')
     with col2:
         suburb2 = st.selectbox("Suburb 2", sorted(prices_df['small_area'].dropna().unique()), index=1, key='comp2')
     with col3:
-        st.markdown("#### Display Options")
-        comp_style = st.selectbox("Choose comparison style:", ["Line Chart", "Bar Chart", "Area Chart", "Data Table"])
-        smooth = st.checkbox("Apply 3-Year Rolling Avg", value=False)
+        st.markdown("#### Customize Comparison Chart")
+        show_points = st.checkbox("Show data points", value=True)
+        smooth = st.checkbox("Smooth lines (rolling avg)", value=False)
 
-    # Prepare data
-    df1 = prices_df[prices_df['small_area'] == suburb1].sort_values('sale_year').copy()
-    df2 = prices_df[prices_df['small_area'] == suburb2].sort_values('sale_year').copy()
-    combined = pd.concat([df1.assign(Suburb=suburb1), df2.assign(Suburb=suburb2)])
-    if smooth and comp_style != "Data Table":
-        combined['median_price'] = combined.groupby('Suburb')['median_price'].transform(lambda x: x.rolling(3,1).mean())
+    df1 = prices_df[prices_df['small_area'] == suburb1].copy()
+    df2 = prices_df[prices_df['small_area'] == suburb2].copy()
+    if smooth:
+        df1['median_price'] = df1['median_price'].rolling(3, min_periods=1).mean()
+        df2['median_price'] = df2['median_price'].rolling(3, min_periods=1).mean()
 
-    # Render based on style
-    if comp_style == "Line Chart":
-        chart = alt.Chart(combined).mark_line(point=True).encode(
-            x=alt.X('sale_year:O', title='Year'),
-            y=alt.Y('median_price:Q', title='Median Price (AUD)', axis=alt.Axis(format='$,')),
-            color='Suburb:N',
-            tooltip=['sale_year:O', alt.Tooltip('median_price:Q', format='$,')]
-        ).properties(title=f"Line Comparison: {suburb1} vs {suburb2}", width=700, height=400).interactive()
-        st.altair_chart(chart, use_container_width=True)
-    elif comp_style == "Bar Chart":
-        chart = alt.Chart(combined).mark_bar().encode(
-            x=alt.X('sale_year:O', title='Year'),
-            y=alt.Y('median_price:Q', title='Median Price (AUD)', axis=alt.Axis(format='$,')),
-            column='Suburb:N',
-            tooltip=['sale_year:O', alt.Tooltip('median_price:Q', format='$,')]
-        ).properties(title=f"Bar Comparison: {suburb1} vs {suburb2}", width=200, height=400)
-        st.altair_chart(chart, use_container_width=True)
-    elif comp_style == "Area Chart":
-        chart = alt.Chart(combined).mark_area(opacity=0.5).encode(
+    df1['Suburb'] = suburb1
+    df2['Suburb'] = suburb2
+    comp_df = pd.concat([df1, df2])
+
+    chart = alt.Chart(comp_df).mark_line().encode(
+        x=alt.X('sale_year:O', title='Year'),
+        y=alt.Y('median_price:Q', title='Median Price (AUD)'),
+        color=alt.Color('Suburb:N', title='Suburb'),
+        tooltip=[alt.Tooltip('sale_year:O', title='Year'),
+                 alt.Tooltip('median_price:Q', title='Median Price', format='$,.0f'),
+                 alt.Tooltip('Suburb:N')]
+    )
+    if show_points:
+        points = alt.Chart(comp_df).mark_point(size=50).encode(
             x='sale_year:O',
-            y=alt.Y('median_price:Q', title='Median Price (AUD)', axis=alt.Axis(format='$,')),
-            color='Suburb:N'
-        ).properties(title=f"Area Comparison: {suburb1} vs {suburb2}", width=700, height=400).interactive()
-        st.altair_chart(chart, use_container_width=True)
-    else:  # Data Table
-        st.subheader(f"Data Table: {suburb1} vs {suburb2}")
-        table = combined.pivot(index='sale_year', columns='Suburb', values='median_price')
-        st.dataframe(table)
-
-# ---- Favorites & Notes ----
-elif page == "Favorites & Notes":
-    st.header("⭐ Favorites & Notes")
-    for fav in st.session_state.favorites:
-        st.write(fav)
-        st.text_area(f"Notes for {fav}", key=f"note_{fav}")
-    if st.button("Clear Favorites"):
-        st.session_state.favorites = []
-
-# ---- About ----
-elif page == "About":
-    st.header("ℹ️ About")
-    st.write("Dashboard uses City of Melbourne open data to explore house prices.")
-
-st.markdown("---")
-st.write("*Data source: City of Melbourne.*")
+            y='median_price:Q',
+            color='Sub

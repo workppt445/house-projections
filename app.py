@@ -228,36 +228,45 @@ elif page == "Comparison":
     with col2:
         suburb2 = st.selectbox("Suburb 2", sorted(prices_df['small_area'].dropna().unique()), index=1, key='comp2')
     with col3:
-        st.markdown("#### Chart Options")
-        smooth = st.checkbox("3-Year Rolling Average", value=True)
-        show_legend = st.checkbox("Show Legend", value=True)
+        st.markdown("#### Display Options")
+        comp_style = st.selectbox("Choose comparison style:", ["Line Chart", "Bar Chart", "Area Chart", "Data Table"])
+        smooth = st.checkbox("Apply 3-Year Rolling Avg", value=False)
 
     # Prepare data
     df1 = prices_df[prices_df['small_area'] == suburb1].sort_values('sale_year').copy()
     df2 = prices_df[prices_df['small_area'] == suburb2].sort_values('sale_year').copy()
-    if smooth:
-        df1['median_price'] = df1['median_price'].rolling(3, min_periods=1).mean()
-        df2['median_price'] = df2['median_price'].rolling(3, min_periods=1).mean()
-    df1['Suburb'] = suburb1
-    df2['Suburb'] = suburb2
-    comp_df = pd.concat([df1, df2])
+    combined = pd.concat([df1.assign(Suburb=suburb1), df2.assign(Suburb=suburb2)])
+    if smooth and comp_style != "Data Table":
+        combined['median_price'] = combined.groupby('Suburb')['median_price'].transform(lambda x: x.rolling(3,1).mean())
 
-    # Create cleaner comparison chart
-    chart = alt.Chart(comp_df).mark_line(point=False, strokeWidth=3).encode(
-        x=alt.X('sale_year:O', title='Year', axis=alt.Axis(labelAngle=0)),
-        y=alt.Y('median_price:Q', title='Median Price (AUD)', axis=alt.Axis(format='$,') ),
-        color=alt.Color('Suburb:N', title=None, legend=alt.Legend(orient='top') if show_legend else None),
-        tooltip=[
-            alt.Tooltip('sale_year:O', title='Year'),
-            alt.Tooltip('median_price:Q', title='Median Price', format='$,')
-        ]
-    ).properties(
-        width=800,
-        height=400,
-        title=f"House Price Comparison: {suburb1} vs {suburb2}"
-    ).interactive()
-
-    st.altair_chart(chart, use_container_width=True)
+    # Render based on style
+    if comp_style == "Line Chart":
+        chart = alt.Chart(combined).mark_line(point=True).encode(
+            x=alt.X('sale_year:O', title='Year'),
+            y=alt.Y('median_price:Q', title='Median Price (AUD)', axis=alt.Axis(format='$,')),
+            color='Suburb:N',
+            tooltip=['sale_year:O', alt.Tooltip('median_price:Q', format='$,')]
+        ).properties(title=f"Line Comparison: {suburb1} vs {suburb2}", width=700, height=400).interactive()
+        st.altair_chart(chart, use_container_width=True)
+    elif comp_style == "Bar Chart":
+        chart = alt.Chart(combined).mark_bar().encode(
+            x=alt.X('sale_year:O', title='Year'),
+            y=alt.Y('median_price:Q', title='Median Price (AUD)', axis=alt.Axis(format='$,')),
+            column='Suburb:N',
+            tooltip=['sale_year:O', alt.Tooltip('median_price:Q', format='$,')]
+        ).properties(title=f"Bar Comparison: {suburb1} vs {suburb2}", width=200, height=400)
+        st.altair_chart(chart, use_container_width=True)
+    elif comp_style == "Area Chart":
+        chart = alt.Chart(combined).mark_area(opacity=0.5).encode(
+            x='sale_year:O',
+            y=alt.Y('median_price:Q', title='Median Price (AUD)', axis=alt.Axis(format='$,')),
+            color='Suburb:N'
+        ).properties(title=f"Area Comparison: {suburb1} vs {suburb2}", width=700, height=400).interactive()
+        st.altair_chart(chart, use_container_width=True)
+    else:  # Data Table
+        st.subheader(f"Data Table: {suburb1} vs {suburb2}")
+        table = combined.pivot(index='sale_year', columns='Suburb', values='median_price')
+        st.dataframe(table)
 
 # ---- Favorites & Notes ----
 elif page == "Favorites & Notes":

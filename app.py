@@ -91,16 +91,26 @@ st.markdown(f"<style>body{{background-color:{bg};color:{fg}}}</style>", unsafe_a
 page = st.sidebar.radio("Go to:", ["Map & Trends", "Heatmap", "Comparison", "Favorites & Notes", "About"])
 
 # ================= Data Loading =================
+# ================= Data Loading =================
 @st.cache_data
-def load_data():
+ def load_data():
     try:
         st.write("📦 Loading price data...")
         prices = pd.read_csv("house-prices-by-small-area-sale-year.csv")
+        # Standardize column names
         prices.columns = [c.strip().lower().replace(' ', '_') for c in prices.columns]
+        if 'type' in prices.columns and 'property_type' not in prices.columns:
+            prices = prices.rename(columns={'type':'property_type'})
 
         st.write("🏠 Loading dwellings data...")
         dwellings = pd.read_csv("city-of-melbourne-dwellings-and-household-forecasts-by-small-area-2020-2040.csv")
         dwellings.columns = [c.strip().lower().replace(' ', '_') for c in dwellings.columns]
+        if 'geography' in dwellings.columns:
+            dwellings = dwellings.rename(columns={'geography':'small_area'})
+        if 'category' in dwellings.columns and 'dwelling_type' not in dwellings.columns:
+            dwellings = dwellings.rename(columns={'category':'dwelling_type'})
+        if 'households' in dwellings.columns and 'dwelling_number' not in dwellings.columns:
+            dwellings = dwellings.rename(columns={'households':'dwelling_number'})
 
         st.write("🔧 Converting data...")
         for col in ['sale_year', 'median_price']:
@@ -115,14 +125,12 @@ def load_data():
 
         st.write("✅ Done loading data.")
         return prices, dwellings
-
     except Exception as e:
-        st.error(f"❌ Failed to load data: {str(e)}")
+        st.error(f"❌ Failed to load data: {e}")
         return pd.DataFrame(), pd.DataFrame()
 
-# >>> Add the actual loading call here <<<
-prices_df, dwellings_df = load_data()
-prices_df, dwellings_df = load_data()
+# Call load_data to get dataframes
+df_prices, df_dwellings = load_data()
 
 # ================ Helper Functions ================
 def filter_data(area, ptype, y_min, y_max):

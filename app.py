@@ -161,27 +161,99 @@ if page == "Map & Trends":
     if prices_df.empty:
         st.error("No price data loaded.")
     else:
-        # Check if latitude/longitude columns exist
-        if 'latitude' not in prices_df.columns or 'longitude' not in prices_df.columns:
-            st.warning("Map data is missing latitude/longitude columns; map disabled.")
-        else:
+        # Debug: show columns
+        st.write("Available columns in price data:", list(prices_df.columns))
+
+        midpoint = None
+        if 'latitude' in prices_df.columns and 'longitude' in prices_df.columns:
             midpoint = (prices_df['latitude'].mean(), prices_df['longitude'].mean())
-            view = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=11)
-            layer = pdk.Layer(
-                "ScatterplotLayer",
-                data=prices_df,
-                get_position='[longitude, latitude]',
-                get_fill_color='[0, 150, 255, 180]',
-                get_radius=200,
-                pickable=True
-            )
-            deck = pdk.Deck(layers=[layer], initial_view_state=view,
-                            tooltip={"html": "<b>Area:</b> {small_area}<br/>"
-                                            "<b>Year:</b> {sale_year}<br/>"
-                                            "<b>Price:</b> ${median_price:,.0f}"})
-            st.pydeck_chart(deck)
+        else:
+            midpoint = (-37.8136, 144.9631)
+            st.warning("Map data is missing latitude/longitude columns; map disabled.")
 
         # Filters
+        st.subheader("Filters")
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            if 'small_area' in prices_df.columns:
+                area_field = 'small_area'
+            elif 'area' in prices_df.columns:
+                area_field = 'area'
+            elif 'suburb' in prices_df.columns:
+                area_field = 'suburb'
+            else:
+                area_field = prices_df.columns[0]
+                st.warning(f"Using '{area_field}' as the area field.")
+            areas = sorted(prices_df[area_field].dropna().unique())
+            area = st.selectbox("Suburb:", areas)
+        with col2:
+            if 'property_type' in prices_df.columns:
+                ptype_field = 'property_type'
+            elif 'type' in prices_df.columns:
+                ptype_field = 'type'
+            else:
+                ptype_field = prices_df.columns[1]
+                st.warning(f"Using '{ptype_field}' as the property type field.")
+            ptypes = sorted(prices_df[ptype_field].dropna().unique())
+            ptype = st.selectbox("Property Type:", ptypes)
+        with col3:
+            if 'sale_year' in prices_df.columns:
+                year_field = 'sale_year'
+            elif 'year' in prices_df.columns:
+                year_field = 'year'
+            else:
+                year_field = prices_df.columns[2]
+                st.warning(f"Using '{year_field}' as the sale year field.")
+            yrs = st.slider("Sale Year Range:", int(prices_df[year_field].min()), int(prices_df[year_field].max()),
+                            (int(prices_df[year_field].min()), int(prices_df[year_field].max())))
+
+        # Filter data accordingly
+        sub = prices_df[
+            (prices_df[area_field] == area) &
+            (prices_df[ptype_field] == ptype) &
+            (prices_df[year_field] >= yrs[0]) &
+            (prices_df[year_field] <= yrs[1])
+        ]
+        if sub.empty:
+            st.warning("No data for these filters.")
+        else:
+            # Pie chart and subsequent code now uses 'sub' and dwellings_df filtering by area_field
+            dwell_field = area_field if area_field in dwellings_df.columns else 'small_area'
+            dwell = dwellings_df[dwellings_df[dwell_field] == area]
+            if not dwell.empty and 'dwelling_type' in dwell.columns:
+                mix = dwell.groupby('dwelling_type')['dwelling_number'].sum().reset_index()
+                mix.columns = ['Type','Count']
+                pie = alt.Chart(mix).mark_arc().encode(
+                    theta='Count:Q', color='Type:N', tooltip=['Type','Count']
+                ).properties(title="Dwelling Type Mix")
+                st.altair_chart(pie, use_container_width=False)
+
+            # Historical trend
+            st.subheader("Historical Median Price")
+            hist = px.line(sub, x=year_field, y='median_price', color=ptype_field, markers=True,
+                           title=f"{area} - {ptype} Price Trend")
+            st.plotly_chart(hist)
+
+            # Forecast etc...
+            model, poly = fit_poly_model(sub)
+            future_df = project_prices(model, poly, sub[year_field].max())
+            st.subheader(f"{MAX_FUTURE_YEARS}-Year Forecast")
+            fc = px.line(future_df, x='sale_year', y='median_price', markers=True,
+                         title="Projected Median Prices")
+            st.plotly_chart(fc)
+
+            preds = model.predict(poly.transform(sub[year_field].values.reshape(-1,1)))
+            rmse = np.sqrt(mean_squared_error(sub['median_price'], preds))
+            st.metric("Forecast RMSE", f"${rmse:,.2f}")
+
+            st.markdown(generate_download_link(sub, f"{area}_{ptype}.csv"), unsafe_allow_html=True)
+
+            if area not in st.session_state.favorites:
+                if st.button("➕ Add to Favorites"):
+                    st.session_state.favorites.append(area)
+                    st.success(f"{area} bookmarked.")
+
+# ---- Heatmap ----
         st.subheader("Filters")
         col1, col2, col3 = st.columns(3)
         with col1:

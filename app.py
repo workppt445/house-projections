@@ -7,8 +7,6 @@ import folium
 from folium.plugins import HeatMap
 from streamlit_folium import st_folium
 from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.metrics import mean_squared_error
 import json
 import os
 import base64
@@ -94,85 +92,85 @@ page = st.sidebar.radio("Go to:", ["Map & Trends", "Heatmap", "Comparison", "Fav
 def load_data():
     prices = pd.read_csv("house-prices-by-small-area-sale-year.csv")
     prices.columns = [c.strip().lower().replace(' ', '_') for c in prices.columns]
+    dwell = pd.read_csv("city-of-melbourne-dwellings-and-household-forecasts-by-small-area-2020-2040.csv")
+    dwell.columns = [c.strip().lower().replace(' ', '_') for c in dwell.columns]
     if 'latitude' not in prices.columns:
         prices['latitude'] = -37.8136
     if 'longitude' not in prices.columns:
         prices['longitude'] = 144.9631
-    if 'property_type' not in prices.columns and 'type' in prices.columns:
-        prices.rename(columns={'type': 'property_type'}, inplace=True)
-    dwell = pd.read_csv("city-of-melbourne-dwellings-and-household-forecasts-by-small-area-2020-2040.csv")
-    dwell.columns = [c.strip().lower().replace(' ', '_') for c in dwell.columns]
+    if 'property_type' not in prices.columns:
+        prices['property_type'] = "House/Townhouse"
+    if 'dwelling_type' not in dwell.columns:
+        dwell['dwelling_type'] = "Unknown"
     return prices, dwell
 
 prices_df, dwell_df = load_data()
-
-# Helper: download link
-def download_csv(df, fname):
-    csv = df.to_csv(index=False).encode()
-    b64 = base64.b64encode(csv).decode()
-    return f"<a href='data:file/csv;base64,{b64}' download='{fname}'>📅 Download {fname}</a>"
 
 # ---- Map & Trends ----
 if page == "Map & Trends":
     st.header("📍 Interactive Map & Trends")
     midpoint = (prices_df['latitude'].mean(), prices_df['longitude'].mean())
     view = pdk.ViewState(latitude=midpoint[0], longitude=midpoint[1], zoom=11)
-    scatter = pdk.Layer(
-        "ScatterplotLayer", data=prices_df,
-        get_position='[longitude, latitude]', get_radius=200,
-        get_fill_color='[0,120,255,160]', pickable=True
-    )
+    scatter = pdk.Layer("ScatterplotLayer", data=prices_df, get_position='[longitude, latitude]', get_radius=200,
+                        get_fill_color='[0,120,255,160]', pickable=True)
     st.pydeck_chart(pdk.Deck(layers=[scatter], initial_view_state=view,
-        tooltip={"text":"{small_area}\nYear:{sale_year}\nPrice:${median_price}"}
-    ))
+                             tooltip={"text": "{small_area}\nYear:{sale_year}\nPrice:${median_price}"}))
     st.subheader("Filters")
-    area = st.selectbox("Suburb", sorted(prices_df['small_area'].dropna().unique()))
-    ptype = st.selectbox("Type", sorted(prices_df['property_type'].dropna().unique()))
+    area = st.selectbox("Suburb", sorted(prices_df['small_area'].unique()))
+    ptype = st.selectbox("Type", sorted(prices_df['property_type'].unique()))
     yrs = st.slider("Year Range", int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max()),
-                     (int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max())))
-    sub = prices_df[(prices_df['small_area']==area)&(prices_df['property_type']==ptype)&
-                    (prices_df['sale_year']>=yrs[0])&(prices_df['sale_year']<=yrs[1])]
+                    (int(prices_df['sale_year'].min()), int(prices_df['sale_year'].max())))
+    sub = prices_df[(prices_df['small_area'] == area) & (prices_df['property_type'] == ptype) &
+                    (prices_df['sale_year'] >= yrs[0]) & (prices_df['sale_year'] <= yrs[1])]
     if sub.empty:
         st.warning("No data for these filters.")
     else:
-        mix = dwell_df[dwell_df['small_area']==area].groupby('dwelling_type')['dwelling_number'].sum().reset_index()
-        pie = alt.Chart(mix).mark_arc().encode(theta='dwelling_number:Q', color='dwelling_type:N')
-        st.altair_chart(pie, use_container_width=False)
+        mix = dwell_df[dwell_df['small_area'] == area].groupby('dwelling_type')['dwelling_number'].sum().reset_index()
+        if not mix.empty:
+            pie = alt.Chart(mix).mark_arc().encode(theta='dwelling_number:Q', color='dwelling_type:N')
+            st.altair_chart(pie, use_container_width=False)
         st.subheader("Historical & Forecast")
         fig = alt.Chart(sub).mark_line(point=True).encode(x='sale_year:O', y='median_price:Q')
         model = LinearRegression().fit(sub[['sale_year']], sub['median_price'])
-        future = pd.DataFrame({'sale_year':np.arange(sub['sale_year'].max()+1, sub['sale_year'].max()+MAX_FUTURE_YEARS+1)})
+        future = pd.DataFrame({'sale_year': np.arange(sub['sale_year'].max() + 1, sub['sale_year'].max() + MAX_FUTURE_YEARS + 1)})
         future['median_price'] = model.predict(future[['sale_year']])
         fig2 = alt.Chart(future).mark_line(color='green').encode(x='sale_year:O', y='median_price:Q')
         st.altair_chart(fig + fig2, use_container_width=True)
-        st.markdown(download_csv(sub, f"{area}_{ptype}.csv"), unsafe_allow_html=True)
 
 # ---- Heatmap ----
 elif page == "Heatmap":
-    st.header("🌡️ Price Heatmap")
+    st.header("\U0001f321️ Price Heatmap")
+    midpoint = (prices_df['latitude'].mean(), prices_df['longitude'].mean())
     m = folium.Map(location=midpoint, zoom_start=11)
-    data = prices_df[['latitude','longitude','median_price']].dropna()
-    data['intensity']=(data['median_price']-data['median_price'].min())/(data['median_price'].max()-data['median_price'].min())
-    HeatMap(data[['latitude','longitude','intensity']].values.tolist(), radius=15).add_to(m)
+    data = prices_df[['latitude', 'longitude', 'median_price']].dropna()
+    data['intensity'] = (data['median_price'] - data['median_price'].min()) / (
+        data['median_price'].max() - data['median_price'].min())
+    HeatMap(data[['latitude', 'longitude', 'intensity']].values.tolist(), radius=15).add_to(m)
     st_folium(m, width=700, height=500)
 
 # ---- Comparison ----
 elif page == "Comparison":
-    st.header("🔍 Compare Two Suburbs")
-    a1,a2=st.columns(2)
+    st.header("\U0001f50d Compare Two Suburbs")
+    a1, a2 = st.columns(2)
     with a1:
-        c1=st.selectbox("Suburb 1", sorted(prices_df['small_area'].dropna().unique()))
+        c1 = st.selectbox("Suburb 1", sorted(prices_df['small_area'].unique()))
     with a2:
-        c2=st.selectbox("Suburb 2", sorted(prices_df['small_area'].dropna().unique()))
-    d1=prices_df[prices_df['small_area']==c1]
-    d2=prices_df[prices_df['small_area']==c2]
-    comp=pd.concat([d1.assign(area=c1),d2.assign(area=c2)])
-    fig=alt.Chart(comp).mark_line(point=True).encode(x='sale_year:O',y='median_price:Q',color='area:N')
-    st.altair_chart(fig, use_container_width=True)
+        c2 = st.selectbox("Suburb 2", sorted(prices_df['small_area'].unique()))
+    d1 = prices_df[prices_df['small_area'] == c1]
+    d2 = prices_df[prices_df['small_area'] == c2]
+    comp = pd.concat([d1.assign(area=c1), d2.assign(area=c2)])
+    st.altair_chart(
+        alt.Chart(comp).mark_line(point=True).encode(
+            x=alt.X('sale_year:O', title='Year'),
+            y=alt.Y('median_price:Q', title='Median Price'),
+            color=alt.Color('area:N', title='Suburb')
+        ).properties(title=f"{c1} vs {c2}: Price Comparison"),
+        use_container_width=True
+    )
 
 # ---- Favorites & Notes ----
 elif page == "Favorites & Notes":
-    st.header("⭐ Favorites & Notes")
+    st.header("\u2b50 Favorites & Notes")
     for fav in st.session_state.favorites:
         st.write(fav)
         st.text_area(f"Notes for {fav}", key=f"note_{fav}")
@@ -181,7 +179,7 @@ elif page == "Favorites & Notes":
 
 # ---- About ----
 elif page == "About":
-    st.header("ℹ️ About")
+    st.header("\u2139\ufe0f About")
     st.write("Dashboard uses City of Melbourne open data to explore house prices.")
 
 st.markdown("---")

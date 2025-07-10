@@ -160,9 +160,7 @@ if page == "Map & Trends":
         )
 
     deck = pdk.Deck(layers=[layer], initial_view_state=view,
-        tooltip={"text":"{small_area}
-Year: {sale_year}
-Price: ${median_price:,.0f}"}
+        tooltip={"text": "{small_area}\nYear: {sale_year}\nPrice: ${median_price:,.0f}"}
     )
     st.pydeck_chart(deck)
 

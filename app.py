@@ -106,6 +106,12 @@ def load_data():
             if col in dwellings.columns:
                 dwellings[col] = pd.to_numeric(dwellings[col], errors='coerce')
 
+        # Inject dummy latitude and longitude if missing
+        if 'latitude' not in prices.columns:
+            prices['latitude'] = -37.8136  # Melbourne CBD latitude
+        if 'longitude' not in prices.columns:
+            prices['longitude'] = 144.9631  # Melbourne CBD longitude
+
         st.write("✅ Done loading data.")
         return prices.dropna(subset=['sale_year', 'median_price']), dwellings
 
